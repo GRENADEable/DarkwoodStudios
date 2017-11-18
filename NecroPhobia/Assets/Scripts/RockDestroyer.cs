@@ -8,7 +8,7 @@ public class RockDestroyer : MonoBehaviour
     {
         if (col.gameObject.tag == "Stone")
         {
-            Destroy(col.gameObject,0.5f);
+            Destroy(col.gameObject);
         }
     }
 }
