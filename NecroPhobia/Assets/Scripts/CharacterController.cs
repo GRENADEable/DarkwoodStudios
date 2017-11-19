@@ -5,6 +5,11 @@ using UnityEngine.UI;
 
 public class CharacterController : MonoBehaviour
 {
+    public Slider StaminaSlider;
+    public float MaxStamina;
+
+    public float currStamina;
+    public float regenStamina;
 
     public float walkingSpeed;
     public float runningSpeed;
@@ -13,17 +18,28 @@ public class CharacterController : MonoBehaviour
     private int score = 0;
     public Text textScore;
 
-    PlayerStats ps;
-
     void Start()
     {
-        ps = GetComponent<PlayerStats>();
+        StaminaSlider.maxValue = MaxStamina;
+        StaminaSlider.value = MaxStamina;
+        currStamina = MaxStamina;
     }
 
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftShift) && ps.currStamina > 0)
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            StaminaSlider.value -= Time.deltaTime;
+            currStamina -= Time.deltaTime;
+        }
+        else
+        {
+            StaminaSlider.value += regenStamina * Time.deltaTime;
+            currStamina += regenStamina * Time.deltaTime;
+        }
+
+        if (Input.GetKey(KeyCode.LeftShift) && currStamina > 0)
         {
             float translation2 = Input.GetAxis("Vertical") * runningSpeed;
             float straffe2 = Input.GetAxis("Horizontal") * runningSpeed;
@@ -43,6 +59,12 @@ public class CharacterController : MonoBehaviour
             straffe *= Time.deltaTime;
 
             transform.Translate(straffe, 0f, translation);
+        }
+        currStamina = Mathf.Clamp(currStamina, 0, MaxStamina);
+
+        if (StaminaSlider.value >= MaxStamina)
+        {
+            StaminaSlider.value = MaxStamina;
         }
 
     }
