@@ -6,7 +6,7 @@ public class StoneThrowing : MonoBehaviour
 {
 
     public GameObject stonePrefab;
-    GameObject stonePrefabClone;
+    
 
     private bool isThrowing;
 
@@ -18,7 +18,7 @@ public class StoneThrowing : MonoBehaviour
 	
 	void Update ()
     {
-		if(Input.GetKeyDown(KeyCode.Space))
+		if(Input.GetKeyDown(KeyCode.Space) && GameVariables.Stones > 0)
         {
             isThrowing = true;
         }
@@ -27,10 +27,11 @@ public class StoneThrowing : MonoBehaviour
 
         if (isThrowing == true)
         {
-            stonePrefabClone = Instantiate(stonePrefab, transform.position, Quaternion.identity) as GameObject;
+            GameVariables.Stones--;
+            GameObject projectile = Instantiate(stonePrefab, transform.position, Quaternion.identity) as GameObject;
             //To throw the stone in the direction the player is facing
-            stonePrefabClone.transform.position = transform.position + Camera.main.transform.forward * 2;
-            Rigidbody rb = stonePrefabClone.GetComponent<Rigidbody>();
+            projectile.transform.position = transform.position + Camera.main.transform.forward * 2;
+            Rigidbody rb = projectile.GetComponent<Rigidbody>();
             rb.velocity = Camera.main.transform.forward * 30;
         }
     }
