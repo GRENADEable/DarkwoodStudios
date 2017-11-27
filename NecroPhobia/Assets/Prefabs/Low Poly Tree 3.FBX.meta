@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: c7d7e2466a2bc37459626af45ceaf791
-timeCreated: 1511774427
+guid: abfe713bf26c4c4429ff8ee4662b347d
+timeCreated: 1511779200
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
@@ -27,6 +27,7 @@ ModelImporter:
     100038: Plane070
     100040: Plane073
     100042: Plane074
+    100044: Tree 3
     400000: //RootNode
     400002: Plane052
     400004: Plane053
@@ -49,72 +50,73 @@ ModelImporter:
     400038: Plane070
     400040: Plane073
     400042: Plane074
-    2300000: //RootNode
-    2300002: Plane052
-    2300004: Plane053
-    2300006: Plane054
-    2300008: Plane055
-    2300010: Plane056
-    2300012: Plane057
-    2300014: Plane058
-    2300016: Plane059
-    2300018: Plane060
-    2300020: Plane061
-    2300022: Plane062
-    2300024: Plane063
-    2300026: Plane064
-    2300028: Plane065
-    2300030: Plane066
-    2300032: Plane067
-    2300034: Plane068
-    2300036: Plane069
-    2300038: Plane070
-    2300040: Plane073
-    2300042: Plane074
-    3300000: //RootNode
-    3300002: Plane052
-    3300004: Plane053
-    3300006: Plane054
-    3300008: Plane055
-    3300010: Plane056
-    3300012: Plane057
-    3300014: Plane058
-    3300016: Plane059
-    3300018: Plane060
-    3300020: Plane061
-    3300022: Plane062
-    3300024: Plane063
-    3300026: Plane064
-    3300028: Plane065
-    3300030: Plane066
-    3300032: Plane067
-    3300034: Plane068
-    3300036: Plane069
-    3300038: Plane070
-    3300040: Plane073
-    3300042: Plane074
+    400044: Tree 3
+    2300000: Plane052
+    2300002: Plane053
+    2300004: Plane054
+    2300006: Plane055
+    2300008: Plane056
+    2300010: Plane057
+    2300012: Plane058
+    2300014: Plane059
+    2300016: Plane060
+    2300018: Plane061
+    2300020: Plane062
+    2300022: Plane063
+    2300024: Plane064
+    2300026: Plane065
+    2300028: Plane066
+    2300030: Plane067
+    2300032: Plane068
+    2300034: Plane069
+    2300036: Plane070
+    2300038: Plane073
+    2300040: Plane074
+    2300042: Tree 3
+    3300000: Plane052
+    3300002: Plane053
+    3300004: Plane054
+    3300006: Plane055
+    3300008: Plane056
+    3300010: Plane057
+    3300012: Plane058
+    3300014: Plane059
+    3300016: Plane060
+    3300018: Plane061
+    3300020: Plane062
+    3300022: Plane063
+    3300024: Plane064
+    3300026: Plane065
+    3300028: Plane066
+    3300030: Plane067
+    3300032: Plane068
+    3300034: Plane069
+    3300036: Plane070
+    3300038: Plane073
+    3300040: Plane074
+    3300042: Tree 3
     4300000: Tree 3
     4300002: Plane074
     4300004: Plane073
-    4300006: Plane070
-    4300008: Plane069
-    4300010: Plane068
-    4300012: Plane067
-    4300014: Plane066
-    4300016: Plane065
+    4300006: Plane056
+    4300008: Plane057
+    4300010: Plane058
+    4300012: Plane059
+    4300014: Plane062
+    4300016: Plane070
     4300018: Plane064
     4300020: Plane063
-    4300022: Plane062
+    4300022: Plane054
     4300024: Plane061
     4300026: Plane060
-    4300028: Plane059
-    4300030: Plane058
-    4300032: Plane057
-    4300034: Plane056
-    4300036: Plane055
-    4300038: Plane054
-    4300040: Plane053
-    4300042: Plane052
+    4300028: Plane067
+    4300030: Plane068
+    4300032: Plane052
+    4300034: Plane055
+    4300036: Plane066
+    4300038: Plane053
+    4300040: Plane065
+    4300042: Plane069
   materials:
     importMaterials: 1
     materialName: 0
