@@ -1,0 +1,217 @@
+fileFormatVersion: 2
+guid: 1734fa2f539224a449fd0e888da88c97
+timeCreated: 1511966313
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Plane025
+    100004: Plane026
+    100006: Plane027
+    100008: Plane028
+    100010: Plane029
+    100012: Plane030
+    100014: Plane031
+    100016: Plane035
+    100018: Plane036
+    100020: Plane037
+    100022: Plane038
+    100024: Plane039
+    100026: Plane040
+    100028: Plane041
+    100030: Plane042
+    100032: Plane043
+    100034: Plane044
+    100036: Plane045
+    100038: Plane046
+    100040: Plane047
+    100042: Plane048
+    100044: Plane049
+    100046: Plane050
+    100048: Plane051
+    100050: Plane071
+    100052: Plane072
+    400000: //RootNode
+    400002: Plane025
+    400004: Plane026
+    400006: Plane027
+    400008: Plane028
+    400010: Plane029
+    400012: Plane030
+    400014: Plane031
+    400016: Plane035
+    400018: Plane036
+    400020: Plane037
+    400022: Plane038
+    400024: Plane039
+    400026: Plane040
+    400028: Plane041
+    400030: Plane042
+    400032: Plane043
+    400034: Plane044
+    400036: Plane045
+    400038: Plane046
+    400040: Plane047
+    400042: Plane048
+    400044: Plane049
+    400046: Plane050
+    400048: Plane051
+    400050: Plane071
+    400052: Plane072
+    2300000: //RootNode
+    2300002: Plane025
+    2300004: Plane026
+    2300006: Plane027
+    2300008: Plane028
+    2300010: Plane029
+    2300012: Plane030
+    2300014: Plane031
+    2300016: Plane035
+    2300018: Plane036
+    2300020: Plane037
+    2300022: Plane038
+    2300024: Plane039
+    2300026: Plane040
+    2300028: Plane041
+    2300030: Plane042
+    2300032: Plane043
+    2300034: Plane044
+    2300036: Plane045
+    2300038: Plane046
+    2300040: Plane047
+    2300042: Plane048
+    2300044: Plane049
+    2300046: Plane050
+    2300048: Plane051
+    2300050: Plane071
+    2300052: Plane072
+    3300000: //RootNode
+    3300002: Plane025
+    3300004: Plane026
+    3300006: Plane027
+    3300008: Plane028
+    3300010: Plane029
+    3300012: Plane030
+    3300014: Plane031
+    3300016: Plane035
+    3300018: Plane036
+    3300020: Plane037
+    3300022: Plane038
+    3300024: Plane039
+    3300026: Plane040
+    3300028: Plane041
+    3300030: Plane042
+    3300032: Plane043
+    3300034: Plane044
+    3300036: Plane045
+    3300038: Plane046
+    3300040: Plane047
+    3300042: Plane048
+    3300044: Plane049
+    3300046: Plane050
+    3300048: Plane051
+    3300050: Plane071
+    3300052: Plane072
+    4300000: Cylinder002
+    4300002: Plane072
+    4300004: Plane071
+    4300006: Plane051
+    4300008: Plane050
+    4300010: Plane049
+    4300012: Plane048
+    4300014: Plane047
+    4300016: Plane046
+    4300018: Plane045
+    4300020: Plane043
+    4300022: Plane035
+    4300024: Plane041
+    4300026: Plane040
+    4300028: Plane039
+    4300030: Plane038
+    4300032: Plane037
+    4300034: Plane036
+    4300036: Plane025
+    4300038: Plane031
+    4300040: Plane030
+    4300042: Plane027
+    4300044: Plane028
+    4300046: Plane029
+    4300048: Plane026
+    4300050: Plane042
+    4300052: Plane044
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
