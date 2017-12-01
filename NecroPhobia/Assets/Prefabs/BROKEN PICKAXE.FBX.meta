@@ -1,22 +1,15 @@
 fileFormatVersion: 2
-guid: b0933eacf916e814598a350c3b376940
-timeCreated: 1511278269
+guid: d1a837d605ab2434e862ea5ac1ed0af9
+timeCreated: 1511451114
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
-    100000: Box003
-    100002: //RootNode
-    100004: Plane001
-    400000: Box003
-    400002: //RootNode
-    400004: Plane001
-    2300000: Box003
-    2300002: Plane001
-    3300000: Box003
-    3300002: Plane001
-    4300000: Plane001
-    4300002: Box003
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: broken pickaxe
     9500000: //RootNode
   materials:
     importMaterials: 1

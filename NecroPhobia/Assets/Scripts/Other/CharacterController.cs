@@ -18,6 +18,9 @@ public class CharacterController : MonoBehaviour
     private int score = 0;
     public Text textScore;
 
+    public GameObject openGateDoor;
+    public GameObject closeGateDoor;
+
     void Start()
     {
         StaminaSlider.maxValue = MaxStamina;
@@ -65,6 +68,23 @@ public class CharacterController : MonoBehaviour
         if (StaminaSlider.value >= MaxStamina)
         {
             StaminaSlider.value = MaxStamina;
+        }
+
+        if (score == 5)
+        {
+            Destroy(GameObject.FindGameObjectWithTag("RockDoor"));
+        }
+
+        if (score == 6)
+        {
+            closeGateDoor.SetActive(false);
+            openGateDoor.SetActive(true);
+        }
+        else
+        {
+            
+            closeGateDoor.SetActive(true);
+            openGateDoor.SetActive(false);
         }
 
     }
