@@ -9,6 +9,7 @@ TagManager:
   - Ground
   - RockDoor
   - Gate
+  - RelicEnded
   layers:
   - Default
   - TransparentFX

@@ -10,14 +10,10 @@ public class SceneManage : MonoBehaviour
         SceneManager.LoadScene("GameV2");
     }
 
-    public void Extras()
-    {
-        SceneManager.LoadScene("Extras");
-    }
-
     public void Exit()
     {
         Application.Quit();
+        Debug.Log("Game Exited");
     }
 
     public void MainMenu()

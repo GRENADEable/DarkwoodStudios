@@ -20,9 +20,11 @@ public class CharacterController : MonoBehaviour
 
     public GameObject openGateDoor;
     public GameObject closeGateDoor;
+    public GameObject relicWhole;
 
     void Start()
     {
+        relicWhole.SetActive(false);
         StaminaSlider.maxValue = MaxStamina;
         StaminaSlider.value = MaxStamina;
         currStamina = MaxStamina;
@@ -89,14 +91,20 @@ public class CharacterController : MonoBehaviour
 
     }
 
-    private void OnCollisionStay(Collision pick)
+    private void OnTriggerStay(Collider relic)
     {
-        if (pick.gameObject.tag == "Relic" && Input.GetKey(KeyCode.E))
+        if (relic.gameObject.tag == "Relic" && Input.GetKey(KeyCode.E))
         {
-            Destroy(pick.gameObject);
+            Destroy(relic.gameObject);
 
             score++;
             textScore.text = score.ToString();
+        }
+
+        if (relic.gameObject.tag == "RelicEnded" && Input.GetKey(KeyCode.E) && score == 6)
+        {
+            relicWhole.SetActive(true);
+            Debug.Log("Game Ended");
         }
     }
 }
