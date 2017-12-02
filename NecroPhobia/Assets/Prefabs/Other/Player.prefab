@@ -102,7 +102,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1404806500212496}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -70.7, y: 1.5, z: 0}
+  m_LocalPosition: {x: 43.2, y: 1.37, z: 83.6}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children:
   - {fileID: 4512792931766272}
@@ -127,7 +127,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 50
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -238,14 +238,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StaminaSlider: {fileID: 0}
+  StaminaBar: {fileID: 0}
   MaxStamina: 1
   currStamina: 0
   regenStamina: 0.5
-  walkingSpeed: 8
+  walkingSpeed: 9
   runningSpeed: 20
   textScore: {fileID: 0}
   openGateDoor: {fileID: 0}
   closeGateDoor: {fileID: 0}
+  relicWhole: {fileID: 0}
+  spiderEnemy: {fileID: 0}
+  spawnDistance: 7
 --- !u!114 &114487268249408624
 MonoBehaviour:
   m_ObjectHideFlags: 1

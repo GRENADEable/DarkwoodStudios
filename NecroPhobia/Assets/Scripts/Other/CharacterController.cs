@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class CharacterController : MonoBehaviour
 {
     public Slider StaminaSlider;
+    public GameObject StaminaBar;
     public float MaxStamina;
 
     public float currStamina;
@@ -21,10 +22,14 @@ public class CharacterController : MonoBehaviour
     public GameObject openGateDoor;
     public GameObject closeGateDoor;
     public GameObject relicWhole;
+    public GameObject spiderEnemy;
+
+    public float spawnDistance;
 
     void Start()
     {
         relicWhole.SetActive(false);
+        spiderEnemy.SetActive(false);
         StaminaSlider.maxValue = MaxStamina;
         StaminaSlider.value = MaxStamina;
         currStamina = MaxStamina;
@@ -81,6 +86,8 @@ public class CharacterController : MonoBehaviour
         {
             closeGateDoor.SetActive(false);
             openGateDoor.SetActive(true);
+            spiderEnemy.SetActive(true);
+            EffectedStamina();
         }
         else
         {
@@ -88,10 +95,9 @@ public class CharacterController : MonoBehaviour
             closeGateDoor.SetActive(true);
             openGateDoor.SetActive(false);
         }
-
     }
 
-    private void OnTriggerStay(Collider relic)
+    void OnTriggerStay(Collider relic)
     {
         if (relic.gameObject.tag == "Relic" && Input.GetKey(KeyCode.E))
         {
@@ -105,6 +111,14 @@ public class CharacterController : MonoBehaviour
         {
             relicWhole.SetActive(true);
             Debug.Log("Game Ended");
+            Destroy(spiderEnemy);
         }
+    }
+
+    void EffectedStamina()
+    {
+        currStamina = 0;
+        StaminaSlider.value = 0;
+        Destroy(StaminaBar);
     }
 }
