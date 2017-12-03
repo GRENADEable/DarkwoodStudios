@@ -4,16 +4,14 @@ using UnityEngine;
 
 public class WayPointSystem : MonoBehaviour
 {
+    public Vector3[] Positions;
 
-	// Use this for initialization
-	void Start ()
+    private void Start()
     {
-		
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-		
-	}
+        Positions = new Vector3[transform.childCount];
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            Positions[i] = transform.GetChild(i).transform.position;
+        }
+    }
 }

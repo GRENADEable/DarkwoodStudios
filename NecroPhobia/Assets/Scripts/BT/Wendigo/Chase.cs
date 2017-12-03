@@ -16,19 +16,16 @@ public class Chase : Node
         if (ownerBT.distanceToPlayer < ownerBT.attackDistance)
         {
             currCondition = Condition.Success;
-            Debug.Log("Player Reached");
         }
-        if (ownerBT.angle < 40 && ownerBT.distanceToPlayer < ownerBT.chaseDistance)
+        if (ownerBT.angle < 20 && ownerBT.distanceToPlayer < ownerBT.chaseDistance)
         {
             currCondition = Condition.Running;
             ownerBT.transform.LookAt(ownerBT.player);
             ownerBT.transform.position = Vector3.MoveTowards(ownerBT.transform.position, ownerBT.player.transform.position, ownerBT.enemySpeed * Time.deltaTime);
-            Debug.Log("Player Sighted");
         }
         else
         {
             currCondition = Condition.Fail;
-            Debug.Log("Player Out of Sight");
         }
     }
 }

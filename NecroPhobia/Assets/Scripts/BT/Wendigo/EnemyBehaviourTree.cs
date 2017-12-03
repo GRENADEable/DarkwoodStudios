@@ -5,15 +5,17 @@ using UnityEngine;
 public class EnemyBehaviourTree : MonoBehaviour
 {
     [HideInInspector] public Node root;
+    public WayPointSystem path;
     public float enemySpeed;
 
-
     public Transform player;
+
     public float chaseDistance;
     public float attackDistance;
     public float distanceToPlayer;
     public float angle;
     [HideInInspector] public Vector3 tarDir;
+    public float distanceToWaypoint;
 
     // Use this for initialization
     void Start ()
