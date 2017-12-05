@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CharacterController : MonoBehaviour
 {
@@ -38,6 +39,10 @@ public class CharacterController : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
         if (Input.GetKey(KeyCode.LeftShift))
         {
             StaminaSlider.value -= Time.deltaTime;
