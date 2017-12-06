@@ -17,11 +17,13 @@ public class Chase : Node
         {
             currCondition = Condition.Success;
         }
-        if (ownerBT.angle < 20 && ownerBT.distanceToPlayer < ownerBT.chaseDistance)
+        if (ownerBT.angle < 40 && ownerBT.distanceToPlayer < ownerBT.chaseDistance)
         {
             currCondition = Condition.Running;
-            ownerBT.transform.LookAt(ownerBT.player);
+            ownerBT.transform.LookAt(ownerBT.player.position);
             ownerBT.transform.position = Vector3.MoveTowards(ownerBT.transform.position, ownerBT.player.transform.position, ownerBT.enemySpeed * Time.deltaTime);
+            //ownerBT.transform.position +=
+            Debug.Log("Chasing");
         }
         else
         {

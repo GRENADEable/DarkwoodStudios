@@ -16,7 +16,6 @@ public class EnemyBehaviourTree : MonoBehaviour
     public float angle;
     [HideInInspector] public Vector3 tarDir;
     public float distanceToWaypoint;
-
     // Use this for initialization
     void Start ()
     {
