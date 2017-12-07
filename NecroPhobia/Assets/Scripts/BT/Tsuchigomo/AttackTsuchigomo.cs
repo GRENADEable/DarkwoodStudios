@@ -15,7 +15,7 @@ public class AttackTsuchigomo : NodeTsuchigomo
         }
         else
         {
-            //ownerBT.anim.SetInteger("TsuchiTransition", 1);
+            ownerBT.anim.SetInteger("TsuchiTransition", 1);
             currCondition = Condition.Fail;
             return;
         }
