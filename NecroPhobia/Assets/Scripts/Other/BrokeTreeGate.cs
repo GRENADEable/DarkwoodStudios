@@ -2,23 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BrokeTreeGate : MonoBehaviour {
+public class BrokeTreeGate : MonoBehaviour
+{
+    private AudioSource aud;
+    public  AudioClip audchop;
+    private bool isPlayed;
 
-    void OnTriggerEnter(Collider other)
+    void Start()
     {
-        if (other.gameObject.tag == "Player" && GameVariables.Axe > 0)
+        isPlayed = false;
+        aud = GetComponent<AudioSource>();
+
+    }
+    void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Player" && GameVariables.Axe > 0 && Input.GetKey(KeyCode.E))
         {
-            Destroy(gameObject);
+            if (!isPlayed)
+            {
+                aud.PlayOneShot(audchop);
+                isPlayed = true;
+            }
+                Destroy(gameObject);
+
         }
     }
-    void Start ()
-    {
-		
-	}
-	
-	
-	void Update ()
-    {
-		
-	}
 }

@@ -18,12 +18,19 @@ public class Chase : Node
             currCondition = Condition.Running;
             ownerBT.transform.LookAt(ownerBT.player.position);
             ownerBT.anim.SetInteger("Transition", 8);
-            //ownerBT.transform.position = Vector3.MoveTowards(ownerBT.transform.position, ownerBT.player.transform.position, ownerBT.enemyRunningSpeed * Time.deltaTime);
+            ownerBT.transform.position = Vector3.MoveTowards(ownerBT.transform.position, ownerBT.player.transform.position, ownerBT.enemyRunningSpeed * Time.deltaTime);
+            if (!ownerBT.isPlaying)
+            {
+                ownerBT.aud.PlayOneShot(ownerBT.audclip);
+                ownerBT.aud.PlayOneShot(ownerBT.chaseClip);
+                ownerBT.isPlaying = true;
+            }
             //ownerBT.transform.position +=
             //Debug.Log("Player Sighted");
         }
         else
         {
+            ownerBT.aud.Stop();
             ownerBT.anim.SetInteger("Transition", 3);
             currCondition = Condition.Fail;
             //Debug.Log("Player Out of Sight");
