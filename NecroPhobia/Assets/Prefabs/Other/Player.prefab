@@ -337,7 +337,7 @@ MonoBehaviour:
   currStamina: 0
   regenStamina: 0.5
   walkingSpeed: 7
-  runningSpeed: 20
+  runningSpeed: 11
   textScore: {fileID: 0}
   openGateDoor: {fileID: 0}
   closeGateDoor: {fileID: 0}
