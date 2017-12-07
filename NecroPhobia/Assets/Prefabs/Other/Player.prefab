@@ -254,9 +254,9 @@ MonoBehaviour:
   StaminaBar: {fileID: 0}
   MaxStamina: 1
   currStamina: 0
-  regenStamina: 0.5
-  walkingSpeed: 9
-  runningSpeed: 20
+  regenStamina: 0.7
+  walkingSpeed: 7
+  runningSpeed: 10
   textScore: {fileID: 0}
   openGateDoor: {fileID: 0}
   closeGateDoor: {fileID: 0}

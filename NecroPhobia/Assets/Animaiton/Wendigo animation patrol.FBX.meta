@@ -350,7 +350,7 @@ ModelImporter:
     4300056: Circle026
     4300058: Circle030
     4300060: Circle034
-    7400000: wendigo walkcycle Patrol no bob
+    7400000: Wendigo WalkCycle Anim
     9500000: //RootNode
     13700000: Body
   materials:
@@ -378,7 +378,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: wendigo walkcycle Patrol no bob
+      name: Wendigo WalkCycle Anim
       takeName: wendigo walkcycle Patrol no bob
       firstFrame: 0
       lastFrame: 130

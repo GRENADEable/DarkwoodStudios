@@ -7,7 +7,7 @@ public class Attack : Node
 {
     public override void Execute(EnemyBehaviourTree ownerBT)
     {
-        if (ownerBT.angle < 20 && ownerBT.distanceToPlayer < ownerBT.attackDistance)//Player is Alive
+        if (ownerBT.angle < 40 && ownerBT.distanceToPlayer < ownerBT.attackDistance)//Player is Alive
         {
             ownerBT.player = null;
             currCondition = Condition.Success;

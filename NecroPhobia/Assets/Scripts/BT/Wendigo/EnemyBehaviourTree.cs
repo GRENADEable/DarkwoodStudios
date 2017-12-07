@@ -6,8 +6,8 @@ public class EnemyBehaviourTree : MonoBehaviour
 {
     [HideInInspector] public Node root;
     public WayPointSystem path;
-    public float enemySpeed;
-
+    public float enemyWalkingSpeed;
+    public float enemyRunningSpeed;
     public Transform player;
 
     public float chaseDistance;
@@ -16,9 +16,12 @@ public class EnemyBehaviourTree : MonoBehaviour
     public float angle;
     [HideInInspector] public Vector3 tarDir;
     public float distanceToWaypoint;
+
+    public Animator anim;
     // Use this for initialization
     void Start ()
     {
+        anim = GetComponentInChildren<Animator>();
         Selector selectNode = new Selector();
         Sequence sequenceNode = new Sequence();
 

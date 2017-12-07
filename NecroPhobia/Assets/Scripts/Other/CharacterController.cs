@@ -25,8 +25,6 @@ public class CharacterController : MonoBehaviour
     public GameObject relicWhole;
     public GameObject spiderEnemy;
 
-    public float spawnDistance;
-
     void Start()
     {
         relicWhole.SetActive(false);

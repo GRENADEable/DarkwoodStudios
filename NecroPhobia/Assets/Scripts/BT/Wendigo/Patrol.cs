@@ -10,7 +10,7 @@ public class Patrol : Node
     {
         ownerBT.distanceToWaypoint = Vector3.Distance(ownerBT.path.Positions[currPosIndex], ownerBT.transform.position);
         ownerBT.transform.LookAt(ownerBT.path.Positions[currPosIndex]);
-        ownerBT.transform.position = Vector3.MoveTowards(ownerBT.transform.position, ownerBT.path.Positions[currPosIndex], ownerBT.enemySpeed * Time.deltaTime);
+        ownerBT.transform.position = Vector3.MoveTowards(ownerBT.transform.position, ownerBT.path.Positions[currPosIndex], ownerBT.enemyWalkingSpeed * Time.deltaTime);
         if (ownerBT.distanceToWaypoint < 1.8f)
         {
             currPosIndex++;

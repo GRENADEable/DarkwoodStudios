@@ -21,12 +21,13 @@ public class Chase : Node
         {
             currCondition = Condition.Running;
             ownerBT.transform.LookAt(ownerBT.player.position);
-            ownerBT.transform.position = Vector3.MoveTowards(ownerBT.transform.position, ownerBT.player.transform.position, ownerBT.enemySpeed * Time.deltaTime);
+            ownerBT.anim.SetInteger("isRunning", 8);
+            ownerBT.transform.position = Vector3.MoveTowards(ownerBT.transform.position, ownerBT.player.transform.position, ownerBT.enemyRunningSpeed * Time.deltaTime);
             //ownerBT.transform.position +=
-            Debug.Log("Chasing");
         }
         else
         {
+            ownerBT.anim.SetInteger("isRunning", 3);
             currCondition = Condition.Fail;
         }
     }
