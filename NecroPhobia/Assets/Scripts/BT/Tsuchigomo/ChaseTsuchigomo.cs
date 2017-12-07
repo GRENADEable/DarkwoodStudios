@@ -8,23 +8,25 @@ public class ChaseTsuchigomo : NodeTsuchigomo
     {
         ownerBT.distanceToPlayer = Vector3.Distance(ownerBT.player.transform.position, ownerBT.transform.position);
 
-        if (ownerBT.distanceToPlayer < ownerBT.attackDistance)
-        {
-            currCondition = Condition.Success;
-            Debug.Log("Player Reached");
-        }
+        
         if (GameObject.FindGameObjectWithTag("Player"))
         {
             currCondition = Condition.Running;
             ownerBT.transform.LookAt(ownerBT.player.transform.position);
             ownerBT.transform.position = Vector3.MoveTowards(ownerBT.transform.position, ownerBT.player.transform.position, ownerBT.enemySpeed * Time.deltaTime);
             //ownerBT.rg.AddForce(ownerBT.transform.position * ownerBT.force);
-            Debug.Log("Player Sighted");
+            //Debug.Log("Player Sighted");
         }
         else
         {
             currCondition = Condition.Fail;
-            Debug.Log("Player Out of Sight");
+            //Debug.Log("Player Out of Sight");
+        }
+
+        if (ownerBT.distanceToPlayer < ownerBT.attackDistance)
+        {
+            currCondition = Condition.Success;
+            //Debug.Log("Player Reached");
         }
     }
 }

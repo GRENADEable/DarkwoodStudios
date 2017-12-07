@@ -13,18 +13,22 @@ public class EnemyBTTsuchigomo : MonoBehaviour
     public float angle;
     public float height;
     [HideInInspector] public Vector3 tarDir;
-    public Rigidbody rg;
+    //public Rigidbody rg;
     public float force;
+
+    [HideInInspector] public Animator anim;
 
     // Use this for initialization
     void Start ()
     {
+        anim = GetComponentInChildren<Animator>();
+
         SequenceTsuchigomo sequenceNode = new SequenceTsuchigomo();
 
         root = sequenceNode;
         sequenceNode.children.Add(new ChaseTsuchigomo());
         sequenceNode.children.Add(new AttackTsuchigomo());
-        rg = GetComponent<Rigidbody>();
+        //rg = GetComponent<Rigidbody>();
 
     }
 

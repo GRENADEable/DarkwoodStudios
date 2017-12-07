@@ -252,17 +252,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StaminaSlider: {fileID: 0}
   StaminaBar: {fileID: 0}
-  MaxStamina: 1
+  MaxStamina: 2
   currStamina: 0
-  regenStamina: 0.7
+  regenStamina: 0.5
   walkingSpeed: 7
-  runningSpeed: 10
+  runningSpeed: 11
   textScore: {fileID: 0}
   openGateDoor: {fileID: 0}
   closeGateDoor: {fileID: 0}
   relicWhole: {fileID: 0}
   spiderEnemy: {fileID: 0}
-  spawnDistance: 7
 --- !u!114 &114563498245071886
 MonoBehaviour:
   m_ObjectHideFlags: 1

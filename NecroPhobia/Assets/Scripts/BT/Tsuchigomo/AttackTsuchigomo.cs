@@ -9,21 +9,22 @@ public class AttackTsuchigomo : NodeTsuchigomo
     {
         if (ownerBT.angle < 40 && ownerBT.distanceToPlayer < ownerBT.attackDistance)//Player is Alive
         {
-            ownerBT.player = null;
+            ownerBT.anim.SetInteger("TsuchiTransition", 2);
             currCondition = Condition.Success;
-            Debug.Log("Attacking");
+            //Debug.Log("Attacking");
         }
         else
         {
+            //ownerBT.anim.SetInteger("TsuchiTransition", 1);
             currCondition = Condition.Fail;
             return;
         }
 
-        if (ownerBT.player == null)//Player is Dead
+        /*if (ownerBT.player == null)//Player is Dead
         {
             SceneManager.LoadScene("DeathScene");
             currCondition = Condition.Fail;
-            Debug.Log("Player is Dead");
-        }
+            //Debug.Log("Player is Dead");
+        }*/
     }
 }

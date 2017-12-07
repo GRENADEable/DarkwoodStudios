@@ -196,7 +196,7 @@ ModelImporter:
     4300012: Sphere007
     4300014: Sphere009
     4300016: Sphere010
-    7400000: tsuchigomo runcycle Completealt1 Edit
+    7400000: TsuchigomoRun Anim
     9500000: //RootNode
     13700000: 'main model '
   materials:
@@ -224,7 +224,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: tsuchigomo runcycle Completealt1 Edit
+      name: TsuchigomoRun Anim
       takeName: tsuchigomo runcycle Completealt1 Edit
       firstFrame: 0
       lastFrame: 80

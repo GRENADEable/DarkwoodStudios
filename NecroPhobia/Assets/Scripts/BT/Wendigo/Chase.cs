@@ -13,22 +13,26 @@ public class Chase : Node
         ownerBT.angle = Vector3.Angle(ownerBT.tarDir, ownerBT.transform.forward);
         ownerBT.distanceToPlayer = Vector3.Distance(ownerBT.player.position, ownerBT.transform.position);
 
-        if (ownerBT.distanceToPlayer < ownerBT.attackDistance)
-        {
-            currCondition = Condition.Success;
-        }
         if (ownerBT.angle < 40 && ownerBT.distanceToPlayer < ownerBT.chaseDistance)
         {
             currCondition = Condition.Running;
             ownerBT.transform.LookAt(ownerBT.player.position);
-            ownerBT.anim.SetInteger("isRunning", 8);
-            ownerBT.transform.position = Vector3.MoveTowards(ownerBT.transform.position, ownerBT.player.transform.position, ownerBT.enemyRunningSpeed * Time.deltaTime);
+            ownerBT.anim.SetInteger("Transition", 8);
+            //ownerBT.transform.position = Vector3.MoveTowards(ownerBT.transform.position, ownerBT.player.transform.position, ownerBT.enemyRunningSpeed * Time.deltaTime);
             //ownerBT.transform.position +=
+            //Debug.Log("Player Sighted");
         }
         else
         {
-            ownerBT.anim.SetInteger("isRunning", 3);
+            ownerBT.anim.SetInteger("Transition", 3);
             currCondition = Condition.Fail;
+            //Debug.Log("Player Out of Sight");
+        }
+
+        if (ownerBT.distanceToPlayer < ownerBT.attackDistance)
+        {
+            currCondition = Condition.Success;
+            //Debug.Log("Player Reached");
         }
     }
 }

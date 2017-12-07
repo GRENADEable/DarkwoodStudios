@@ -17,11 +17,15 @@ public class EnemyBehaviourTree : MonoBehaviour
     [HideInInspector] public Vector3 tarDir;
     public float distanceToWaypoint;
 
-    public Animator anim;
+    [HideInInspector] public Animator anim;
+    [HideInInspector] public Collider col;
+
     // Use this for initialization
     void Start ()
     {
         anim = GetComponentInChildren<Animator>();
+        col = GetComponentInChildren<Collider>();
+
         Selector selectNode = new Selector();
         Sequence sequenceNode = new Sequence();
 

@@ -10,10 +10,14 @@ public class Attack : Node
         if (ownerBT.angle < 40 && ownerBT.distanceToPlayer < ownerBT.attackDistance)//Player is Alive
         {
             ownerBT.player = null;
+            //ownerBT.anim.SetInteger("Transition", 7);
             currCondition = Condition.Success;
+            Debug.Log("Attacking");
         }
         else
         {
+            //ownerBT.anim.SetInteger("Transition", 3);
+
             currCondition = Condition.Fail;
             return;
         }
