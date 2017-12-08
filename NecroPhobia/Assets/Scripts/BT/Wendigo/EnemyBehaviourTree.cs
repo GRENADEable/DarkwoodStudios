@@ -14,23 +14,17 @@ public class EnemyBehaviourTree : MonoBehaviour
     public float attackDistance;
     public float distanceToPlayer;
     public float angle;
-    [HideInInspector] public Vector3 tarDir;
     public float distanceToWaypoint;
-    public bool isPlaying;
+
+    [HideInInspector] public Vector3 tarDir;
     [HideInInspector] public Animator anim;
-    [HideInInspector] public Collider col;
-    [HideInInspector] public AudioSource aud;
-    public AudioClip audclip;
-    public AudioClip chaseClip;
-    public AudioClip environmentClip;
+    //[HideInInspector] public Collider col;
 
     // Use this for initialization
     void Start ()
     {
-        isPlaying = false;
         anim = GetComponentInChildren<Animator>();
-        col = GetComponentInChildren<Collider>();
-        aud = GetComponent<AudioSource>();
+        //col = GetComponentInChildren<Collider>();
 
         Selector selectNode = new Selector();
         Sequence sequenceNode = new Sequence();

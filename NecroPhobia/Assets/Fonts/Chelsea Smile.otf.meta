@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: c75dc522f00b6aa459ae6047ebde7f6b
+timeCreated: 1512770360
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Chelsea Smile
+  fontNames:
+  - Chelsea Smile
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
