@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AxeKey : MonoBehaviour {
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Player" && Input.GetKey(KeyCode.E))
         {

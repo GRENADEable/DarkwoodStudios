@@ -13,8 +13,8 @@ public class ChaseTsuchigomo : NodeTsuchigomo
         {
             currCondition = Condition.Running;
             ownerBT.transform.LookAt(ownerBT.player.transform.position);
-            //ownerBT.transform.position = Vector3.MoveTowards(ownerBT.transform.position, ownerBT.player.transform.position, ownerBT.enemySpeed * Time.deltaTime);
-            //ownerBT.rg.AddForce(ownerBT.transform.position * ownerBT.force);
+            ownerBT.transform.position = Vector3.MoveTowards(ownerBT.transform.position, ownerBT.player.transform.position, ownerBT.enemySpeed * Time.deltaTime);
+            //ownerBT.rg.AddForce(ownerBT.transform.forward * ownerBT.force);
             //Debug.Log("Player Sighted");
         }
         else

@@ -157,6 +157,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4043814567890410}
+  - component: {fileID: 114784036272263888}
   m_Layer: 0
   m_Name: Bone029
   m_TagString: Untagged
@@ -358,7 +359,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4804738877468650}
   - component: {fileID: 136545647505542206}
-  - component: {fileID: 114731423944716324}
+  - component: {fileID: 114377798406049658}
   m_Layer: 0
   m_Name: Bone013(mirrored)
   m_TagString: Untagged
@@ -573,10 +574,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4128298508836020}
+  - component: {fileID: 135413390643062424}
+  - component: {fileID: 114374748834081754}
   m_Layer: 0
   m_Name: Bone030
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 8220585740371884164, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -619,7 +622,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4545073737487310}
   - component: {fileID: 136466411603170202}
-  - component: {fileID: 114467890591521688}
+  - component: {fileID: 114316486987053314}
   m_Layer: 0
   m_Name: Bone013
   m_TagString: Untagged
@@ -2789,6 +2792,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114316486987053314
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1429639848831398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0df41e727e13224d9ccf5876225a572, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114322540080089300
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2802,25 +2816,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySpeed: 6.8
   player: {fileID: 0}
-  attackDistance: 2
+  attackDistance: 5
   distanceToPlayer: 0
   angle: 0
   height: 0.5
   tarDir: {x: 0, y: 0, z: 0}
   force: 0.5
   anim: {fileID: 0}
---- !u!114 &114467890591521688
+--- !u!114 &114374748834081754
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1429639848831398}
+  m_GameObject: {fileID: 1376892558405804}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a3bb697e1d5e2c43bfb83021745da77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114731423944716324
+--- !u!114 &114377798406049658
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -2828,9 +2842,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 1261900373947010}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0df41e727e13224d9ccf5876225a572, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114784036272263888
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1084104787172240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a3bb697e1d5e2c43bfb83021745da77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!135 &135413390643062424
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1376892558405804}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.6
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136466411603170202
 CapsuleCollider:
   m_ObjectHideFlags: 1

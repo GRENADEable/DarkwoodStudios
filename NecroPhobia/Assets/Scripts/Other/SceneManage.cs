@@ -20,4 +20,13 @@ public class SceneManage : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+
+    void OnTriggerEnter(Collider kill)
+    {
+        if (kill.gameObject.tag == "Player")
+        {
+            SceneManager.LoadScene("DeathScene");
+            Debug.Log("Player is Dead");
+        }
+    }
 }

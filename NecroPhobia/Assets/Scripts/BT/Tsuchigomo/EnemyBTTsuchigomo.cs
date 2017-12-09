@@ -13,7 +13,7 @@ public class EnemyBTTsuchigomo : MonoBehaviour
     public float angle;
     public float height;
     [HideInInspector] public Vector3 tarDir;
-    //public Rigidbody rg;
+    //[HideInInspector]public Rigidbody rg;
     public float force;
 
     [HideInInspector] public Animator anim;
