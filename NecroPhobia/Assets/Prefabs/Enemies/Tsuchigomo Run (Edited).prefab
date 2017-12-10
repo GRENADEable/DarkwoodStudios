@@ -2816,7 +2816,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySpeed: 6.8
   player: {fileID: 0}
-  attackDistance: 5
+  attackDistance: 5.5
   distanceToPlayer: 0
   angle: 0
   height: 0.5
