@@ -6,11 +6,10 @@ using UnityEngine.Audio;
 
 public class SceneManage : MonoBehaviour
 {
-    public AudioMixer audMix;
 
-    public void StartGame(int sceneInd)
+    public void StartGame()
     {
-        SceneManager.LoadSceneAsync("GameV2");
+        SceneManager.LoadScene("GameV2");
     }
 
     public void Exit()
@@ -22,11 +21,6 @@ public class SceneManage : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene("MainMenu");
-    }
-
-    public void Volume(float vol)
-    {
-        audMix.SetFloat("Volume", vol);
     }
 
     public void FullScreen(bool isFullScreen)
