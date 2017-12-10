@@ -16,7 +16,9 @@ public class Chase : Node
         if (ownerBT.angle < 40 && ownerBT.distanceToPlayer < ownerBT.chaseDistance)
         {
             currCondition = Condition.Running;
+            //The LookAt function. The difference between the position of Y is causing a change in rotation of X.
             ownerBT.transform.LookAt(ownerBT.player.position);
+            ownerBT.transform.rotation = Quaternion.Euler(0, ownerBT.transform.rotation.eulerAngles.y, ownerBT.transform.eulerAngles.z);
             ownerBT.anim.SetInteger("Transition", 8);
             ownerBT.transform.position = Vector3.MoveTowards(ownerBT.transform.position, ownerBT.player.transform.position, ownerBT.enemyRunningSpeed * Time.deltaTime);
             //ownerBT.transform.position +=
