@@ -2845,6 +2845,29 @@ Prefab:
       propertyPath: textScore
       value: 
       objectReference: {fileID: 979714221}
+    - target: {fileID: 4434806442028482, guid: 32df23086ef1d8e40aefd895cdbec081, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -81.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 4434806442028482, guid: 32df23086ef1d8e40aefd895cdbec081, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -23
+      objectReference: {fileID: 0}
+    - target: {fileID: 114562480844821464, guid: 32df23086ef1d8e40aefd895cdbec081,
+        type: 2}
+      propertyPath: StaminaSlider
+      value: 
+      objectReference: {fileID: 310914140}
+    - target: {fileID: 114562480844821464, guid: 32df23086ef1d8e40aefd895cdbec081,
+        type: 2}
+      propertyPath: StaminaBar
+      value: 
+      objectReference: {fileID: 1177579901}
+    - target: {fileID: 114562480844821464, guid: 32df23086ef1d8e40aefd895cdbec081,
+        type: 2}
+      propertyPath: textScore
+      value: 
+      objectReference: {fileID: 1177579902}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 32df23086ef1d8e40aefd895cdbec081, type: 2}
   m_IsPrefabParent: 0
@@ -3136,7 +3159,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &419983678
 GameObject:
@@ -6490,7 +6513,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 11994db15da9cdc4d9d1b59ad2bd514d, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 11994db15da9cdc4d9d1b59ad2bd514d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -6784,6 +6807,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcd57e2e249225142801be9706b041a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audchop: {fileID: 0}
+  tree: {fileID: 0}
 --- !u!65 &916654376
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8980,6 +9005,17 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 940b139e4b0dc8c429646cd3e878dd5e, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1177579901 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1870006569158336, guid: 940b139e4b0dc8c429646cd3e878dd5e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1177579900}
+--- !u!114 &1177579902 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114876591155784362, guid: 940b139e4b0dc8c429646cd3e878dd5e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1177579900}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1191415886
 GameObject:
   m_ObjectHideFlags: 0
