@@ -138,5 +138,6 @@ public class PlayerController : MonoBehaviour
         currStamina = 0;
         StaminaSlider.value = 0;
         Destroy(StaminaBar);
+        walkingSpeed = 11;
     }
 }

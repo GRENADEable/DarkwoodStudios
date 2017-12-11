@@ -18,8 +18,8 @@ public class ChaseAudioWendigo : MonoBehaviour
     {
         if (play.gameObject.tag == "Player")
         {
-            aud.PlayOneShot(growlClip);
-            aud.PlayOneShot(chaseClip);
+            aud.PlayOneShot(growlClip, 0.15f);
+            aud.PlayOneShot(chaseClip, 0.15f);
         }
 
     }

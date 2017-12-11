@@ -529,6 +529,9 @@ GameObject:
   - component: {fileID: 95591055617885886}
   - component: {fileID: 114322540080089300}
   - component: {fileID: 54807222403144278}
+  - component: {fileID: 82230791363789230}
+  - component: {fileID: 136646373539775608}
+  - component: {fileID: 114427151565436996}
   m_Layer: 0
   m_Name: Tsuchigomo Run (Edited)
   m_TagString: Untagged
@@ -2773,8 +2776,88 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!82 &82230791363789230
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1356476169396068}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95591055617885886
 Animator:
   serializedVersion: 3
@@ -2814,9 +2897,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 925f7ff0f7f6e1b4eb2120ea7837fc34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeed: 6.8
+  enemySpeed: 10.9
   player: {fileID: 0}
-  attackDistance: 5.5
+  attackDistance: 5.8
   distanceToPlayer: 0
   angle: 0
   height: 0.5
@@ -2845,6 +2928,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0df41e727e13224d9ccf5876225a572, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114427151565436996
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1356476169396068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2b8c0ff306ec1e429c7cfb053016c3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  growlClip: {fileID: 8300000, guid: a4bfc11d1443a6a428004440b856fbc7, type: 3}
+  chaseClip: {fileID: 8300000, guid: 627671ee694fd9a4ab0eeef5a27557a3, type: 3}
 --- !u!114 &114784036272263888
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2907,6 +3003,19 @@ CapsuleCollider:
   m_Height: 0.54
   m_Direction: 0
   m_Center: {x: 0, y: 0.15, z: 0}
+--- !u!136 &136646373539775608
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1356476169396068}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.6
+  m_Height: 3.95
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.5, z: 1.72}
 --- !u!136 &136702223560592488
 CapsuleCollider:
   m_ObjectHideFlags: 1

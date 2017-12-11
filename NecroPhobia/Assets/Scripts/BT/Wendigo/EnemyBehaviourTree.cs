@@ -18,7 +18,7 @@ public class EnemyBehaviourTree : MonoBehaviour
 
     [HideInInspector] public Vector3 tarDir;
     [HideInInspector] public Animator anim;
-    public PlayerController play;
+    //public PlayerController play;
     //[HideInInspector] public Collider col;
 
     // Use this for initialization
@@ -26,7 +26,7 @@ public class EnemyBehaviourTree : MonoBehaviour
     {
         anim = GetComponentInChildren<Animator>();
         //col = GetComponentInChildren<Collider>();
-        play = GetComponent<PlayerController>();
+        //play = GetComponent<PlayerController>();
 
         Selector selectNode = new Selector();
         Sequence sequenceNode = new Sequence();
