@@ -8,10 +8,11 @@ public class Patrol : Node
 
     public override void Execute(EnemyBehaviourTree ownerBT)
     {
-        ownerBT.distanceToWaypoint = Vector3.Distance(ownerBT.path.Positions[currPosIndex], ownerBT.transform.position);
-        ownerBT.transform.LookAt(ownerBT.path.Positions[currPosIndex]);
-        ownerBT.transform.position = Vector3.MoveTowards(ownerBT.transform.position, ownerBT.path.Positions[currPosIndex], 
-        ownerBT.enemyWalkingSpeed * Time.deltaTime);
+        Vector3 target = ownerBT.path.Positions[currPosIndex];
+        target.y = ownerBT.transform.position.y;
+        ownerBT.distanceToWaypoint = Vector3.Distance(target, ownerBT.transform.position);
+        ownerBT.transform.LookAt(target);
+        ownerBT.transform.position = Vector3.MoveTowards(ownerBT.transform.position, target, ownerBT.enemyWalkingSpeed * Time.deltaTime);
         if (ownerBT.distanceToWaypoint < 1.8f)
         {
             currPosIndex++;

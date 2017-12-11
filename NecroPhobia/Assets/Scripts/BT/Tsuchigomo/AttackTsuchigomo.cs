@@ -19,12 +19,5 @@ public class AttackTsuchigomo : NodeTsuchigomo
             currCondition = Condition.Fail;
             return;
         }
-
-        /*if (ownerBT.player == null)//Player is Dead
-        {
-            SceneManager.LoadScene("DeathScene");
-            currCondition = Condition.Fail;
-            //Debug.Log("Player is Dead");
-        }*/
     }
 }

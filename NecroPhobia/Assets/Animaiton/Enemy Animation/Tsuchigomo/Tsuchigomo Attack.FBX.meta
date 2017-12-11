@@ -1,0 +1,304 @@
+fileFormatVersion: 2
+guid: 8d3a7fd368876584589c320d31aebcd6
+timeCreated: 1512561721
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Bone006
+    100002: Bone006(mirrored)
+    100004: Bone007
+    100006: Bone007(mirrored)
+    100008: Bone008
+    100010: Bone008(mirrored)
+    100012: Bone010
+    100014: Bone010(mirrored)
+    100016: Bone011
+    100018: Bone011(mirrored)
+    100020: Bone012
+    100022: Bone012(mirrored)
+    100024: Bone013
+    100026: Bone013(mirrored)
+    100028: Bone014
+    100030: Bone014(mirrored)
+    100032: Bone015
+    100034: Bone015(mirrored)
+    100036: Bone016
+    100038: Bone016(mirrored)
+    100040: Bone017
+    100042: Bone017(mirrored)
+    100044: Bone018
+    100046: Bone018(mirrored)
+    100048: Bone019
+    100050: Bone019(mirrored)
+    100052: Bone020
+    100054: Bone020(mirrored)
+    100056: Bone021
+    100058: Bone021(mirrored)
+    100060: Bone022
+    100062: Bone022(mirrored)
+    100064: Bone023
+    100066: Bone023(mirrored)
+    100068: Bone024
+    100070: Bone025
+    100072: Bone026
+    100074: Bone027
+    100076: Bone028
+    100078: Bone029
+    100080: Bone030
+    100082: Bone031
+    100084: Circle002
+    100086: Circle003
+    100088: Circle004
+    100090: Circle006
+    100092: Donut001
+    100094: Donut002
+    100096: IK Chain001
+    100098: IK Chain002
+    100100: IK Chain003
+    100102: IK Chain004
+    100104: IK Chain005
+    100106: IK Chain006
+    100108: IK Chain007
+    100110: IK Chain008
+    100112: IK Chain009
+    100114: IK Chain010
+    100116: IK Chain011
+    100118: IK Chain012
+    100120: IK Chain013
+    100122: IK Chain014
+    100124: Lfootcon
+    100126: Lfootcon001
+    100128: Lfootcon002
+    100130: 'main model '
+    100132: Mastercon
+    100134: pelviscon
+    100136: Rfootcon
+    100138: Sphere003
+    100140: Sphere004
+    100142: Sphere005
+    100144: Sphere006
+    100146: Sphere007
+    100148: Sphere008
+    100150: Sphere009
+    100152: Sphere010
+    100154: Star001
+    100156: Star002
+    100158: Star003
+    100160: Star004
+    100162: Text001
+    100164: //RootNode
+    400000: Bone006
+    400002: Bone006(mirrored)
+    400004: Bone007
+    400006: Bone007(mirrored)
+    400008: Bone008
+    400010: Bone008(mirrored)
+    400012: Bone010
+    400014: Bone010(mirrored)
+    400016: Bone011
+    400018: Bone011(mirrored)
+    400020: Bone012
+    400022: Bone012(mirrored)
+    400024: Bone013
+    400026: Bone013(mirrored)
+    400028: Bone014
+    400030: Bone014(mirrored)
+    400032: Bone015
+    400034: Bone015(mirrored)
+    400036: Bone016
+    400038: Bone016(mirrored)
+    400040: Bone017
+    400042: Bone017(mirrored)
+    400044: Bone018
+    400046: Bone018(mirrored)
+    400048: Bone019
+    400050: Bone019(mirrored)
+    400052: Bone020
+    400054: Bone020(mirrored)
+    400056: Bone021
+    400058: Bone021(mirrored)
+    400060: Bone022
+    400062: Bone022(mirrored)
+    400064: Bone023
+    400066: Bone023(mirrored)
+    400068: Bone024
+    400070: Bone025
+    400072: Bone026
+    400074: Bone027
+    400076: Bone028
+    400078: Bone029
+    400080: Bone030
+    400082: Bone031
+    400084: Circle002
+    400086: Circle003
+    400088: Circle004
+    400090: Circle006
+    400092: Donut001
+    400094: Donut002
+    400096: IK Chain001
+    400098: IK Chain002
+    400100: IK Chain003
+    400102: IK Chain004
+    400104: IK Chain005
+    400106: IK Chain006
+    400108: IK Chain007
+    400110: IK Chain008
+    400112: IK Chain009
+    400114: IK Chain010
+    400116: IK Chain011
+    400118: IK Chain012
+    400120: IK Chain013
+    400122: IK Chain014
+    400124: Lfootcon
+    400126: Lfootcon001
+    400128: Lfootcon002
+    400130: 'main model '
+    400132: Mastercon
+    400134: pelviscon
+    400136: Rfootcon
+    400138: Sphere003
+    400140: Sphere004
+    400142: Sphere005
+    400144: Sphere006
+    400146: Sphere007
+    400148: Sphere008
+    400150: Sphere009
+    400152: Sphere010
+    400154: Star001
+    400156: Star002
+    400158: Star003
+    400160: Star004
+    400162: Text001
+    400164: //RootNode
+    2300000: Sphere003
+    2300002: Sphere004
+    2300004: Sphere005
+    2300006: Sphere006
+    2300008: Sphere007
+    2300010: Sphere008
+    2300012: Sphere009
+    2300014: Sphere010
+    3300000: Sphere003
+    3300002: Sphere004
+    3300004: Sphere005
+    3300006: Sphere006
+    3300008: Sphere007
+    3300010: Sphere008
+    3300012: Sphere009
+    3300014: Sphere010
+    4300000: 'main model '
+    4300002: Sphere007
+    4300004: Sphere006
+    4300006: Sphere009
+    4300008: Sphere008
+    4300010: Sphere004
+    4300012: Sphere003
+    4300014: Sphere005
+    4300016: Sphere010
+    7400000: TsuchigomoAttack Anim
+    9500000: //RootNode
+    13700000: 'main model '
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: TsuchigomoAttack Anim
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 45
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

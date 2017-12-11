@@ -13,7 +13,8 @@ public class Chase : Node
         ownerBT.angle = Vector3.Angle(ownerBT.tarDir, ownerBT.transform.forward);
         ownerBT.distanceToPlayer = Vector3.Distance(ownerBT.player.position, ownerBT.transform.position);
 
-        if (ownerBT.angle < 60 && ownerBT.distanceToPlayer < ownerBT.chaseDistance /*&& ownerBT.play.invisTimer <= 0*/)
+        if (ownerBT.angle < 60 && ownerBT.distanceToPlayer < ownerBT.chaseDistance && 
+            ownerBT.player.GetComponent<PlayerController>().invisTimer <= 0)
         {
             currCondition = Condition.Running;
             //The LookAt function. The difference between the position of Y is causing a change in rotation of X.
@@ -32,7 +33,7 @@ public class Chase : Node
             //Debug.Log("Player Out of Sight");
         }
 
-        if (ownerBT.distanceToPlayer < ownerBT.attackDistance /*&& ownerBT.play.invisTimer <= 0*/)
+        if (ownerBT.distanceToPlayer < ownerBT.attackDistance && ownerBT.player.GetComponent<PlayerController>().invisTimer <= 0)
         {
             currCondition = Condition.Success;
             //Debug.Log("Player Reached");

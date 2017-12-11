@@ -33,7 +33,6 @@ public class SceneManage : MonoBehaviour
         if (kill.gameObject.tag == "Player")
         {
             SceneManager.LoadScene("DeathScene");
-            Debug.Log("Player is Dead");
         }
     }
 }

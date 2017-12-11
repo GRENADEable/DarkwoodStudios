@@ -26,6 +26,9 @@ public class PlayerController : MonoBehaviour
     public GameObject relicWhole;
     public GameObject spiderEnemy;
 
+    private AudioSource aud;
+    public AudioClip relicPickup;
+
     void Start()
     {
         relicWhole.SetActive(false);
@@ -33,7 +36,7 @@ public class PlayerController : MonoBehaviour
         StaminaSlider.maxValue = MaxStamina;
         StaminaSlider.value = MaxStamina;
         currStamina = MaxStamina;
-        invisTimer = 5;
+        aud = GetComponent<AudioSource>();
     }
 
 
@@ -101,12 +104,11 @@ public class PlayerController : MonoBehaviour
             openGateDoor.SetActive(false);
         }
 
-        /*if (invisTimer <= 5)
+        if (invisTimer <= 5)
         {
             invisTimer = invisTimer - 1 * Time.deltaTime;
             invisTimer = Mathf.Clamp(invisTimer, 0, 5);
-            Debug.Log(invisTimer);
-        }*/
+        }
     }
 
     void OnTriggerStay(Collider relic)
@@ -117,6 +119,7 @@ public class PlayerController : MonoBehaviour
 
             score++;
             textScore.text = score.ToString();
+            aud.PlayOneShot(relicPickup, 0.5f);
         }
 
         if (relic.gameObject.tag == "RelicEnded" && Input.GetKey(KeyCode.E) && score == 6)
@@ -126,11 +129,11 @@ public class PlayerController : MonoBehaviour
             Destroy(spiderEnemy);
         }
 
-        /*if (relic.gameObject.tag == "TalisMan" && Input.GetKey(KeyCode.E))
+        if (relic.gameObject.tag == "TalisMan" && Input.GetKey(KeyCode.E))
         {
             invisTimer = 5.0f;
             Destroy(relic.gameObject);
-        }*/
+        }
     }
 
     void EffectedStamina()

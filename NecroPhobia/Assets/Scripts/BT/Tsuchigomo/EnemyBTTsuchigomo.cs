@@ -11,11 +11,8 @@ public class EnemyBTTsuchigomo : MonoBehaviour
     public float attackDistance;
     public float distanceToPlayer;
     public float angle;
-    public float height;
-    [HideInInspector] public Vector3 tarDir;
-    //[HideInInspector]public Rigidbody rg;
-    public float force;
 
+    [HideInInspector] public Vector3 tarDir;
     [HideInInspector] public Animator anim;
 
     // Use this for initialization

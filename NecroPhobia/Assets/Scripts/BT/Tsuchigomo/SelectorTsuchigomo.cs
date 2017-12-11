@@ -17,16 +17,13 @@ public class SelectorTsuchigomo : NodeTsuchigomo
                 return;
             }
 
-
             //Node Running
             else if (children[i].currCondition == Condition.Running)
             {
                 currCondition = Condition.Running;
                 return;
             }
-
         }
-
         //Node Fail
         currCondition = Condition.Fail;
         return;

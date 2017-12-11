@@ -1,0 +1,456 @@
+fileFormatVersion: 2
+guid: e4f955033e192e1498ece853139c30ed
+timeCreated: 1512831573
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Body
+    100002: Bone002
+    100004: Bone008
+    100006: Bone012
+    100008: Bone013
+    100010: Bone014
+    100012: Bone018
+    100014: Bone019
+    100016: Bone020
+    100018: Bone022
+    100020: Bone023
+    100022: Bone024
+    100024: Bone026
+    100026: Bone027
+    100028: Bone028
+    100030: Bone029
+    100032: Bone031
+    100034: Bone032
+    100036: Bone033
+    100038: Bone035
+    100040: Bone036
+    100042: Bone037
+    100044: Bone038
+    100046: Bone039
+    100048: Bone044
+    100050: Bone045
+    100052: Bone046
+    100054: Bone047
+    100056: Bone048
+    100058: Bone049
+    100060: Bone051
+    100062: Bone052
+    100064: Bone053
+    100066: Bone055
+    100068: Bone056
+    100070: Bone057
+    100072: Bone061
+    100074: Bone062
+    100076: Bone063
+    100078: Bone067
+    100080: Bone068
+    100082: Bone069
+    100084: Bone070
+    100086: Bone071
+    100088: Bone072
+    100090: Bone073
+    100092: Bone074
+    100094: Bone075
+    100096: Bone076
+    100098: Bone077
+    100100: Bone078
+    100102: Bone079
+    100104: Bone088
+    100106: Bone089
+    100108: Bone090
+    100110: Bone091
+    100112: Bone092
+    100114: Bone094
+    100116: Bone095
+    100118: Bone096
+    100120: Bone097
+    100122: Bone098
+    100124: Bone099
+    100126: Circle001
+    100128: Circle002
+    100130: Circle003
+    100132: Circle004
+    100134: Circle009
+    100136: Circle010
+    100138: Circle011
+    100140: Circle012
+    100142: Circle013
+    100144: Circle014
+    100146: Circle015
+    100148: Circle016
+    100150: Circle017
+    100152: Circle018
+    100154: Circle019
+    100156: Circle020
+    100158: Circle021
+    100160: Circle022
+    100162: Circle023
+    100164: Circle024
+    100166: Circle025
+    100168: Circle026
+    100170: Circle027
+    100172: Circle028
+    100174: Circle029
+    100176: Circle030
+    100178: Circle031
+    100180: Circle033
+    100182: Circle034
+    100184: Circle035
+    100186: Circle038
+    100188: Circle039
+    100190: Circle040
+    100192: Circle041
+    100194: Circle042
+    100196: Circle043
+    100198: Circle044
+    100200: Circle045
+    100202: COG CTRL
+    100204: connectBone001
+    100206: connectBone002
+    100208: connectBone007
+    100210: Egg001
+    100212: IK Chain002
+    100214: IK Chain010
+    100216: IK Chain013
+    100218: IK Chain014
+    100220: IK Chain015
+    100222: 'L_foot '
+    100224: L_foot ankle
+    100226: L_foot CTRL
+    100228: L_foot toes
+    100230: Left foot IK
+    100232: Left Knee
+    100234: Left Knee001
+    100236: Left leg IK
+    100238: Particle View 001
+    100240: R_foot CTR
+    100242: Right foot IK
+    100244: Right Knee
+    100246: Right Knee001
+    100248: Text002
+    100250: //RootNode
+    400000: Body
+    400002: Bone002
+    400004: Bone008
+    400006: Bone012
+    400008: Bone013
+    400010: Bone014
+    400012: Bone018
+    400014: Bone019
+    400016: Bone020
+    400018: Bone022
+    400020: Bone023
+    400022: Bone024
+    400024: Bone026
+    400026: Bone027
+    400028: Bone028
+    400030: Bone029
+    400032: Bone031
+    400034: Bone032
+    400036: Bone033
+    400038: Bone035
+    400040: Bone036
+    400042: Bone037
+    400044: Bone038
+    400046: Bone039
+    400048: Bone044
+    400050: Bone045
+    400052: Bone046
+    400054: Bone047
+    400056: Bone048
+    400058: Bone049
+    400060: Bone051
+    400062: Bone052
+    400064: Bone053
+    400066: Bone055
+    400068: Bone056
+    400070: Bone057
+    400072: Bone061
+    400074: Bone062
+    400076: Bone063
+    400078: Bone067
+    400080: Bone068
+    400082: Bone069
+    400084: Bone070
+    400086: Bone071
+    400088: Bone072
+    400090: Bone073
+    400092: Bone074
+    400094: Bone075
+    400096: Bone076
+    400098: Bone077
+    400100: Bone078
+    400102: Bone079
+    400104: Bone088
+    400106: Bone089
+    400108: Bone090
+    400110: Bone091
+    400112: Bone092
+    400114: Bone094
+    400116: Bone095
+    400118: Bone096
+    400120: Bone097
+    400122: Bone098
+    400124: Bone099
+    400126: Circle001
+    400128: Circle002
+    400130: Circle003
+    400132: Circle004
+    400134: Circle009
+    400136: Circle010
+    400138: Circle011
+    400140: Circle012
+    400142: Circle013
+    400144: Circle014
+    400146: Circle015
+    400148: Circle016
+    400150: Circle017
+    400152: Circle018
+    400154: Circle019
+    400156: Circle020
+    400158: Circle021
+    400160: Circle022
+    400162: Circle023
+    400164: Circle024
+    400166: Circle025
+    400168: Circle026
+    400170: Circle027
+    400172: Circle028
+    400174: Circle029
+    400176: Circle030
+    400178: Circle031
+    400180: Circle033
+    400182: Circle034
+    400184: Circle035
+    400186: Circle038
+    400188: Circle039
+    400190: Circle040
+    400192: Circle041
+    400194: Circle042
+    400196: Circle043
+    400198: Circle044
+    400200: Circle045
+    400202: COG CTRL
+    400204: connectBone001
+    400206: connectBone002
+    400208: connectBone007
+    400210: Egg001
+    400212: IK Chain002
+    400214: IK Chain010
+    400216: IK Chain013
+    400218: IK Chain014
+    400220: IK Chain015
+    400222: 'L_foot '
+    400224: L_foot ankle
+    400226: L_foot CTRL
+    400228: L_foot toes
+    400230: Left foot IK
+    400232: Left Knee
+    400234: Left Knee001
+    400236: Left leg IK
+    400238: Particle View 001
+    400240: R_foot CTR
+    400242: Right foot IK
+    400244: Right Knee
+    400246: Right Knee001
+    400248: Text002
+    400250: //RootNode
+    2300000: Circle011
+    2300002: Circle012
+    2300004: Circle013
+    2300006: Circle014
+    2300008: Circle015
+    2300010: Circle016
+    2300012: Circle017
+    2300014: Circle018
+    2300016: Circle019
+    2300018: Circle020
+    2300020: Circle021
+    2300022: Circle022
+    2300024: Circle023
+    2300026: Circle024
+    2300028: Circle025
+    2300030: Circle026
+    2300032: Circle027
+    2300034: Circle028
+    2300036: Circle029
+    2300038: Circle030
+    2300040: Circle031
+    2300042: Circle033
+    2300044: Circle034
+    2300046: Circle035
+    2300048: Circle038
+    2300050: Circle039
+    2300052: Circle040
+    2300054: Circle041
+    2300056: Circle042
+    2300058: Circle043
+    3300000: Circle011
+    3300002: Circle012
+    3300004: Circle013
+    3300006: Circle014
+    3300008: Circle015
+    3300010: Circle016
+    3300012: Circle017
+    3300014: Circle018
+    3300016: Circle019
+    3300018: Circle020
+    3300020: Circle021
+    3300022: Circle022
+    3300024: Circle023
+    3300026: Circle024
+    3300028: Circle025
+    3300030: Circle026
+    3300032: Circle027
+    3300034: Circle028
+    3300036: Circle029
+    3300038: Circle030
+    3300040: Circle031
+    3300042: Circle033
+    3300044: Circle034
+    3300046: Circle035
+    3300048: Circle038
+    3300050: Circle039
+    3300052: Circle040
+    3300054: Circle041
+    3300056: Circle042
+    3300058: Circle043
+    4300000: Body
+    4300002: Circle012
+    4300004: Circle016
+    4300006: Circle020
+    4300008: Circle013
+    4300010: Circle017
+    4300012: Circle021
+    4300014: Circle011
+    4300016: Circle015
+    4300018: Circle019
+    4300020: Circle014
+    4300022: Circle018
+    4300024: Circle022
+    4300026: Circle023
+    4300028: Circle024
+    4300030: Circle025
+    4300032: Circle038
+    4300034: Circle039
+    4300036: Circle040
+    4300038: Circle029
+    4300040: Circle033
+    4300042: Circle043
+    4300044: Circle028
+    4300046: Circle042
+    4300048: Circle041
+    4300050: Circle027
+    4300052: Circle031
+    4300054: Circle035
+    4300056: Circle026
+    4300058: Circle030
+    4300060: Circle034
+    7400000: WendigoAttackFixed Anim
+    9500000: //RootNode
+    13700000: Body
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: WendigoAttackFixed Anim
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 61
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

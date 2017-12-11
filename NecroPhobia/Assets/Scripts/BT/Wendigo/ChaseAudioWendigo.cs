@@ -8,6 +8,7 @@ public class ChaseAudioWendigo : MonoBehaviour
     public AudioClip chaseClip;
 
     private AudioSource aud;
+    public GameObject ply;
 
     void Awake()
     {
@@ -16,7 +17,7 @@ public class ChaseAudioWendigo : MonoBehaviour
 
     void OnTriggerEnter(Collider play)
     {
-        if (play.gameObject.tag == "Player")
+        if (play.gameObject.tag == "Player" && ply.GetComponent<PlayerController>().invisTimer <= 0)
         {
             aud.PlayOneShot(growlClip, 0.15f);
             aud.PlayOneShot(chaseClip, 0.15f);
