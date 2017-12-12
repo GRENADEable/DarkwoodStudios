@@ -5,15 +5,29 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager gm = null;
+    private static GameManager gm;
+
+    public GameManager GetInstance()
+    {
+        return gm;
+    }
 
     void Awake()
     {
         if (gm == null)
+        {
             gm = this;
-        else if (gm != this)
-            Destroy(gameObject);
+        }
+        else
+        {
+            Destroy(this);
+        }
 
+        gm = this;
+    }
+    // Use this for initialization
+    void Start()
+    {
         DontDestroyOnLoad(this.gameObject);
     }
 }

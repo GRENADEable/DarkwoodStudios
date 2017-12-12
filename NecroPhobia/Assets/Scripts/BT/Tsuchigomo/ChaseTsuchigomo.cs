@@ -7,9 +7,8 @@ public class ChaseTsuchigomo : NodeTsuchigomo
     public override void Run(EnemyBTTsuchigomo ownerBT)
     {
         ownerBT.distanceToPlayer = Vector3.Distance(ownerBT.player.transform.position, ownerBT.transform.position);
-
         
-        if (GameObject.FindGameObjectWithTag("Player"))
+        if (GameObject.FindGameObjectWithTag("Player") && ownerBT.counter <=0)
         {
             currCondition = Condition.Running;
             ownerBT.transform.LookAt(ownerBT.player.transform.position);

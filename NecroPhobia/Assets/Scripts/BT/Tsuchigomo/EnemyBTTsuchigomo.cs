@@ -11,6 +11,8 @@ public class EnemyBTTsuchigomo : MonoBehaviour
     public float attackDistance;
     public float distanceToPlayer;
     public float angle;
+    public float counter;
+    public GameObject changeAnim;
 
     [HideInInspector] public Vector3 tarDir;
     [HideInInspector] public Animator anim;
@@ -25,6 +27,7 @@ public class EnemyBTTsuchigomo : MonoBehaviour
         root = sequenceNode;
         sequenceNode.children.Add(new ChaseTsuchigomo());
         sequenceNode.children.Add(new AttackTsuchigomo());
+        counter = 4.0f;
         //rg = GetComponent<Rigidbody>();
 
     }
@@ -32,6 +35,7 @@ public class EnemyBTTsuchigomo : MonoBehaviour
     // Update is called once per frame
     void Update ()
     {
+        counter = counter - 1 * Time.deltaTime;
         root.Run(this);
 	}
 }

@@ -14,6 +14,7 @@ TagManager:
   - Hatchet
   - Collider
   - Document
+  - Stop
   layers:
   - Default
   - TransparentFX
