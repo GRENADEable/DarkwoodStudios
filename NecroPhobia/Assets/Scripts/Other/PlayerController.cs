@@ -19,12 +19,15 @@ public class PlayerController : MonoBehaviour
 
     private int score = 0;
     public Text textScore;
+    public GameObject relicPickupText;
     public float invisTimer;
 
     public GameObject openGateDoor;
     public GameObject closeGateDoor;
-    public GameObject relicWhole;
     public GameObject spiderEnemy;
+
+    public GameObject relicWhole;
+    public GameObject lostDocument1;
 
     private AudioSource aud;
     public AudioClip relicPickup;
@@ -37,6 +40,7 @@ public class PlayerController : MonoBehaviour
         StaminaSlider.value = MaxStamina;
         currStamina = MaxStamina;
         aud = GetComponent<AudioSource>();
+        relicPickupText.SetActive(false);
     }
 
 
@@ -113,13 +117,32 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerStay(Collider relic)
     {
-        if (relic.gameObject.tag == "Relic" && Input.GetKey(KeyCode.E))
+        if (relic.gameObject.tag == "Relic")
         {
-            Destroy(relic.gameObject);
+            relicPickupText.SetActive(true);
+            if (relic.gameObject.tag == "Relic" && Input.GetKey(KeyCode.E))
+            {
+                Destroy(relic.gameObject);
 
-            score++;
-            textScore.text = score.ToString();
-            aud.PlayOneShot(relicPickup, 0.5f);
+                score++;
+                textScore.text = score.ToString();
+                relicPickupText.SetActive(false);
+                aud.PlayOneShot(relicPickup, 0.5f);
+            }
+        }
+
+        if (relic.gameObject.tag == "Hatchet")
+        {
+            relicPickupText.SetActive(true);
+
+            if (relic.gameObject.tag == "Hatchet" && Input.GetKey(KeyCode.E))
+            {
+                Destroy(relic.gameObject);
+
+                relicPickupText.SetActive(false);
+                GameVariables.Axe += 1;
+                aud.PlayOneShot(relicPickup, 0.5f);
+            }
         }
 
         if (relic.gameObject.tag == "RelicEnded" && Input.GetKey(KeyCode.E) && score == 6)
@@ -133,6 +156,19 @@ public class PlayerController : MonoBehaviour
         {
             invisTimer = 5.0f;
             Destroy(relic.gameObject);
+        }
+
+        if (relic.gameObject.tag == "Document" && Input.GetKey(KeyCode.E))
+        {
+            Destroy(lostDocument1);
+        }
+    }
+
+    void OnTriggerExit(Collider col)
+    {
+        if (col.gameObject.tag == "Relic")
+        {
+            relicPickupText.SetActive(false);
         }
     }
 

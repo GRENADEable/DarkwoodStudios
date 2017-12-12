@@ -231,7 +231,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 26472be0a31d1504c837e96e6aa9356b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -337,13 +337,16 @@ MonoBehaviour:
   currStamina: 0
   regenStamina: 0.5
   walkingSpeed: 7
-  runningSpeed: 11
+  runningSpeed: 40
   textScore: {fileID: 0}
+  relicPickupText: {fileID: 0}
   invisTimer: 0
   openGateDoor: {fileID: 0}
   closeGateDoor: {fileID: 0}
-  relicWhole: {fileID: 0}
   spiderEnemy: {fileID: 0}
+  relicWhole: {fileID: 0}
+  lostDocument1: {fileID: 0}
+  relicPickup: {fileID: 8300000, guid: 7fcdd1e097cfdfb478f5a2aacd688d45, type: 3}
 --- !u!114 &114563498245071886
 MonoBehaviour:
   m_ObjectHideFlags: 1

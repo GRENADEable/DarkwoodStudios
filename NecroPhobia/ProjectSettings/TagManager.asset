@@ -11,6 +11,8 @@ TagManager:
   - Gate
   - RelicEnded
   - TalisMan
+  - Hatchet
+  - Document
   layers:
   - Default
   - TransparentFX

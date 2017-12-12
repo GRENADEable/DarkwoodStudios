@@ -2897,9 +2897,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 925f7ff0f7f6e1b4eb2120ea7837fc34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeed: 10.9
+  enemySpeed: 10.7
   player: {fileID: 0}
-  attackDistance: 5.8
+  attackDistance: 5.7
   distanceToPlayer: 0
   angle: 0
   tarDir: {x: 0, y: 0, z: 0}
