@@ -13,7 +13,19 @@ public class Chase : Node
         ownerBT.angle = Vector3.Angle(ownerBT.tarDir, ownerBT.transform.forward);
         ownerBT.distanceToPlayer = Vector3.Distance(ownerBT.player.position, ownerBT.transform.position);
 
-        if (ownerBT.angle < 60 && ownerBT.distanceToPlayer < ownerBT.chaseDistance && 
+        if (((ownerBT.angle < 60 && ownerBT.distanceToPlayer < ownerBT.chaseDistance) || ownerBT.distanceToPlayer < ownerBT.closeDistance)
+            && ownerBT.player.GetComponent<PlayerController>().invisTimer <= 0)
+        {
+            currCondition = Condition.Running;
+            //The LookAt function. The difference between the position of Y is causing a change in rotation of X.
+            ownerBT.transform.LookAt(ownerBT.player.position);
+            ownerBT.transform.rotation = Quaternion.Euler(0, ownerBT.transform.rotation.eulerAngles.y, ownerBT.transform.eulerAngles.z);
+            ownerBT.anim.SetInteger("Transition", 8);
+            ownerBT.transform.position = Vector3.MoveTowards(ownerBT.transform.position, ownerBT.player.transform.position,
+            ownerBT.enemyRunningSpeed * Time.deltaTime);
+            //Debug.Log("Player Sighted");
+        }
+        /*if (ownerBT.angle < 60 && ownerBT.distanceToPlayer < ownerBT.chaseDistance && 
             ownerBT.player.GetComponent<PlayerController>().invisTimer <= 0)
         {
             currCondition = Condition.Running;
@@ -23,9 +35,8 @@ public class Chase : Node
             ownerBT.anim.SetInteger("Transition", 8);
             ownerBT.transform.position = Vector3.MoveTowards(ownerBT.transform.position, ownerBT.player.transform.position, 
             ownerBT.enemyRunningSpeed * Time.deltaTime);
-            //ownerBT.transform.position +=
             //Debug.Log("Player Sighted");
-        }
+        }*/
         else
         {
             ownerBT.anim.SetInteger("Transition", 3);

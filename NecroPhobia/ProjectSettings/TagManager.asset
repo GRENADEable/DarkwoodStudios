@@ -12,6 +12,7 @@ TagManager:
   - RelicEnded
   - TalisMan
   - Hatchet
+  - Collider
   - Document
   layers:
   - Default

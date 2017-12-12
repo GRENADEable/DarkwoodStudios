@@ -287,7 +287,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -337,7 +337,7 @@ MonoBehaviour:
   currStamina: 0
   regenStamina: 0.5
   walkingSpeed: 7
-  runningSpeed: 40
+  runningSpeed: 11
   textScore: {fileID: 0}
   relicPickupText: {fileID: 0}
   invisTimer: 0
@@ -345,7 +345,6 @@ MonoBehaviour:
   closeGateDoor: {fileID: 0}
   spiderEnemy: {fileID: 0}
   relicWhole: {fileID: 0}
-  lostDocument1: {fileID: 0}
   relicPickup: {fileID: 8300000, guid: 7fcdd1e097cfdfb478f5a2aacd688d45, type: 3}
 --- !u!114 &114563498245071886
 MonoBehaviour:

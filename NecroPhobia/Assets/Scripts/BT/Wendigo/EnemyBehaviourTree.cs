@@ -12,19 +12,20 @@ public class EnemyBehaviourTree : MonoBehaviour
 
     public float chaseDistance;
     public float attackDistance;
+    public float closeDistance;
     public float distanceToPlayer;
     public float angle;
     public float distanceToWaypoint;
 
     [HideInInspector] public Vector3 tarDir;
     [HideInInspector] public Animator anim;
-    //[HideInInspector] public Collider col;
+    [HideInInspector] public Collider col;
 
     // Use this for initialization
     void Start ()
     {
         anim = GetComponent<Animator>();
-        //col = GetComponentInChildren<Collider>();
+        col = GetComponentInChildren<Collider>();
 
         Selector selectNode = new Selector();
         Sequence sequenceNode = new Sequence();

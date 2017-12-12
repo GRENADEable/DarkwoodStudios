@@ -6,31 +6,42 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Stamina Bars")]
     public Slider StaminaSlider;
     public GameObject StaminaBar;
-    public float MaxStamina;
 
+    [Header("Stamina")]
     public float currStamina;
     public float regenStamina;
+    public float MaxStamina;
 
+    [Header("Movement Speeds")]
     public float walkingSpeed;
     public float runningSpeed;
 
-
+    [Header("Score")]
     private int score = 0;
     public Text textScore;
-    public GameObject relicPickupText;
+
+    [Header("Invisibility Timer")]
     public float invisTimer;
 
+    [Header("GameObjects")]
+    public GameObject relicPickupText;
     public GameObject openGateDoor;
     public GameObject closeGateDoor;
     public GameObject spiderEnemy;
-
     public GameObject relicWhole;
-    public GameObject lostDocument1;
 
+    [Header("Audio")]
     private AudioSource aud;
     public AudioClip relicPickup;
+
+    [Header("Documents")]
+    public GameObject lostDoc1;
+    public GameObject lostDoc2;
+    public GameObject lostDoc3;
+    public GameObject lostDoc4;
 
     void Start()
     {
@@ -41,8 +52,13 @@ public class PlayerController : MonoBehaviour
         currStamina = MaxStamina;
         aud = GetComponent<AudioSource>();
         relicPickupText.SetActive(false);
-    }
 
+        lostDoc1.SetActive(false);
+        /*lostDoc2.SetActive(false);
+        lostDoc3.SetActive(false);
+        lostDoc4.SetActive(false);*/
+
+    }
 
     void Update()
     {
@@ -103,7 +119,6 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            
             closeGateDoor.SetActive(true);
             openGateDoor.SetActive(false);
         }
@@ -114,10 +129,49 @@ public class PlayerController : MonoBehaviour
             invisTimer = Mathf.Clamp(invisTimer, 0, 5);
         }
     }
-
     void OnTriggerStay(Collider relic)
     {
-        if (relic.gameObject.tag == "Relic")
+        if (relic.tag == "Document")
+        {
+            relicPickupText.SetActive(true);
+
+            if (relic.tag == "Document" && Input.GetKeyDown(KeyCode.E))
+            {
+                lostDoc1.SetActive(!lostDoc1.activeSelf);
+            }
+        }
+
+        /*if (relic.tag == "Document2")
+        {
+            relicPickupText.SetActive(true);
+
+            if (relic.tag == "Document2" && Input.GetKeyDown(KeyCode.E))
+            {
+                lostDoc1.SetActive(!lostDoc1.activeSelf);
+            }
+        }
+
+        if (relic.tag == "Document3")
+        {
+            relicPickupText.SetActive(true);
+
+            if (relic.tag == "Document3" && Input.GetKeyDown(KeyCode.E))
+            {
+                lostDoc1.SetActive(!lostDoc1.activeSelf);
+            }
+        }
+
+        if (relic.tag == "Document4")
+        {
+            relicPickupText.SetActive(true);
+
+            if (relic.tag == "Document" && Input.GetKeyDown(KeyCode.E))
+            {
+                lostDoc1.SetActive(!lostDoc1.activeSelf);
+            }
+        }*/
+
+        if (relic.tag == "Relic")
         {
             relicPickupText.SetActive(true);
             if (relic.gameObject.tag == "Relic" && Input.GetKey(KeyCode.E))
@@ -131,47 +185,66 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (relic.gameObject.tag == "Hatchet")
+        if (relic.tag == "Hatchet")
         {
             relicPickupText.SetActive(true);
 
-            if (relic.gameObject.tag == "Hatchet" && Input.GetKey(KeyCode.E))
+            if (relic.tag == "Hatchet" && Input.GetKey(KeyCode.E))
             {
                 Destroy(relic.gameObject);
-
                 relicPickupText.SetActive(false);
                 GameVariables.Axe += 1;
                 aud.PlayOneShot(relicPickup, 0.5f);
             }
         }
 
-        if (relic.gameObject.tag == "RelicEnded" && Input.GetKey(KeyCode.E) && score == 6)
+        if (relic.tag == "RelicEnded" && Input.GetKey(KeyCode.E) && score == 6)
         {
             relicWhole.SetActive(true);
             Debug.Log("Game Ended");
-            Destroy(spiderEnemy);
+            spiderEnemy.SetActive(false);
         }
 
-        if (relic.gameObject.tag == "TalisMan" && Input.GetKey(KeyCode.E))
+        if (relic.tag == "TalisMan" && Input.GetKey(KeyCode.E))
         {
             invisTimer = 5.0f;
             Destroy(relic.gameObject);
         }
 
-        if (relic.gameObject.tag == "Document" && Input.GetKey(KeyCode.E))
-        {
-            Destroy(lostDocument1);
-        }
+       
     }
 
-    void OnTriggerExit(Collider col)
+    void OnTriggerExit(Collider exit)
     {
-        if (col.gameObject.tag == "Relic")
+        if (exit.tag == "Relic")
         {
             relicPickupText.SetActive(false);
         }
-    }
 
+        if (exit.tag == "Document")
+        {
+            relicPickupText.SetActive(false);
+            lostDoc1.SetActive(false);
+        }
+
+        /*if (exit.tag == "Document2")
+        {
+            relicPickupText.SetActive(false);
+            lostDoc2.SetActive(false);
+        }
+
+        if (exit.tag == "Document3")
+        {
+            relicPickupText.SetActive(false);
+            lostDoc3.SetActive(false);
+        }
+
+        if (exit.tag == "Document4")
+        {
+            relicPickupText.SetActive(false);
+            lostDoc4.SetActive(false);
+        }*/
+    }
     void EffectedStamina()
     {
         currStamina = 0;

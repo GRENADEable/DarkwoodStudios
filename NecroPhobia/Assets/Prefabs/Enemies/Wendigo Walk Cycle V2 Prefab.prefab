@@ -964,7 +964,7 @@ GameObject:
   - component: {fileID: 137480367778114268}
   m_Layer: 0
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2007,8 +2007,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1095639900992906}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 274.4, y: 0.57, z: 226.4}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 253.8, y: 0.57, z: 275.14}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4417859396829336}
@@ -2199,7 +2199,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -2255,13 +2255,15 @@ MonoBehaviour:
   enemyWalkingSpeed: 3
   enemyRunningSpeed: 7.5
   player: {fileID: 0}
-  chaseDistance: 18
+  chaseDistance: 15
   attackDistance: 8
+  closeDistance: 10
   distanceToPlayer: 0
   angle: 0
   distanceToWaypoint: 0
   tarDir: {x: 0, y: 0, z: 0}
   anim: {fileID: 0}
+  col: {fileID: 0}
 --- !u!114 &114499668462151294
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2297,7 +2299,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   growlClip: {fileID: 8300000, guid: a8d75927e5e47a94ead613520de61175, type: 3}
   chaseClip: {fileID: 8300000, guid: 627671ee694fd9a4ab0eeef5a27557a3, type: 3}
-  ply: {fileID: 0}
+  ply: {fileID: 1131154902115614, guid: 32df23086ef1d8e40aefd895cdbec081, type: 2}
 --- !u!135 &135730725883008268
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -2306,7 +2308,7 @@ SphereCollider:
   m_GameObject: {fileID: 1752383334952014}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0}
