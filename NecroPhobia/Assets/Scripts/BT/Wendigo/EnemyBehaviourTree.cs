@@ -17,6 +17,7 @@ public class EnemyBehaviourTree : MonoBehaviour
     public float angle;
     public float distanceToWaypoint;
 
+    [HideInInspector]public int currPosIndex;
     [HideInInspector] public Vector3 tarDir;
     [HideInInspector] public Animator anim;
     [HideInInspector] public Collider col;

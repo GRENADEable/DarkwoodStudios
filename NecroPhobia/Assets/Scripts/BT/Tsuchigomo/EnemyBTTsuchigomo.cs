@@ -17,19 +17,21 @@ public class EnemyBTTsuchigomo : MonoBehaviour
     [HideInInspector] public Vector3 tarDir;
     [HideInInspector] public Animator anim;
 
+    [HideInInspector] public AudioSource aud;
+    public AudioClip tsuchiGrowl;
+
     // Use this for initialization
     void Start ()
     {
-        anim = GetComponentInChildren<Animator>();
+        anim = GetComponent<Animator>();
+        aud = GetComponent<AudioSource>();
 
         SequenceTsuchigomo sequenceNode = new SequenceTsuchigomo();
 
         root = sequenceNode;
         sequenceNode.children.Add(new ChaseTsuchigomo());
         sequenceNode.children.Add(new AttackTsuchigomo());
-        counter = 4.0f;
-        //rg = GetComponent<Rigidbody>();
-
+        counter = 4.2f;
     }
 
     // Update is called once per frame

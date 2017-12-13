@@ -10,6 +10,11 @@ public class ChaseTsuchigomo : NodeTsuchigomo
         
         if (GameObject.FindGameObjectWithTag("Player") && ownerBT.counter <=0)
         {
+            if (!ownerBT.aud.isPlaying)
+            {
+                ownerBT.aud.PlayOneShot(ownerBT.tsuchiGrowl, 0.45f);
+            }
+
             currCondition = Condition.Running;
             ownerBT.transform.LookAt(ownerBT.player.transform.position);
             ownerBT.transform.position = Vector3.MoveTowards(ownerBT.transform.position, ownerBT.player.transform.position, 

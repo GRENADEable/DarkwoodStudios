@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameManager gm;
+
     [Header("Stamina Bars")]
     public Slider StaminaSlider;
     public GameObject StaminaBar;
@@ -19,44 +21,34 @@ public class PlayerController : MonoBehaviour
     public float walkingSpeed;
     public float runningSpeed;
 
-    [Header("Score")]
-    private int score = 0;
-    public Text textScore;
-
     [Header("Invisibility Timer")]
     public float invisTimer;
 
     [Header("GameObjects")]
     public GameObject relicPickupText;
-    public GameObject openGateDoor;
+    /*public GameObject openGateDoor;
     public GameObject closeGateDoor;
-    public GameObject spiderEnemy;
+    public GameObject spiderEnemy;*/
     public GameObject relicWhole;
+    public GameObject wendigoEnemy;
 
     [Header("Audio")]
     private AudioSource aud;
     public AudioClip relicPickup;
 
     [Header("Documents")]
-    public GameObject lostDoc1;
-    public GameObject lostDoc2;
-    public GameObject lostDoc3;
-    public GameObject lostDoc4;
+    private DocumentPickup docPick;
 
     void Start()
     {
-        relicWhole.SetActive(false);
-        spiderEnemy.SetActive(false);
+        docPick = GetComponent<DocumentPickup>();
+        //relicWhole.SetActive(false);
+        //spiderEnemy.SetActive(false);
         StaminaSlider.maxValue = MaxStamina;
         StaminaSlider.value = MaxStamina;
         currStamina = MaxStamina;
         aud = GetComponent<AudioSource>();
-        relicPickupText.SetActive(false);
-
-        lostDoc1.SetActive(false);
-        /*lostDoc2.SetActive(false);
-        lostDoc3.SetActive(false);
-        lostDoc4.SetActive(false);*/
+        gm = GameManager.GetInstance();//GetComponent<GameManager>();
 
     }
 
@@ -105,12 +97,12 @@ public class PlayerController : MonoBehaviour
             StaminaSlider.value = MaxStamina;
         }
 
-        if (score == 5)
+        /*if (score == 5)
         {
             Destroy(GameObject.FindGameObjectWithTag("RockDoor"));
-        }
+        }*/
 
-        if (score == 6)
+       /* if (score == 6)
         {
             closeGateDoor.SetActive(false);
             openGateDoor.SetActive(true);
@@ -121,8 +113,8 @@ public class PlayerController : MonoBehaviour
         {
             closeGateDoor.SetActive(true);
             openGateDoor.SetActive(false);
-        }
-
+        }*/
+        
         if (invisTimer <= 5)
         {
             invisTimer = invisTimer - 1 * Time.deltaTime;
@@ -131,46 +123,6 @@ public class PlayerController : MonoBehaviour
     }
     void OnTriggerStay(Collider relic)
     {
-        if (relic.tag == "Document")
-        {
-            relicPickupText.SetActive(true);
-
-            if (relic.tag == "Document" && Input.GetKeyDown(KeyCode.E))
-            {
-                lostDoc1.SetActive(!lostDoc1.activeSelf);
-            }
-        }
-
-        /*if (relic.tag == "Document2")
-        {
-            relicPickupText.SetActive(true);
-
-            if (relic.tag == "Document2" && Input.GetKeyDown(KeyCode.E))
-            {
-                lostDoc1.SetActive(!lostDoc1.activeSelf);
-            }
-        }
-
-        if (relic.tag == "Document3")
-        {
-            relicPickupText.SetActive(true);
-
-            if (relic.tag == "Document3" && Input.GetKeyDown(KeyCode.E))
-            {
-                lostDoc1.SetActive(!lostDoc1.activeSelf);
-            }
-        }
-
-        if (relic.tag == "Document4")
-        {
-            relicPickupText.SetActive(true);
-
-            if (relic.tag == "Document" && Input.GetKeyDown(KeyCode.E))
-            {
-                lostDoc1.SetActive(!lostDoc1.activeSelf);
-            }
-        }*/
-
         if (relic.tag == "Relic")
         {
             relicPickupText.SetActive(true);
@@ -178,8 +130,8 @@ public class PlayerController : MonoBehaviour
             {
                 Destroy(relic.gameObject);
 
-                score++;
-                textScore.text = score.ToString();
+                gm.score++;
+                gm.textScore.text = gm.score.ToString();
                 relicPickupText.SetActive(false);
                 aud.PlayOneShot(relicPickup, 0.5f);
             }
@@ -198,11 +150,10 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (relic.tag == "RelicEnded" && Input.GetKey(KeyCode.E) && score == 6)
+        if (relic.tag == "RelicEnded" && Input.GetKey(KeyCode.E) && gm.score == 6)
         {
             relicWhole.SetActive(true);
             Debug.Log("Game Ended");
-            spiderEnemy.SetActive(false);
         }
 
         if (relic.tag == "TalisMan" && Input.GetKey(KeyCode.E))
@@ -212,44 +163,5 @@ public class PlayerController : MonoBehaviour
         }
 
        
-    }
-
-    void OnTriggerExit(Collider exit)
-    {
-        if (exit.tag == "Relic")
-        {
-            relicPickupText.SetActive(false);
-        }
-
-        if (exit.tag == "Document")
-        {
-            relicPickupText.SetActive(false);
-            lostDoc1.SetActive(false);
-        }
-
-        /*if (exit.tag == "Document2")
-        {
-            relicPickupText.SetActive(false);
-            lostDoc2.SetActive(false);
-        }
-
-        if (exit.tag == "Document3")
-        {
-            relicPickupText.SetActive(false);
-            lostDoc3.SetActive(false);
-        }
-
-        if (exit.tag == "Document4")
-        {
-            relicPickupText.SetActive(false);
-            lostDoc4.SetActive(false);
-        }*/
-    }
-    void EffectedStamina()
-    {
-        currStamina = 0;
-        StaminaSlider.value = 0;
-        Destroy(StaminaBar);
-        walkingSpeed = 11;
     }
 }

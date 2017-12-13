@@ -1744,15 +1744,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1356476169396068}
-  m_LocalRotation: {x: -0, y: -0.9935719, z: -0, w: 0.11320332}
-  m_LocalPosition: {x: 246.613, y: 0.259, z: 248.325}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 246.613, y: 0.259, z: 235.3}
   m_LocalScale: {x: 2.300001, y: 2.2, z: 2.2000008}
   m_Children:
   - {fileID: 4469910527269044}
   - {fileID: 4255383409757694}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -167, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4408989507698150
 Transform:
   m_ObjectHideFlags: 1
@@ -2902,8 +2902,13 @@ MonoBehaviour:
   attackDistance: 5.7
   distanceToPlayer: 0
   angle: 0
+  counter: 0
+  changeAnim: {fileID: 0}
+  isPlay: 0
   tarDir: {x: 0, y: 0, z: 0}
   anim: {fileID: 0}
+  aud: {fileID: 0}
+  tsuchiGrowl: {fileID: 8300000, guid: a4bfc11d1443a6a428004440b856fbc7, type: 3}
 --- !u!114 &114374748834081754
 MonoBehaviour:
   m_ObjectHideFlags: 1
