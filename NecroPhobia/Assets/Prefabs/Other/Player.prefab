@@ -330,26 +330,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb3f672a5bee3484eb2a7abec4acc7e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   StaminaSlider: {fileID: 0}
   StaminaBar: {fileID: 0}
   currStamina: 0
   regenStamina: 0.5
   MaxStamina: 2
   walkingSpeed: 7
-  runningSpeed: 40
-  textScore: {fileID: 0}
+  runningSpeed: 11
   invisTimer: 0
   relicPickupText: {fileID: 0}
-  openGateDoor: {fileID: 0}
-  closeGateDoor: {fileID: 0}
-  spiderEnemy: {fileID: 0}
   relicWhole: {fileID: 0}
   wendigoEnemy: {fileID: 0}
   relicPickup: {fileID: 8300000, guid: 7fcdd1e097cfdfb478f5a2aacd688d45, type: 3}
-  lostDoc1: {fileID: 0}
-  lostDoc2: {fileID: 0}
-  lostDoc3: {fileID: 0}
-  lostDoc4: {fileID: 0}
 --- !u!114 &114563498245071886
 MonoBehaviour:
   m_ObjectHideFlags: 1
