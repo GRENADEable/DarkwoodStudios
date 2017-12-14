@@ -9,6 +9,7 @@ public class EnemyBTTsuchigomo : MonoBehaviour
 
     public GameObject player;
     public float attackDistance;
+    public float chaseDistance;
     public float distanceToPlayer;
     public float angle;
     public float counter;
@@ -16,15 +17,16 @@ public class EnemyBTTsuchigomo : MonoBehaviour
 
     [HideInInspector] public Vector3 tarDir;
     [HideInInspector] public Animator anim;
+    [HideInInspector] public CapsuleCollider capcol;
 
-    [HideInInspector] public AudioSource aud;
-    public AudioClip tsuchiGrowl;
-
+    void Awake()
+    {
+        capcol = GetComponent<CapsuleCollider>();
+    }
     // Use this for initialization
     void Start ()
     {
         anim = GetComponent<Animator>();
-        aud = GetComponent<AudioSource>();
 
         SequenceTsuchigomo sequenceNode = new SequenceTsuchigomo();
 
@@ -39,5 +41,5 @@ public class EnemyBTTsuchigomo : MonoBehaviour
     {
         counter = counter - 1 * Time.deltaTime;
         root.Run(this);
-	}
+    }
 }

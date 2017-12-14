@@ -14,7 +14,8 @@ TagManager:
   - Hatchet
   - Collider
   - Document
-  - Stop
+  - Enemy
+  - LastPiece
   layers:
   - Default
   - TransparentFX

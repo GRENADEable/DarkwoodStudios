@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     private static GameManager gm;
-    public PlayerController player;
 
     [Header("GameObjects")]
     public GameObject openGateDoor;
@@ -39,9 +38,7 @@ public class GameManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        player = GetComponent<PlayerController>();
         DontDestroyOnLoad(this.gameObject);
-        spiderEnemy.SetActive(false);
     }
 
     void Update()
@@ -50,26 +47,5 @@ public class GameManager : MonoBehaviour
         {
             Destroy(GameObject.FindGameObjectWithTag("RockDoor"));
         }
-
-        if (score == 6)
-        {
-            closeGateDoor.SetActive(false);
-            openGateDoor.SetActive(true);
-            spiderEnemy.SetActive(true);
-            EffectedStamina();
-        }
-        else
-        {
-            closeGateDoor.SetActive(true);
-            openGateDoor.SetActive(false);
-        }
-    }
-
-    void EffectedStamina()
-    {
-        player.currStamina = 0;
-        player.StaminaSlider.value = 0;
-        Destroy(player.StaminaBar);
-        player.walkingSpeed = 11;
     }
 }

@@ -7,7 +7,7 @@ public class AttackTsuchigomo : NodeTsuchigomo
 {
     public override void Run(EnemyBTTsuchigomo ownerBT)
     {
-        if (ownerBT.angle < 40 && ownerBT.distanceToPlayer < ownerBT.attackDistance)//Player is Alive
+        if (ownerBT.distanceToPlayer < ownerBT.attackDistance)//Player is Alive
         {
             ownerBT.anim.SetInteger("TsuchiTransition", 2);
             currCondition = Condition.Success;

@@ -36,14 +36,10 @@ public class PlayerController : MonoBehaviour
     private AudioSource aud;
     public AudioClip relicPickup;
 
-    [Header("Documents")]
-    private DocumentPickup docPick;
-
     void Start()
     {
-        docPick = GetComponent<DocumentPickup>();
         //relicWhole.SetActive(false);
-        //spiderEnemy.SetActive(false);
+        gm.spiderEnemy.SetActive(false);
         StaminaSlider.maxValue = MaxStamina;
         StaminaSlider.value = MaxStamina;
         currStamina = MaxStamina;
@@ -96,29 +92,23 @@ public class PlayerController : MonoBehaviour
         {
             StaminaSlider.value = MaxStamina;
         }
-
-        /*if (score == 5)
-        {
-            Destroy(GameObject.FindGameObjectWithTag("RockDoor"));
-        }*/
-
-       /* if (score == 6)
-        {
-            closeGateDoor.SetActive(false);
-            openGateDoor.SetActive(true);
-            spiderEnemy.SetActive(true);
-            EffectedStamina();
-        }
-        else
-        {
-            closeGateDoor.SetActive(true);
-            openGateDoor.SetActive(false);
-        }*/
         
         if (invisTimer <= 5)
         {
             invisTimer = invisTimer - 1 * Time.deltaTime;
             invisTimer = Mathf.Clamp(invisTimer, 0, 5);
+        }
+
+        if (gm.score == 6)
+        {
+            EffectedStamina();
+            gm.closeGateDoor.SetActive(false);
+            gm.openGateDoor.SetActive(true);
+        }
+        else
+        {
+            gm.closeGateDoor.SetActive(true);
+            gm.openGateDoor.SetActive(false);
         }
     }
     void OnTriggerStay(Collider relic)
@@ -156,12 +146,42 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Game Ended");
         }
 
+        if (relic.tag == "LastPiece")
+        {
+            relicPickupText.SetActive(true);
+            if (relic.gameObject.tag == "LastPiece" && Input.GetKey(KeyCode.E))
+            {
+                Destroy(relic.gameObject);
+
+                gm.score++;
+                gm.textScore.text = gm.score.ToString();
+                relicPickupText.SetActive(false);
+                aud.PlayOneShot(relicPickup, 0.5f);
+                gm.spiderEnemy.SetActive(true);
+
+            }
+        }
+
         if (relic.tag == "TalisMan" && Input.GetKey(KeyCode.E))
         {
             invisTimer = 5.0f;
             Destroy(relic.gameObject);
         }
+    }
 
-       
+    void OnTriggerExit(Collider relic)
+    {
+        if (relic.tag == "Relic")
+        {
+            relicPickupText.SetActive(false);
+        }
+    }
+
+    void EffectedStamina()
+    {
+        currStamina = 0;
+        StaminaSlider.value = 0;
+        Destroy(StaminaBar);
+        walkingSpeed = 11;
     }
 }
