@@ -7,16 +7,6 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager gm;
 
-    [Header("GameObjects")]
-    public GameObject openGateDoor;
-    public GameObject closeGateDoor;
-    public GameObject spiderEnemy;
-
-    [Header("Score")]
-    [HideInInspector] public int score = 0;
-    public Text textScore;
-
-
     public static GameManager GetInstance()
     {
         return gm;
@@ -43,9 +33,6 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (score == 5)
-        {
-            Destroy(GameObject.FindGameObjectWithTag("RockDoor"));
-        }
+        
     }
 }

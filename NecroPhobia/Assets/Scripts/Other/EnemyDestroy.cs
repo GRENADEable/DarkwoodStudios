@@ -10,7 +10,6 @@ public class EnemyDestroy : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
-
             enemyPrefab.SetActive(false);
         }
     }

@@ -177,7 +177,7 @@ MonoBehaviour:
   docScreen: {fileID: 0}
   col: {fileID: 0}
   relicPickupText: {fileID: 0}
-  audPaper: {fileID: 8300000, guid: c9f7c5fa31839204786dadc1b66de3a1, type: 3}
+  audPaper: {fileID: 8300000, guid: 21a498772649aee4f9a88a808df8e05f, type: 3}
 --- !u!136 &136020451118418472
 CapsuleCollider:
   m_ObjectHideFlags: 1

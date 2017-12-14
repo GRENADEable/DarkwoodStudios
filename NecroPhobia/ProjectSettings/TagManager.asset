@@ -16,6 +16,7 @@ TagManager:
   - Document
   - Enemy
   - LastPiece
+  - Other
   layers:
   - Default
   - TransparentFX

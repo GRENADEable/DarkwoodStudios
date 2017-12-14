@@ -76,7 +76,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1131154902115614}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 306.14, y: 1.57, z: 339.29}
+  m_LocalPosition: {x: 305.8, y: 1.57, z: 339.597}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children:
   - {fileID: 4521841200286346}
@@ -330,19 +330,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb3f672a5bee3484eb2a7abec4acc7e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gm: {fileID: 0}
   StaminaSlider: {fileID: 0}
   StaminaBar: {fileID: 0}
   currStamina: 0
   regenStamina: 0.5
   MaxStamina: 2
   walkingSpeed: 7
-  runningSpeed: 11
+  runningSpeed: 50
   invisTimer: 0
   relicPickupText: {fileID: 0}
   relicWhole: {fileID: 0}
   wendigoEnemy: {fileID: 0}
+  openGateDoor: {fileID: 0}
+  closeGateDoor: {fileID: 0}
+  spiderEnemy: {fileID: 0}
+  hatchetIcon: {fileID: 0}
   relicPickup: {fileID: 8300000, guid: 7fcdd1e097cfdfb478f5a2aacd688d45, type: 3}
+  score: 0
+  textScore: {fileID: 0}
 --- !u!114 &114563498245071886
 MonoBehaviour:
   m_ObjectHideFlags: 1

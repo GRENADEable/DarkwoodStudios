@@ -7,6 +7,7 @@ public class BrokeTreeGate : MonoBehaviour
     private AudioSource aud;
     public  AudioClip audchop;
     public GameObject tree;
+    public GameObject hatchetIcon;
 
 
     void Start()
@@ -18,7 +19,8 @@ public class BrokeTreeGate : MonoBehaviour
     {
         if (other.gameObject.tag == "Player" && GameVariables.Axe > 0 && Input.GetKey(KeyCode.E))
         {
-            aud.PlayOneShot(audchop);
+            hatchetIcon.SetActive(false);
+            aud.PlayOneShot(audchop, 0.5f);
             Destroy(tree);
             GameVariables.Axe -= 1;
 

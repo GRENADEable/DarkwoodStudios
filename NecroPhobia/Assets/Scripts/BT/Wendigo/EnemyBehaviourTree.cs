@@ -20,13 +20,17 @@ public class EnemyBehaviourTree : MonoBehaviour
     [HideInInspector]public int currPosIndex;
     [HideInInspector] public Vector3 tarDir;
     [HideInInspector] public Animator anim;
+    [HideInInspector] public Collider[] capcol;
     [HideInInspector] public Collider col;
+    [HideInInspector] public Rigidbody rg;
 
     // Use this for initialization
     void Start ()
     {
         anim = GetComponent<Animator>();
-        col = GetComponentInChildren<Collider>();
+        capcol = GetComponentsInChildren<Collider>();
+        rg = GetComponent<Rigidbody>();
+
 
         Selector selectNode = new Selector();
         Sequence sequenceNode = new Sequence();
@@ -43,5 +47,37 @@ public class EnemyBehaviourTree : MonoBehaviour
 	void Update ()
     {
         root.Execute(this);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<Collider>().tag == "Other")
+        {
+            rg.useGravity = false;
+            capcol[1].enabled = false;
+            capcol[2].enabled = false;
+        }
+        else
+        {
+            rg.useGravity = true;
+            capcol[1].enabled = true;
+            capcol[2].enabled = true;
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.GetComponent<Collider>().tag == "Other")
+        {
+            rg.useGravity = true;
+            capcol[1].enabled = true;
+            capcol[2].enabled = true;
+        }
+        else
+        {
+            rg.useGravity = false;
+            capcol[1].enabled = false;
+            capcol[2].enabled = false;
+        }
     }
 }

@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4342800150179462}
   - component: {fileID: 33761472625757138}
   - component: {fileID: 23103687763807818}
+  - component: {fileID: 136429150466656188}
   m_Layer: 0
   m_Name: Talisman Prefab
   m_TagString: TalisMan
@@ -34,13 +35,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1155855984538848}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 17.559, y: 0.41, z: -37.90857}
+  m_LocalRotation: {x: 0.56611055, y: 0.5432148, z: 0.4779223, w: -0.3950023}
+  m_LocalPosition: {x: 288.15, y: 3.63, z: 211.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: -75.118004, y: 154.15201, z: 112.379005}
 --- !u!23 &23103687763807818
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -80,3 +81,16 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1155855984538848}
   m_Mesh: {fileID: 4300000, guid: a843b6cbe3ea8b948a1e560649b5dbc3, type: 3}
+--- !u!136 &136429150466656188
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1155855984538848}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.6
+  m_Height: 3
+  m_Direction: 0
+  m_Center: {x: 1.23, y: 0, z: 0}
