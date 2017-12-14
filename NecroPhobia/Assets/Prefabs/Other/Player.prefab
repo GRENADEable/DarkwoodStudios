@@ -336,9 +336,9 @@ MonoBehaviour:
   regenStamina: 0.5
   MaxStamina: 2
   walkingSpeed: 7
-  runningSpeed: 50
+  runningSpeed: 11
   invisTimer: 0
-  relicPickupText: {fileID: 0}
+  pickupText: {fileID: 0}
   relicWhole: {fileID: 0}
   wendigoEnemy: {fileID: 0}
   openGateDoor: {fileID: 0}
