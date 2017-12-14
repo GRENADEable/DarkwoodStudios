@@ -53,22 +53,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1166846674698258
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4806542664604600}
-  - component: {fileID: 114133502684923098}
-  m_Layer: 0
-  m_Name: Throwing
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!4 &4434806442028482
 Transform:
   m_ObjectHideFlags: 1
@@ -76,11 +60,10 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1131154902115614}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 305.8, y: 1.57, z: 339.597}
+  m_LocalPosition: {x: 43.01, y: 1.282, z: 82.075}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children:
   - {fileID: 4521841200286346}
-  - {fileID: 4806542664604600}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -96,19 +79,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4434806442028482}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4806542664604600
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1166846674698258}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.012512207, y: 0.3017869, z: 0.27568567}
-  m_LocalScale: {x: 2.1555867, y: 1.1428442, z: 2.6227798}
-  m_Children: []
-  m_Father: {fileID: 4434806442028482}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &20641604748967288
 Camera:
@@ -306,19 +276,6 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1025430506278772}
   m_Enabled: 1
---- !u!114 &114133502684923098
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1166846674698258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0673e5e083735fe4b892c25c0595dc58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stonePrefab: {fileID: 1960921611618506, guid: 10d2b1379a4f6244c962ed366f1e1f79,
-    type: 2}
 --- !u!114 &114562480844821464
 MonoBehaviour:
   m_ObjectHideFlags: 1
