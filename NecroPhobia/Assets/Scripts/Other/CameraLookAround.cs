@@ -27,7 +27,7 @@ public class CameraLookAround : MonoBehaviour {
         SmoothV.x = Mathf.Lerp(SmoothV.x, MouseDelta.x, 1f / Smoothing);
         SmoothV.y = Mathf.Lerp(SmoothV.y, MouseDelta.y, 1f / Smoothing);
         MouseLook += SmoothV;
-        MouseLook.y = Mathf.Clamp(MouseLook.y, -50f, 50f);
+        MouseLook.y = Mathf.Clamp(MouseLook.y, -40f, 50f);
 
         transform.localRotation = Quaternion.AngleAxis(-MouseLook.y, Vector3.right);
         Character.transform.localRotation = Quaternion.AngleAxis(MouseLook.x, Character.transform.up);
