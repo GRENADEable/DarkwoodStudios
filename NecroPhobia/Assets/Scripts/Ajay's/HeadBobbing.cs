@@ -5,9 +5,9 @@ using UnityEngine;
 public class HeadBobbing : MonoBehaviour {
 
     private float Timer = 0.0f;
-    float BobSpeed = 0.18f;
-    float BobAmount = 0.18f;
-    float MidPoint = 1f;
+    float BobSpeed = 0.2f;
+    float BobAmount = 0.1f;
+    float MidPoint = 0.45f;
 
     void FixedUpdate()
     {

@@ -748,6 +748,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4631232802018094}
+  - component: {fileID: 135628518857195296}
   m_Layer: 0
   m_Name: connectBone001
   m_TagString: Untagged
@@ -2007,8 +2008,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1095639900992906}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 274.4, y: 0.57, z: 226.4}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 255.55, y: 0.57, z: 275.14}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4417859396829336}
@@ -2303,6 +2304,18 @@ MonoBehaviour:
   growlClip: {fileID: 8300000, guid: a8d75927e5e47a94ead613520de61175, type: 3}
   chaseClip: {fileID: 8300000, guid: 627671ee694fd9a4ab0eeef5a27557a3, type: 3}
   ply: {fileID: 0}
+--- !u!135 &135628518857195296
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1654992375532682}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.6
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &135730725883008268
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -2313,7 +2326,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.2
+  m_Radius: 0.3
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136506290343299520
 CapsuleCollider:
@@ -2324,7 +2337,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.09
+  m_Radius: 0.1
   m_Height: 0.7
   m_Direction: 0
   m_Center: {x: 0, y: 0, z: 0}
