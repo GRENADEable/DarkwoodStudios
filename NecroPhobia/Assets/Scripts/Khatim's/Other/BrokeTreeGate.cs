@@ -17,10 +17,10 @@ public class BrokeTreeGate : MonoBehaviour
     }
     void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Player" && GameVariables.Axe > 0 && Input.GetKey(KeyCode.E))
+        if (other.gameObject.tag == "Player" && GameVariables.Axe > 0 && Input.GetKeyDown(KeyCode.E))
         {
             hatchetIcon.SetActive(false);
-            aud.PlayOneShot(audchop, 0.5f);
+            aud.PlayOneShot(audchop, 0.55f);
             Destroy(tree);
             GameVariables.Axe -= 1;
 

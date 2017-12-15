@@ -29,7 +29,7 @@ public class DocumentPickup : MonoBehaviour
             docScreen.SetActive(!docScreen.activeSelf);
             if (docScreen.activeSelf)
             {
-                aud.PlayOneShot(audPaper, 0.15f);
+                aud.PlayOneShot(audPaper, 0.2f);
             }
         }
     }

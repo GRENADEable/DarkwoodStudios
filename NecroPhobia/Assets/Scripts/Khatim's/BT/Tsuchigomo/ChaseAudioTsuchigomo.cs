@@ -18,8 +18,8 @@ public class ChaseAudioTsuchigomo : MonoBehaviour
     {
         if (play.gameObject.tag == "Player")
         {
-            aud.PlayOneShot(growlClip, 0.045f);
-            aud.PlayOneShot(chaseClip, 0.045f);
+            aud.PlayOneShot(growlClip, 0.25f);
+            aud.PlayOneShot(chaseClip, 0.25f);
         }
 
     }

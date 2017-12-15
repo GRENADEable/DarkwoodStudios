@@ -131,12 +131,12 @@ public class PlayerController : MonoBehaviour
                 score++;
                 textScore.text = score.ToString();
                 pickupText.SetActive(false);
-                aud.PlayOneShot(relicPickup, 0.5f);
+                aud.PlayOneShot(relicPickup, 0.8f);
             }
         }
         if (relic.tag == "Relic" && score == 5)
         {
-            aud.PlayOneShot(rockNotify, 0.9f);
+            aud.PlayOneShot(rockNotify, 0.8f);
         }
 
         if (relic.tag == "Hatchet")
@@ -149,7 +149,7 @@ public class PlayerController : MonoBehaviour
                 pickupText.SetActive(false);
                 hatchetIcon.SetActive(true);
                 GameVariables.Axe += 1;
-                aud.PlayOneShot(relicPickup, 0.5f);
+                aud.PlayOneShot(relicPickup, 0.7f);
             }
         }
 
@@ -169,7 +169,7 @@ public class PlayerController : MonoBehaviour
                 score++;
                 textScore.text = score.ToString();
                 pickupText.SetActive(false);
-                aud.PlayOneShot(relicPickup, 0.5f);
+                aud.PlayOneShot(relicPickup, 0.8f);
                 Destroy(wendigoEnemy);
                 spiderEnemy.SetActive(true);
 

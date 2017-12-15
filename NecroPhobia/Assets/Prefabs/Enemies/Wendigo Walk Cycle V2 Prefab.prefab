@@ -749,6 +749,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4631232802018094}
   - component: {fileID: 135628518857195296}
+  - component: {fileID: 114808117118420654}
   m_Layer: 0
   m_Name: connectBone001
   m_TagString: Untagged
@@ -2131,7 +2132,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!82 &82406923748708508
 AudioSource:
@@ -2144,7 +2145,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.45
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2285,6 +2286,17 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1752383334952014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0df41e727e13224d9ccf5876225a572, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114808117118420654
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1654992375532682}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0df41e727e13224d9ccf5876225a572, type: 3}
