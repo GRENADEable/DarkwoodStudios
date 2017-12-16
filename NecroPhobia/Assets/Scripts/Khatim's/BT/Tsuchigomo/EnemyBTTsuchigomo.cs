@@ -33,13 +33,18 @@ public class EnemyBTTsuchigomo : MonoBehaviour
         root = sequenceNode;
         sequenceNode.children.Add(new ChaseTsuchigomo());
         sequenceNode.children.Add(new AttackTsuchigomo());
-        counter = 4.2f;
+        counter = 2.2f;
     }
 
     // Update is called once per frame
     void Update ()
     {
-        counter = counter - 1 * Time.deltaTime;
         root.Run(this);
+
+        if (counter <=5)
+        {
+            counter = counter - 1 * Time.deltaTime;
+            counter = Mathf.Clamp(counter, 0, 5);
+        }
     }
 }

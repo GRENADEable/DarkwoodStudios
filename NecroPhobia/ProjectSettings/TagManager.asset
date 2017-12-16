@@ -17,6 +17,7 @@ TagManager:
   - Enemy
   - LastPiece
   - Other
+  - Wall
   layers:
   - Default
   - TransparentFX

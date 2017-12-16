@@ -15,21 +15,24 @@ public class PlayerController : MonoBehaviour
     public float regenStamina;
     public float MaxStamina;
 
+    [Header("Invisibility")]
+    public float invisTimer;
+
     [Header("Movement Speeds")]
     public float walkingSpeed;
     public float runningSpeed;
 
-    [Header("Invisibility Timer")]
-    public float invisTimer;
+    [Header("Icons")]
+    public GameObject fadeScreen;
+    public GameObject pickupText;
+    public GameObject hatchetIcon;
 
     [Header("GameObjects")]
-    public GameObject pickupText;
     public GameObject relicWhole;
     public GameObject wendigoEnemy;
     public GameObject openGateDoor;
     public GameObject closeGateDoor;
     public GameObject spiderEnemy;
-    public GameObject hatchetIcon;
 
     [Header("Audio")]
     public AudioClip relicPickup;
@@ -38,6 +41,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Score")]
     public Text textScore;
+    public GameObject Score;
     [HideInInspector] public int score = 0;
 
     void Start()
@@ -45,9 +49,12 @@ public class PlayerController : MonoBehaviour
         relicWhole.SetActive(false);        
         hatchetIcon.SetActive(false);
         spiderEnemy.SetActive(false);
+        fadeScreen.SetActive(false); 
+
         StaminaSlider.maxValue = MaxStamina;
         StaminaSlider.value = MaxStamina;
         currStamina = MaxStamina;
+
         aud = GetComponent<AudioSource>();
 
     }
@@ -99,7 +106,7 @@ public class PlayerController : MonoBehaviour
         
         if (invisTimer <= 5)
         {
-            invisTimer = invisTimer - 1 * Time.deltaTime;
+            invisTimer -= Time.deltaTime;
             invisTimer = Mathf.Clamp(invisTimer, 0, 5);
         }
 
@@ -157,6 +164,9 @@ public class PlayerController : MonoBehaviour
         if (relic.tag == "RelicEnded" && Input.GetKey(KeyCode.E) && score == 6)
         {
             relicWhole.SetActive(true);
+            Score.SetActive(false);
+            fadeScreen.SetActive(true);
+
             Debug.Log("Game Ended");
         }
 
@@ -185,8 +195,9 @@ public class PlayerController : MonoBehaviour
                 invisTimer = 5.0f;
                 Destroy(relic.gameObject);
             }
+            
         }
-        
+
     }
 
     void OnTriggerExit(Collider relic)

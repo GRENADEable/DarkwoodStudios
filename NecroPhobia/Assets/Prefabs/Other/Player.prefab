@@ -292,19 +292,21 @@ MonoBehaviour:
   currStamina: 0
   regenStamina: 0.5
   MaxStamina: 2
+  invisTimer: 0
   walkingSpeed: 7
   runningSpeed: 11
-  invisTimer: 0
+  fadeScreen: {fileID: 0}
   pickupText: {fileID: 0}
+  hatchetIcon: {fileID: 0}
   relicWhole: {fileID: 0}
   wendigoEnemy: {fileID: 0}
   openGateDoor: {fileID: 0}
   closeGateDoor: {fileID: 0}
   spiderEnemy: {fileID: 0}
-  hatchetIcon: {fileID: 0}
   relicPickup: {fileID: 8300000, guid: 7fcdd1e097cfdfb478f5a2aacd688d45, type: 3}
   rockNotify: {fileID: 8300000, guid: e50125cda300dd143b29b68d0c5b4784, type: 3}
   textScore: {fileID: 0}
+  Score: {fileID: 0}
   score: 0
 --- !u!114 &114563498245071886
 MonoBehaviour:

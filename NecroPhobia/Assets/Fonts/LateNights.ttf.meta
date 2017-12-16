@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 22dc95a83782d0d468c40729cb97cad4
+timeCreated: 1513423938
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: LateNights
+  fontNames:
+  - LateNights
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
