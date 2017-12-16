@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        relicWhole.SetActive(false);        
         hatchetIcon.SetActive(false);
         spiderEnemy.SetActive(false);
         StaminaSlider.maxValue = MaxStamina;
