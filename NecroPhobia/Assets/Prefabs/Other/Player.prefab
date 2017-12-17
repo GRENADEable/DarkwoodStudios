@@ -294,10 +294,11 @@ MonoBehaviour:
   MaxStamina: 2
   invisTimer: 0
   walkingSpeed: 7
-  runningSpeed: 50
+  runningSpeed: 11
   fadeScreen: {fileID: 0}
   pickupText: {fileID: 0}
   hatchetIcon: {fileID: 0}
+  invisIcon: {fileID: 0}
   relicWhole: {fileID: 0}
   wendigoEnemy: {fileID: 0}
   openGateDoor: {fileID: 0}

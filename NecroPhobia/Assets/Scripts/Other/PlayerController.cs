@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     public GameObject fadeScreen;
     public GameObject pickupText;
     public GameObject hatchetIcon;
+    public GameObject invisIcon;
 
     [Header("GameObjects")]
     public GameObject relicWhole;
@@ -109,6 +110,11 @@ public class PlayerController : MonoBehaviour
         {
             invisTimer -= Time.deltaTime;
             invisTimer = Mathf.Clamp(invisTimer, 0, 5);
+        }
+
+        if (invisTimer <= 0)
+        {
+            invisIcon.SetActive(false);
         }
 
         if (score == 5)
@@ -195,6 +201,7 @@ public class PlayerController : MonoBehaviour
             pickupText.SetActive(true);
             if (relic.tag == "TalisMan" && Input.GetKey(KeyCode.E))
             {
+                invisIcon.SetActive(true);
                 pickupText.SetActive(false);
                 invisTimer = 5.0f;
                 Destroy(relic.gameObject);
