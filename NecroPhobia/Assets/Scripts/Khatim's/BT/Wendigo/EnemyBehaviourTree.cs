@@ -21,7 +21,6 @@ public class EnemyBehaviourTree : MonoBehaviour
     [HideInInspector] public Vector3 tarDir;
     [HideInInspector] public Animator anim;
     [HideInInspector] public Collider[] capcol;
-    [HideInInspector] public Collider col;
     [HideInInspector] public Rigidbody rg;
 
     // Use this for initialization

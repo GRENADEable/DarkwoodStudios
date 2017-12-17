@@ -17,7 +17,9 @@ public class EnemyBTTsuchigomo : MonoBehaviour
 
     [HideInInspector] public Vector3 tarDir;
     [HideInInspector] public Animator anim;
+    [HideInInspector] public Collider[] col;
     [HideInInspector] public CapsuleCollider capcol;
+    [HideInInspector] public Rigidbody rg;
 
     void Awake()
     {

@@ -294,7 +294,7 @@ MonoBehaviour:
   MaxStamina: 2
   invisTimer: 0
   walkingSpeed: 7
-  runningSpeed: 11
+  runningSpeed: 50
   fadeScreen: {fileID: 0}
   pickupText: {fileID: 0}
   hatchetIcon: {fileID: 0}
@@ -303,6 +303,7 @@ MonoBehaviour:
   openGateDoor: {fileID: 0}
   closeGateDoor: {fileID: 0}
   spiderEnemy: {fileID: 0}
+  laternsPrefab: {fileID: 0}
   relicPickup: {fileID: 8300000, guid: 7fcdd1e097cfdfb478f5a2aacd688d45, type: 3}
   rockNotify: {fileID: 8300000, guid: e50125cda300dd143b29b68d0c5b4784, type: 3}
   textScore: {fileID: 0}

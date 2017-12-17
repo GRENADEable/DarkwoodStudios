@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
     public GameObject openGateDoor;
     public GameObject closeGateDoor;
     public GameObject spiderEnemy;
+    public GameObject laternsPrefab;
 
     [Header("Audio")]
     public AudioClip relicPickup;
@@ -49,7 +50,7 @@ public class PlayerController : MonoBehaviour
         relicWhole.SetActive(false);        
         hatchetIcon.SetActive(false);
         spiderEnemy.SetActive(false);
-        fadeScreen.SetActive(false); 
+        fadeScreen.SetActive(false);
 
         StaminaSlider.maxValue = MaxStamina;
         StaminaSlider.value = MaxStamina;
@@ -120,9 +121,12 @@ public class PlayerController : MonoBehaviour
             EffectedStamina();
             closeGateDoor.SetActive(false);
             openGateDoor.SetActive(true);
+            laternsPrefab.SetActive(true);
+
         }
         else
         {
+            laternsPrefab.SetActive(false);
             closeGateDoor.SetActive(true);
             openGateDoor.SetActive(false);
         }
