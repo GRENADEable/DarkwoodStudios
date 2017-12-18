@@ -78,56 +78,6 @@ AnimationClip:
       - serializedVersion: 2
         time: 0
         value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-      - serializedVersion: 2
-        time: 8
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-      - serializedVersion: 2
-        time: 10
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Color.a
-    path: OptionsButton/OptionsText
-    classID: 114
-    script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 2
-        time: 0
-        value: 0
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-      - serializedVersion: 2
-        time: 8
-        value: 1
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Interactable
-    path: OptionsButton
-    classID: 114
-    script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 2
-        time: 0
-        value: 0
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -166,6 +116,56 @@ AnimationClip:
     path: ExitButton
     classID: 114
     script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 7.983333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 10
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Color.a
+    path: CreditsButton/CreditsText
+    classID: 114
+    script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 7.95
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Interactable
+    path: CreditsButton
+    classID: 114
+    script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_PPtrCurves: []
   m_SampleRate: 60
   m_WrapMode: 0
@@ -189,20 +189,6 @@ AnimationClip:
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 1231795483
-      attribute: 304273561
-      script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-      typeID: 114
-      customType: 0
-      isPPtrCurve: 0
-    - serializedVersion: 2
-      path: 3315184577
-      attribute: 4287062452
-      script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-      typeID: 114
-      customType: 0
-      isPPtrCurve: 0
-    - serializedVersion: 2
       path: 1146867889
       attribute: 4287062452
       script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -211,6 +197,20 @@ AnimationClip:
       isPPtrCurve: 0
     - serializedVersion: 2
       path: 2341044831
+      attribute: 4287062452
+      script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+      typeID: 114
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 2165245443
+      attribute: 304273561
+      script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+      typeID: 114
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3086962807
       attribute: 4287062452
       script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
       typeID: 114
@@ -300,56 +300,6 @@ AnimationClip:
       - serializedVersion: 2
         time: 0
         value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-      - serializedVersion: 2
-        time: 8
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-      - serializedVersion: 2
-        time: 10
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Color.a
-    path: OptionsButton/OptionsText
-    classID: 114
-    script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 2
-        time: 0
-        value: 0
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-      - serializedVersion: 2
-        time: 8
-        value: 1
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Interactable
-    path: OptionsButton
-    classID: 114
-    script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 2
-        time: 0
-        value: 0
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -386,6 +336,56 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_Interactable
     path: ExitButton
+    classID: 114
+    script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 7.983333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 10
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Color.a
+    path: CreditsButton/CreditsText
+    classID: 114
+    script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 7.95
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Interactable
+    path: CreditsButton
     classID: 114
     script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_EulerEditorCurves: []

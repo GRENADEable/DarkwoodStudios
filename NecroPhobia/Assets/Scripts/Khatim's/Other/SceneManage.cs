@@ -23,11 +23,6 @@ public class SceneManage : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
-    public void FullScreen(bool isFullScreen)
-    {
-        Screen.fullScreen = isFullScreen;
-    }
-
     void OnTriggerEnter(Collider kill)
     {
         if (kill.gameObject.tag == "Player")
