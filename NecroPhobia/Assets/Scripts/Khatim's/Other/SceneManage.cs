@@ -33,6 +33,8 @@ public class SceneManage : MonoBehaviour
         if (kill.gameObject.tag == "Player")
         {
             SceneManager.LoadScene("DeathScene");
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }

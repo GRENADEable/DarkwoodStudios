@@ -20,7 +20,6 @@ public class EnemyBTTsuchigomo : MonoBehaviour
     [HideInInspector] public Collider[] col;
     [HideInInspector] public CapsuleCollider capcol;
     [HideInInspector] public Rigidbody rg;
-
     void Awake()
     {
         capcol = GetComponent<CapsuleCollider>();

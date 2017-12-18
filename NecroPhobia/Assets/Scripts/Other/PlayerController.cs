@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
     public GameObject closeGateDoor;
     public GameObject spiderEnemy;
     public GameObject laternsPrefab;
+    public GameObject[] rockDoors;
 
     [Header("Audio")]
     public AudioClip relicPickup;
@@ -48,6 +49,9 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
         relicWhole.SetActive(false);        
         hatchetIcon.SetActive(false);
         spiderEnemy.SetActive(false);
@@ -56,6 +60,8 @@ public class PlayerController : MonoBehaviour
         StaminaSlider.maxValue = MaxStamina;
         StaminaSlider.value = MaxStamina;
         currStamina = MaxStamina;
+        GameVariables.Axe = 0;
+
 
         aud = GetComponent<AudioSource>();
 
@@ -65,6 +71,9 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Escape))
         {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+
             SceneManager.LoadScene("MainMenu");
         }
         if (Input.GetKey(KeyCode.LeftShift))
@@ -117,11 +126,6 @@ public class PlayerController : MonoBehaviour
             invisIcon.SetActive(false);
         }
 
-        if (score == 5)
-        {
-            Destroy(GameObject.Find("DoorBoulder"));
-        }
-
         if (score == 6)
         {
             EffectedStamina();
@@ -154,6 +158,9 @@ public class PlayerController : MonoBehaviour
         }
         if (relic.tag == "Relic" && score == 5)
         {
+            rockDoors[0].SetActive(false);
+            rockDoors[1].SetActive(false);
+            rockDoors[2].SetActive(false);
             aud.PlayOneShot(rockNotify, 0.8f);
         }
 
@@ -193,6 +200,8 @@ public class PlayerController : MonoBehaviour
                 aud.PlayOneShot(relicPickup, 0.8f);
                 Destroy(wendigoEnemy);
                 spiderEnemy.SetActive(true);
+                rockDoors[1].SetActive(true);
+                rockDoors[2].SetActive(true);
 
             }
         }
