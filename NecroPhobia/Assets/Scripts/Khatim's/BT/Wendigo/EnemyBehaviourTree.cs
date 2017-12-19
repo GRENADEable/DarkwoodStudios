@@ -30,10 +30,11 @@ public class EnemyBehaviourTree : MonoBehaviour
         capcol = GetComponentsInChildren<Collider>();
         rg = GetComponent<Rigidbody>();
 
-
+        //Creating the selector and sequence nodes.
         Selector selectNode = new Selector();
         Sequence sequenceNode = new Sequence();
 
+        //Made the selector Node the root node and then added the children for them.
         root = selectNode;
         selectNode.children.Add(sequenceNode);
         selectNode.children.Add(new Patrol());

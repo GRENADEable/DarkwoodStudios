@@ -6,6 +6,7 @@ public class Chase : Node
 {
     public override void Execute(EnemyBehaviourTree ownerBT)
     {
+        //Tranforms the direction from local space to world space.
         Vector3 chase = ownerBT.transform.TransformDirection(Vector3.forward) * ownerBT.chaseDistance;
         Debug.DrawRay(ownerBT.transform.position, chase, Color.green);
 
