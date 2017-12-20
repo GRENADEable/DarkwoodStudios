@@ -7,6 +7,7 @@ public class Patrol : Node
 
     public override void Execute(EnemyBehaviourTree ownerBT)
     {
+        //Storing the V3 position of the waypoints.
         Vector3 target = ownerBT.path.Positions[ownerBT.currPosIndex];
         target.y = ownerBT.transform.position.y;
         ownerBT.distanceToWaypoint = Vector3.Distance(target, ownerBT.transform.position);

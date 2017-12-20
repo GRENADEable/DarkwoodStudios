@@ -8,6 +8,8 @@ public class WayPointSystem : MonoBehaviour
 
     private void Start()
     {
+        //Stores the v3 positions of each child waypoints. The loop checks how many child waypoints are there that are placed under the
+        //parent object.
         Positions = new Vector3[transform.childCount];
         for (int i = 0; i < transform.childCount; i++)
         {
