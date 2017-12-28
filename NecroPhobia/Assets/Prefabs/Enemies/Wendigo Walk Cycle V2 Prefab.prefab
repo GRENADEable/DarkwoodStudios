@@ -2365,9 +2365,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   path: {fileID: 0}
   enemyWalkingSpeed: 3
-  enemyRunningSpeed: 7.5
+  enemyRunningSpeed: 8.5
   player: {fileID: 0}
-  chaseDistance: 15
+  chaseDistance: 16
   attackDistance: 8
   closeDistance: 10
   distanceToPlayer: 0
@@ -2377,7 +2377,6 @@ MonoBehaviour:
   tarDir: {x: 0, y: 0, z: 0}
   anim: {fileID: 0}
   capcol: []
-  col: {fileID: 0}
   rg: {fileID: 0}
 --- !u!114 &114499668462151294
 MonoBehaviour:
