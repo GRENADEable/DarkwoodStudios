@@ -49,8 +49,8 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
 
         relicWhole.SetActive(false);        
         hatchetIcon.SetActive(false);
@@ -71,10 +71,10 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Escape))
         {
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
+            //Cursor.visible = true;
+            //Cursor.lockState = CursorLockMode.None;
 
-            SceneManager.LoadScene("MainMenu");
+            //SceneManager.LoadScene("MainMenu");
         }
         if (Input.GetKey(KeyCode.LeftShift))
         {

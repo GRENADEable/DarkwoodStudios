@@ -110,6 +110,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4906575798847502}
   - component: {fileID: 95867471066057738}
+  - component: {fileID: 114554948428359608}
+  - component: {fileID: 195785506489196158}
   m_Layer: 0
   m_Name: Wendigo Walk Cycle V3 Prefab
   m_TagString: Untagged
@@ -2002,8 +2004,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1095639900992906}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 255.55, y: 0.57, z: 275.14}
+  m_LocalRotation: {x: -0, y: 0.9658633, z: -0, w: 0.25905228}
+  m_LocalPosition: {x: 215.53, y: 0.96, z: 231.25}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4417859396829336}
@@ -2151,6 +2153,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0df41e727e13224d9ccf5876225a572, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114554948428359608
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1095639900992906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d560dd79b45895e4f8f678eab83b649a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wanderRadius: 0
+  wanderTimer: 0
 --- !u!114 &114757865235762658
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2335,3 +2350,24 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.18170932, y: 0.020620123, z: 0.18420357}
     m_Extent: {x: 1.1067555, y: 0.44581938, z: 0.70717967}
   m_DirtyAABB: 0
+--- !u!195 &195785506489196158
+NavMeshAgent:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1095639900992906}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
