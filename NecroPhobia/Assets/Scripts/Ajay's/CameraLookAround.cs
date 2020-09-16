@@ -2,34 +2,91 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraLookAround : MonoBehaviour {
+public class CameraLookAround : MonoBehaviour
+{
 
-    Vector2 MouseLook;
-    Vector2 SmoothV;
+    //   Vector2 MouseLook;
+    //   Vector2 SmoothV;
 
-    public float Sensitivity;
-    public float Smoothing;
+    //   public float Sensitivity;
+    //   public float Smoothing;
 
-    GameObject Character;
+    //   GameObject Character;
 
-	void Start ()
+    //void Start ()
+    //   {
+    //       Character = this.transform.parent.gameObject;
+    //}
+
+
+    //void Update ()
+    //   {
+    //       var MouseDelta = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
+
+    //       MouseDelta = Vector2.Scale(MouseDelta, new Vector2(Sensitivity * Smoothing, Sensitivity * Smoothing));
+
+    //       SmoothV.x = Mathf.Lerp(SmoothV.x, MouseDelta.x, 1f / Smoothing);
+    //       SmoothV.y = Mathf.Lerp(SmoothV.y, MouseDelta.y, 1f / Smoothing);
+    //       MouseLook += SmoothV;
+    //       MouseLook.y = Mathf.Clamp(MouseLook.y, -40f, 50f);
+
+    //       transform.localRotation = Quaternion.AngleAxis(-MouseLook.y, Vector3.right);
+    //       Character.transform.localRotation = Quaternion.AngleAxis(MouseLook.x, Character.transform.up);
+    //   }
+
+    [Header("Mouse Settings")]
+    public float mouseSens = 100f;
+    public Transform playerBod;
+
+    private float m_xRotate = 0f;
+    private float m_timer = 0.0f;
+    private float m_bobSpeed = 0.2f;
+    private float m_bobamount = 0.1f;
+    [SerializeField] private float m_midpoint = 0.85f;
+
+    void Update()
     {
-        Character = this.transform.parent.gameObject;
-	}
-	
-	
-	void Update ()
+        float mouseX = Input.GetAxis("Mouse X") * mouseSens * Time.deltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSens * Time.deltaTime;
+
+        m_xRotate -= mouseY;
+        m_xRotate = Mathf.Clamp(m_xRotate, -90f, 90f);
+
+        transform.localRotation = Quaternion.Euler(m_xRotate, 0f, 0f);
+        playerBod.Rotate(Vector3.up * mouseX);
+    }
+
+    void FixedUpdate()
     {
-        var MouseDelta = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
+        float waveslice = 0.0f;
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
 
-        MouseDelta = Vector2.Scale(MouseDelta, new Vector2(Sensitivity * Smoothing, Sensitivity * Smoothing));
+        Vector3 cSharpConversion = transform.localPosition;
 
-        SmoothV.x = Mathf.Lerp(SmoothV.x, MouseDelta.x, 1f / Smoothing);
-        SmoothV.y = Mathf.Lerp(SmoothV.y, MouseDelta.y, 1f / Smoothing);
-        MouseLook += SmoothV;
-        MouseLook.y = Mathf.Clamp(MouseLook.y, -40f, 50f);
+        if (Mathf.Abs(horizontal) == 0 && Mathf.Abs(vertical) == 0)
+            m_timer = 0.0f;
+        else
+        {
+            //Using a sine wave to determine where the head should be in its bounce
+            waveslice = Mathf.Sin(m_timer);
+            m_timer = m_timer + m_bobSpeed;
+            if (m_timer > Mathf.PI * 2)
+                m_timer = m_timer - (Mathf.PI * 2);
+        }
+        //If the point on the sine wave is not at zero
+        if (waveslice != 0)
+        {
+            // If waveslice is -1, reached the lowest point on the sine wave and should  footstep.
+            float translateChange = waveslice * m_bobamount;
+            float totalAxes = Mathf.Abs(horizontal) + Mathf.Abs(vertical);
+            totalAxes = Mathf.Clamp(totalAxes, 0.0f, 1.0f);
+            translateChange = totalAxes * translateChange;
+            cSharpConversion.y = m_midpoint + translateChange;
+        }
+        else
+            cSharpConversion.y = m_midpoint;
 
-        transform.localRotation = Quaternion.AngleAxis(-MouseLook.y, Vector3.right);
-        Character.transform.localRotation = Quaternion.AngleAxis(MouseLook.x, Character.transform.up);
+        transform.localPosition = cSharpConversion;
     }
 }

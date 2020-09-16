@@ -6,20 +6,16 @@ using UnityEngine.UI;
 
 public class WendigoAI : MonoBehaviour
 {
-    #region Enums
-    public enum WendigoState { Idle, Wander, Chase, Attack };
+    [Space, Header("Enums")]
     public WendigoState aiState = WendigoState.Idle;
-    #endregion
+    public enum WendigoState { Idle, Wander, Chase, Attack };
 
-    #region Public Variables
+    [Space, Header("Wander Variables")]
     public float wanderRadius;
     public float wanderTimer;
-    #endregion
 
-    #region Private Variables
     private NavMeshAgent _wendigoAgent;
     private float _timer;
-    #endregion
 
     void Start()
     {
