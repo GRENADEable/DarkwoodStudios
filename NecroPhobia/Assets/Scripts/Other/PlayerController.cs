@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
         //Cursor.visible = false;
         //Cursor.lockState = CursorLockMode.Locked;
 
-        relicWhole.SetActive(false);        
+        relicWhole.SetActive(false);
         hatchetIcon.SetActive(false);
         spiderEnemy.SetActive(false);
         fadeScreen.SetActive(false);
@@ -114,7 +114,7 @@ public class PlayerController : MonoBehaviour
         {
             StaminaSlider.value = MaxStamina;
         }
-        
+
         if (invisTimer <= 5)
         {
             invisTimer -= Time.deltaTime;
@@ -215,7 +215,7 @@ public class PlayerController : MonoBehaviour
                 invisTimer = 5.0f;
                 Destroy(relic.gameObject);
             }
-            
+
         }
 
     }
@@ -229,7 +229,7 @@ public class PlayerController : MonoBehaviour
 
         if (relic.tag == "Hatchet")
         {
-            pickupText.SetActive(false);    
+            pickupText.SetActive(false);
         }
 
         if (relic.tag == "TalisMan")

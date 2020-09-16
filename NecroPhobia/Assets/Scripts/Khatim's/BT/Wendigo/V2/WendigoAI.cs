@@ -6,6 +6,11 @@ using UnityEngine.UI;
 
 public class WendigoAI : MonoBehaviour
 {
+    #region Enums
+    public enum WendigoState { Idle, Wander, Chase, Attack };
+    public WendigoState aiState = WendigoState.Idle;
+    #endregion
+
     #region Public Variables
     public float wanderRadius;
     public float wanderTimer;
@@ -25,6 +30,31 @@ public class WendigoAI : MonoBehaviour
 
     void Update()
     {
+        switch (aiState)
+        {
+            case WendigoState.Idle:
+                break;
+
+            case WendigoState.Wander:
+                Wander();
+                break;
+
+            case WendigoState.Chase:
+                break;
+
+            case WendigoState.Attack:
+                break;
+        }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, wanderRadius);
+    }
+
+    void Wander()
+    {
         _timer += Time.deltaTime;
 
         if (_timer >= wanderTimer)
@@ -33,12 +63,6 @@ public class WendigoAI : MonoBehaviour
             _wendigoAgent.SetDestination(newPos);
             _timer = 0;
         }
-    }
-
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, wanderRadius);
     }
 
     static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask)

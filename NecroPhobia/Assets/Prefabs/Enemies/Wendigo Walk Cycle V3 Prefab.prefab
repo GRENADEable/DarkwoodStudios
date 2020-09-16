@@ -110,8 +110,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4906575798847502}
   - component: {fileID: 95867471066057738}
-  - component: {fileID: 114554948428359608}
   - component: {fileID: 195785506489196158}
+  - component: {fileID: 114554948428359608}
   m_Layer: 0
   m_Name: Wendigo Walk Cycle V3 Prefab
   m_TagString: Untagged
@@ -2004,8 +2004,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1095639900992906}
-  m_LocalRotation: {x: -0, y: 0.9658633, z: -0, w: 0.25905228}
-  m_LocalPosition: {x: 215.53, y: 0.96, z: 231.25}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 274.4, y: 0.57, z: 226.4}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4417859396829336}
@@ -2164,8 +2164,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d560dd79b45895e4f8f678eab83b649a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wanderRadius: 0
-  wanderTimer: 0
+  aiState: 0
+  wanderRadius: 50
+  wanderTimer: 10
 --- !u!114 &114757865235762658
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2358,7 +2359,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1095639900992906}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.8
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
