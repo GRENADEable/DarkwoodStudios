@@ -8,11 +8,19 @@ public class UIManager : MonoBehaviour
     [Space, Header("HUD References")]
     public GameObject relicPickupTxt;
 
+    [Space, Header("Object Inspection")]
+    public GameObject objectInspectPanel;
+    public Transform objectPickedPos;
+    public Vector3 scaleVector;
+    [SerializeField] private GameObject _pickedObj;
+
     void OnEnable()
     {
         PlayerControllerV2.onRelicTriggerEnter += OnRelicTriggerEnterEventReceived;
 
         PlayerControllerV2.onRelicTriggerExit += OnRelicTriggerExitEventReceived;
+
+        ObjectPickup.onObjPickup += OnObjPickupEventReceived;
     }
 
     void OnDisable()
@@ -20,6 +28,8 @@ public class UIManager : MonoBehaviour
         PlayerControllerV2.onRelicTriggerEnter -= OnRelicTriggerEnterEventReceived;
 
         PlayerControllerV2.onRelicTriggerExit -= OnRelicTriggerExitEventReceived;
+
+        ObjectPickup.onObjPickup -= OnObjPickupEventReceived;
     }
 
     void OnDestroy()
@@ -27,6 +37,8 @@ public class UIManager : MonoBehaviour
         PlayerControllerV2.onRelicTriggerEnter -= OnRelicTriggerEnterEventReceived;
 
         PlayerControllerV2.onRelicTriggerExit -= OnRelicTriggerExitEventReceived;
+
+        ObjectPickup.onObjPickup -= OnObjPickupEventReceived;
     }
 
     void Start()
@@ -46,5 +58,14 @@ public class UIManager : MonoBehaviour
     void OnRelicTriggerExitEventReceived()
     {
         relicPickupTxt.SetActive(false);
+    }
+
+    void OnObjPickupEventReceived(GameObject obj)
+    {
+        _pickedObj = obj;
+        objectInspectPanel.SetActive(true);
+        GameObject spawnObj = Instantiate(_pickedObj, objectPickedPos.position, Quaternion.identity, objectPickedPos);
+        spawnObj.transform.localScale = scaleVector;
+        Debug.Log("Object Spawn on Screen");
     }
 }
