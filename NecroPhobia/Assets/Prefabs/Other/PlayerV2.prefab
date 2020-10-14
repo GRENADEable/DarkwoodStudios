@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 124045344427200204}
   - component: {fileID: 81604579580559282}
   - component: {fileID: 114673569190309168}
+  - component: {fileID: 114445065574976674}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -306,6 +307,19 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1025430506278772}
   m_Enabled: 1
+--- !u!114 &114445065574976674
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1025430506278772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fc18a55c333d51489e5ee49b3cbff50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _falloff: 0
+  _shader: {fileID: 4800000, guid: 89a223cbeee1935419811f8736c0a9b3, type: 3}
 --- !u!114 &114569474548213534
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -318,9 +332,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerWalkSpeed: 7
-  playerRunSpeed: 11
+  playerRunSpeed: 20
   gravity: -9.81
-  currPlayerSpeed: 0
   fovVal: 20
   lerpTime: 0.1
   groundCheck: {fileID: 4470449875386250}
