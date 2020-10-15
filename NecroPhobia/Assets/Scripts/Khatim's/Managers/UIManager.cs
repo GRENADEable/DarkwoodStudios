@@ -8,8 +8,10 @@ public class UIManager : MonoBehaviour
     [Space, Header("HUD References")]
     public GameObject relicPickupTxt;
 
+    [Space, Header("Animation Controllers")]
+    public Animator effectAnim;
+
     [Space, Header("Object Inspection")]
-    public GameObject objectInspectPanel;
     public Transform objectPickedPos;
     public Vector3 scaleVector;
     [SerializeField] private GameObject _pickedObj;
@@ -63,9 +65,9 @@ public class UIManager : MonoBehaviour
     void OnObjPickupEventReceived(GameObject obj)
     {
         _pickedObj = obj;
-        objectInspectPanel.SetActive(true);
         GameObject spawnObj = Instantiate(_pickedObj, objectPickedPos.position, Quaternion.identity, objectPickedPos);
         spawnObj.transform.localScale = scaleVector;
+        effectAnim.Play("ExamineAppearAnim");
         Debug.Log("Object Spawn on Screen");
     }
 }

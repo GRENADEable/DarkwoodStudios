@@ -14,7 +14,7 @@ public class ObjectPickup : PlayerInteraction
         base.StartInteraction();
         pickedObj = interactCol.gameObject;
 
-        if (onObjPickup != null)
+        if (onObjPickup != null) // Events sent to UI Manager script
             onObjPickup(pickedObj);
     }
 

@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    [Space, Header("Data")]
+    public GameManagerData gameManagerData;
+
     void Start()
     {
         Cursor.visible = false;

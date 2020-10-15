@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class PlayerControllerV2 : MonoBehaviour
 {
+    [Space, Header("Data")]
+    public GameManagerData gameManagerData;
+
     [Space, Header("Player References")]
     public float playerWalkSpeed;
     public float playerRunSpeed;
@@ -45,12 +48,20 @@ public class PlayerControllerV2 : MonoBehaviour
         else
             _cam.fieldOfView = Mathf.Lerp(_cam.fieldOfView, _currFov, lerpTime);
 
-        if (Input.GetButtonDown("Interact") && _plyInteract != null)
+        if (Input.GetButtonDown("Interact") && _plyInteract != null && gameManagerData.player == GameManagerData.PlayerState.Moving)
+        {
+            gameManagerData.player = GameManagerData.PlayerState.Examine;
             _plyInteract.StartInteraction();
-        else if (Input.GetButton("Interact") && _plyInteract != null)
+
+        }
+        else if (Input.GetButton("Interact") && _plyInteract != null && gameManagerData.player == GameManagerData.PlayerState.Examine)
             _plyInteract.UpdateInteraction();
-        if (Input.GetButtonUp("Interact") && _plyInteract != null)
+
+        if (Input.GetButtonUp("Interact") && _plyInteract != null && gameManagerData.player == GameManagerData.PlayerState.Examine)
+        {
+            gameManagerData.player = GameManagerData.PlayerState.Examine;
             _plyInteract.EndInteraction();
+        }
 
         if (Input.GetKey(KeyCode.LeftShift))
             currPlayerSpeed = playerRunSpeed;
@@ -90,7 +101,7 @@ public class PlayerControllerV2 : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (_plyInteract != null)
+        if (_plyInteract != null && gameManagerData.player == GameManagerData.PlayerState.Examine)
         {
             if (other.CompareTag("Relic") && _plyInteract.interactCol == other)
             {
@@ -105,6 +116,7 @@ public class PlayerControllerV2 : MonoBehaviour
     void ResetInteraction()
     {
         _plyInteract.interactCol = null;
+        gameManagerData.player = GameManagerData.PlayerState.Moving;
         _plyInteract = null;
     }
 }
