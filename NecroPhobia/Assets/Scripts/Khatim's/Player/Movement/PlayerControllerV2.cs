@@ -49,19 +49,12 @@ public class PlayerControllerV2 : MonoBehaviour
             _cam.fieldOfView = Mathf.Lerp(_cam.fieldOfView, _currFov, lerpTime);
 
         if (Input.GetButtonDown("Interact") && _plyInteract != null && gameManagerData.player == GameManagerData.PlayerState.Moving)
-        {
-            gameManagerData.player = GameManagerData.PlayerState.Examine;
             _plyInteract.StartInteraction();
-
-        }
-        else if (Input.GetButton("Interact") && _plyInteract != null && gameManagerData.player == GameManagerData.PlayerState.Examine)
+        else if (Input.GetButton("Interact") && _plyInteract != null && gameManagerData.player == GameManagerData.PlayerState.Moving)
             _plyInteract.UpdateInteraction();
 
-        if (Input.GetButtonUp("Interact") && _plyInteract != null && gameManagerData.player == GameManagerData.PlayerState.Examine)
-        {
-            gameManagerData.player = GameManagerData.PlayerState.Examine;
+        if (Input.GetButtonUp("Interact") && _plyInteract != null && gameManagerData.player == GameManagerData.PlayerState.Moving)
             _plyInteract.EndInteraction();
-        }
 
         if (Input.GetKey(KeyCode.LeftShift))
             currPlayerSpeed = playerRunSpeed;
@@ -78,9 +71,11 @@ public class PlayerControllerV2 : MonoBehaviour
 
         Vector3 moveDirection = (transform.right * xMove + transform.forward * zMove).normalized;
 
-        _charControl.Move(moveDirection * currPlayerSpeed * Time.deltaTime);
+        if (gameManagerData.player == GameManagerData.PlayerState.Moving)
+            _charControl.Move(moveDirection * currPlayerSpeed * Time.deltaTime); // For directional movement
+
         _vel.y += gravity * Time.deltaTime;
-        _charControl.Move(_vel * Time.deltaTime);
+        _charControl.Move(_vel * Time.deltaTime); // For gravity
     }
 
     void OnTriggerEnter(Collider other)
@@ -101,7 +96,7 @@ public class PlayerControllerV2 : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (_plyInteract != null && gameManagerData.player == GameManagerData.PlayerState.Examine)
+        if (_plyInteract != null)
         {
             if (other.CompareTag("Relic") && _plyInteract.interactCol == other)
             {

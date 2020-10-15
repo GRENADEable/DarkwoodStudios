@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class CameraLookAround : MonoBehaviour
 {
-    [Header("Mouse Settings")]
+    [Space, Header("Data")]
+    public GameManagerData gameManagerData;
+
+    [Space, Header("Mouse Settings")]
     public float mouseSens = 100f;
     public Transform playerBod;
 
@@ -22,8 +25,11 @@ public class CameraLookAround : MonoBehaviour
         m_xRotate -= mouseY;
         m_xRotate = Mathf.Clamp(m_xRotate, -90f, 90f);
 
-        transform.localRotation = Quaternion.Euler(m_xRotate, 0f, 0f);
-        playerBod.Rotate(Vector3.up * mouseX);
+        if (gameManagerData.player == GameManagerData.PlayerState.Moving)
+        {
+            transform.localRotation = Quaternion.Euler(m_xRotate, 0f, 0f);
+            playerBod.Rotate(Vector3.up * mouseX);
+        }
     }
 
     void FixedUpdate()
@@ -57,6 +63,7 @@ public class CameraLookAround : MonoBehaviour
         else
             cSharpConversion.y = m_midpoint;
 
-        transform.localPosition = cSharpConversion;
+        if (gameManagerData.player == GameManagerData.PlayerState.Moving)
+            transform.localPosition = cSharpConversion;
     }
 }

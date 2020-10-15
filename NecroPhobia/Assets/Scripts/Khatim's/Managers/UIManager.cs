@@ -5,16 +5,24 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    [Space, Header("Data")]
+    public GameManagerData gameManagerData;
+
     [Space, Header("HUD References")]
     public GameObject relicPickupTxt;
 
-    [Space, Header("Animation Controllers")]
+    [Space, Header("UI References")]
+    public GameObject examineCanvas;
     public Animator effectAnim;
+
+    [Space, Header("Examine Object References")]
+    public float speed;
 
     [Space, Header("Object Inspection")]
     public Transform objectPickedPos;
     public Vector3 scaleVector;
-    [SerializeField] private GameObject _pickedObj;
+    [SerializeField] private GameObject _examineObj;
+    private Vector2 _lastMousePos;
 
     void OnEnable()
     {
@@ -49,7 +57,17 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
+        if (gameManagerData.player == GameManagerData.PlayerState.Examine)
+        {
+            Vector2 currMousePos = (Vector2)Input.mousePosition;
+            Vector2 mouseDelta = currMousePos - _lastMousePos;
+            mouseDelta *= speed * Time.deltaTime;
 
+            _lastMousePos = currMousePos;
+
+            if (Input.GetMouseButton(0))
+                _examineObj.transform.Rotate(mouseDelta.y * 1, mouseDelta.x * -1f, 0f, Space.World);
+        }
     }
 
     void OnRelicTriggerEnterEventReceived()
@@ -64,10 +82,16 @@ public class UIManager : MonoBehaviour
 
     void OnObjPickupEventReceived(GameObject obj)
     {
-        _pickedObj = obj;
-        GameObject spawnObj = Instantiate(_pickedObj, objectPickedPos.position, Quaternion.identity, objectPickedPos);
-        spawnObj.transform.localScale = scaleVector;
+        gameManagerData.player = GameManagerData.PlayerState.Examine;
         effectAnim.Play("ExamineAppearAnim");
-        Debug.Log("Object Spawn on Screen");
+
+        examineCanvas.SetActive(true);
+        relicPickupTxt.SetActive(false);
+
+        GameObject spawnObj = Instantiate(obj, objectPickedPos.position, Quaternion.identity, objectPickedPos);
+        spawnObj.transform.localScale = scaleVector;
+        _examineObj = spawnObj;
+
+        //Debug.Log("Object Spawn on Screen");
     }
 }

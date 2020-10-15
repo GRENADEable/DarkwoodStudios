@@ -12,6 +12,6 @@ public class GameManagerData : ScriptableObject
 
     void OnEnable()
     {
-        //player = PlayerState.Moving;
+        player = PlayerState.Moving;
     }
 }
