@@ -8,11 +8,8 @@ public class PlayerControllerV2 : MonoBehaviour
     [Space, Header("Data")]
     public GameManagerData gameManagerData;
 
-    [Space, Header("Player References")]
-    public float playerWalkSpeed;
-    public float playerRunSpeed;
-    public float gravity = -9.81f;
-    private float currPlayerSpeed;
+    //[Space, Header("Player References")]
+    [SerializeField] private float _currPlayerSpeed;
     private Vector3 _vel;
     private CharacterController _charControl;
     private PlayerInteraction _plyInteract;
@@ -43,7 +40,7 @@ public class PlayerControllerV2 : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButton(1) && gameManagerData.player == GameManagerData.PlayerState.Moving)
             _cam.fieldOfView = Mathf.Lerp(_cam.fieldOfView, fovVal, lerpTime);
         else
             _cam.fieldOfView = Mathf.Lerp(_cam.fieldOfView, _currFov, lerpTime);
@@ -56,10 +53,11 @@ public class PlayerControllerV2 : MonoBehaviour
         if (Input.GetButtonUp("Interact") && _plyInteract != null && gameManagerData.player == GameManagerData.PlayerState.Moving)
             _plyInteract.EndInteraction();
 
-        if (Input.GetKey(KeyCode.LeftShift))
-            currPlayerSpeed = playerRunSpeed;
+
+        if (gameManagerData.currStamina > 0 && Input.GetButton("Run"))
+            _currPlayerSpeed = gameManagerData.playerRunSpeed;
         else
-            currPlayerSpeed = playerWalkSpeed;
+            _currPlayerSpeed = gameManagerData.playerWalkSpeed;
 
         _isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
@@ -72,9 +70,9 @@ public class PlayerControllerV2 : MonoBehaviour
         Vector3 moveDirection = (transform.right * xMove + transform.forward * zMove).normalized;
 
         if (gameManagerData.player == GameManagerData.PlayerState.Moving)
-            _charControl.Move(moveDirection * currPlayerSpeed * Time.deltaTime); // For directional movement
+            _charControl.Move(moveDirection * _currPlayerSpeed * Time.deltaTime); // For directional movement
 
-        _vel.y += gravity * Time.deltaTime;
+        _vel.y += gameManagerData.gravity * Time.deltaTime;
         _charControl.Move(_vel * Time.deltaTime); // For gravity
     }
 

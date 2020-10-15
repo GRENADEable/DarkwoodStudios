@@ -11,4 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6091c37c1af374e4ca936da3cf50d452, type: 3}
   m_Name: GameManagerData
   m_EditorClassIdentifier: 
-  player: 1
+  player: 0
+  currSpeed: 0
+  playerWalkSpeed: 7
+  playerRunSpeed: 15
+  gravity: -9.81
+  currStamina: 26.619291
+  regenStamina: 30
+  depleteStamina: 40
+  maxStamina: 100

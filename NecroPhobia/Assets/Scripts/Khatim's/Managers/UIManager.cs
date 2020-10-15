@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,11 +13,12 @@ public class UIManager : MonoBehaviour
     public GameObject relicPickupTxt;
 
     [Space, Header("UI References")]
-    public GameObject examineCanvas;
     public Animator effectAnim;
+    public GameObject examineCanvas;
+    public Slider staminaSlider;
 
     [Space, Header("Examine Object References")]
-    public float speed;
+    public float examineSpeed;
 
     [Space, Header("Object Inspection")]
     public Transform objectPickedPos;
@@ -53,6 +55,8 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
+        staminaSlider.maxValue = gameManagerData.maxStamina;
+        staminaSlider.value = gameManagerData.maxStamina;
     }
 
     void Update()
@@ -61,12 +65,23 @@ public class UIManager : MonoBehaviour
         {
             Vector2 currMousePos = (Vector2)Input.mousePosition;
             Vector2 mouseDelta = currMousePos - _lastMousePos;
-            mouseDelta *= speed * Time.deltaTime;
+            mouseDelta *= examineSpeed * Time.deltaTime;
 
             _lastMousePos = currMousePos;
 
             if (Input.GetMouseButton(0))
                 _examineObj.transform.Rotate(mouseDelta.y * 1, mouseDelta.x * -1f, 0f, Space.World);
+        }
+
+        if (Input.GetButton("Run"))
+        {
+            staminaSlider.value -= gameManagerData.depleteStamina * Time.deltaTime;
+            gameManagerData.currStamina -= gameManagerData.depleteStamina * Time.deltaTime;
+        }
+        else
+        {
+            staminaSlider.value += gameManagerData.regenStamina * Time.deltaTime;
+            gameManagerData.currStamina += gameManagerData.regenStamina * Time.deltaTime;
         }
     }
 
