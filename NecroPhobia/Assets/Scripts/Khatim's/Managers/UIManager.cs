@@ -26,6 +26,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject _examineObj;
     private Vector2 _lastMousePos;
 
+    public delegate void SendEvents();
+    public static event SendEvents onExaminExit;
+
     void OnEnable()
     {
         PlayerControllerV2.onRelicTriggerEnter += OnRelicTriggerEnterEventReceived;
@@ -71,6 +74,13 @@ public class UIManager : MonoBehaviour
 
             if (Input.GetMouseButton(0))
                 _examineObj.transform.Rotate(mouseDelta.y * 1, mouseDelta.x * -1f, 0f, Space.World);
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                ExamineExit();
+                if (onExaminExit != null)
+                    onExaminExit();
+            }
         }
 
         if (Input.GetButton("Run"))
@@ -108,5 +118,14 @@ public class UIManager : MonoBehaviour
         _examineObj = spawnObj;
 
         //Debug.Log("Object Spawn on Screen");
+    }
+
+    void ExamineExit()
+    {
+        gameManagerData.player = GameManagerData.PlayerState.Moving;
+        effectAnim.Play("ExamineDisappearAnim");
+
+        examineCanvas.SetActive(false);
+        _examineObj = null;
     }
 }

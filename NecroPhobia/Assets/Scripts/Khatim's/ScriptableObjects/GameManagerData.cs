@@ -7,10 +7,9 @@ public class GameManagerData : ScriptableObject
 {
     [Space, Header("Enums")]
     public PlayerState player = PlayerState.Moving;
-    public enum PlayerState { Moving, Examine, Dead };
+    public enum PlayerState { Idle, Moving, Examine, Dead };
 
     [Space, Header("Player Movement")]
-    public float currSpeed;
     public float playerWalkSpeed;
     public float playerRunSpeed;
     public float gravity = -9.81f;

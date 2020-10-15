@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class PlayerControllerV2 : MonoBehaviour
@@ -29,6 +30,21 @@ public class PlayerControllerV2 : MonoBehaviour
     public delegate void SendEvents();
     public static event SendEvents onRelicTriggerEnter;
     public static event SendEvents onRelicTriggerExit;
+
+    void OnEnable()
+    {
+        UIManager.onExaminExit += ResetInteraction;
+    }
+
+    void OnDisable()
+    {
+        UIManager.onExaminExit -= ResetInteraction;
+    }
+
+    void OnDestroy()
+    {
+        UIManager.onExaminExit -= ResetInteraction;
+    }
 
 
     void Start()
@@ -109,7 +125,6 @@ public class PlayerControllerV2 : MonoBehaviour
     void ResetInteraction()
     {
         _plyInteract.interactCol = null;
-        gameManagerData.player = GameManagerData.PlayerState.Moving;
         _plyInteract = null;
     }
 }

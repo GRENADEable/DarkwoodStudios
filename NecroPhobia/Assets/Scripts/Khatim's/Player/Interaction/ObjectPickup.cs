@@ -16,6 +16,9 @@ public class ObjectPickup : PlayerInteraction
 
         if (onObjPickup != null) // Events sent to UI Manager script
             onObjPickup(pickedObj);
+
+        interactCol = null;
+        pickedObj = null;
     }
 
     public override void UpdateInteraction()
