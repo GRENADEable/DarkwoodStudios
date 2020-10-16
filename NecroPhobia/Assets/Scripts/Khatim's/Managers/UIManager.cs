@@ -121,7 +121,11 @@ public class UIManager : MonoBehaviour
         Destroy(spawnObj.GetComponent<Rigidbody>());
 
         if (obj.gameObject.tag == "Relic")
+        {
             spawnObj.transform.localScale = relicScaleVector;
+            gameManagerData.relicCount++;
+            relicCountText.text = "Relic Count: " + gameManagerData.relicCount;
+        }
         else if (obj.gameObject.tag == "Document")
             spawnObj.transform.localScale = documentScaleVector;
 
