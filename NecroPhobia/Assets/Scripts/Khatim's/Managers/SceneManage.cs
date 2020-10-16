@@ -7,6 +7,21 @@ using UnityEngine.Audio;
 public class SceneManage : MonoBehaviour
 {
 
+    void OnEnable()
+    {
+        GameManagerData.onGameStart += OnGameStartEventReceived;
+    }
+
+    void OnDisable()
+    {
+        GameManagerData.onGameStart -= OnGameStartEventReceived;
+    }
+
+    void OnDestroy()
+    {
+        GameManagerData.onGameStart -= OnGameStartEventReceived;
+    }
+
     public void StartGame()
     {
         SceneManager.LoadScene("GameV2");
@@ -23,13 +38,8 @@ public class SceneManage : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
-    void OnTriggerEnter(Collider kill)
+    void OnGameStartEventReceived()
     {
-        if (kill.gameObject.tag == "Player")
-        {
-            SceneManager.LoadScene("DeathScene");
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
-        }
+        SceneManager.LoadScene("GameV2");
     }
 }

@@ -9,6 +9,9 @@ public class GameManagerData : ScriptableObject
     public PlayerState player = PlayerState.Moving;
     public enum PlayerState { Idle, Moving, Examine, Dead };
 
+    public MenuState menu = MenuState.MainMenu;
+    public enum MenuState { MainMenu, Game, Pause, Death };
+
     [Space, Header("Player Movement")]
     public float playerWalkSpeed;
     public float playerRunSpeed;
@@ -24,8 +27,21 @@ public class GameManagerData : ScriptableObject
     public float relicCount;
     public float axeCount;
 
+    public delegate void SendEvents();
+    public static event SendEvents onGameStart;
+
     void OnEnable()
     {
+        //menu = MenuState.MainMenu;
         player = PlayerState.Moving;
+    }
+
+    public void Start()
+    {
+        if (onGameStart != null)
+        {
+            onGameStart();
+            Debug.Log("Game Started");
+        }
     }
 }
