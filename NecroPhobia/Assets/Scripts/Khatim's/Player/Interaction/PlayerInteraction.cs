@@ -9,16 +9,16 @@ public class PlayerInteraction : MonoBehaviour
     public virtual void StartInteraction()
     {
         Destroy(interactCol.gameObject);
-        Debug.Log("Interaction Started");
+        //Debug.Log("Interaction Started");
     }
 
     public virtual void UpdateInteraction()
     {
-        Debug.Log("Interaction Running");
+        //Debug.Log("Interaction Running");
     }
 
     public virtual void EndInteraction()
     {
-        Debug.Log("Interaction Ending");
+        //Debug.Log("Interaction Ending");
     }
 }

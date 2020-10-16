@@ -4,7 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Relic
   - Stone
   - Ground
   - RockDoor
@@ -13,11 +12,12 @@ TagManager:
   - TalisMan
   - Hatchet
   - Collider
-  - Document
   - Enemy
   - LastPiece
   - Other
   - Wall
+  - Document
+  - Relic
   layers:
   - Default
   - TransparentFX

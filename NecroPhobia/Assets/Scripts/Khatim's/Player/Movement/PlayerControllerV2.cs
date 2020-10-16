@@ -94,7 +94,7 @@ public class PlayerControllerV2 : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Relic") && _plyInteract == null)
+        if ((other.CompareTag("Relic") || other.CompareTag("Document")) && _plyInteract == null)
         {
             _plyInteract = GetComponent<ObjectPickup>();
             _plyInteract.interactCol = other;
@@ -112,7 +112,7 @@ public class PlayerControllerV2 : MonoBehaviour
     {
         if (_plyInteract != null)
         {
-            if (other.CompareTag("Relic") && _plyInteract.interactCol == other)
+            if ((other.CompareTag("Relic") || other.CompareTag("Document")) && _plyInteract.interactCol == other)
             {
                 ResetInteraction();
                 if (onRelicTriggerExit != null) // Event Sent to UIManager Script

@@ -16,14 +16,16 @@ public class UIManager : MonoBehaviour
     public Animator effectAnim;
     public GameObject examineCanvas;
     public Slider staminaSlider;
+    public Text relicCountText;
 
     [Space, Header("Examine Object References")]
     public float examineSpeed;
 
     [Space, Header("Object Inspection")]
     public Transform objectPickedPos;
-    public Vector3 scaleVector;
-    [SerializeField] private GameObject _examineObj;
+    public Vector3 relicScaleVector;
+    public Vector3 documentScaleVector;
+    private GameObject _examineObj;
     private Vector2 _lastMousePos;
 
     public delegate void SendEvents();
@@ -60,6 +62,7 @@ public class UIManager : MonoBehaviour
     {
         staminaSlider.maxValue = gameManagerData.maxStamina;
         staminaSlider.value = gameManagerData.maxStamina;
+        relicCountText.text = "Relic Count: " + gameManagerData.relicCount;
     }
 
     void Update()
@@ -114,7 +117,14 @@ public class UIManager : MonoBehaviour
         relicPickupTxt.SetActive(false);
 
         GameObject spawnObj = Instantiate(obj, objectPickedPos.position, Quaternion.identity, objectPickedPos);
-        spawnObj.transform.localScale = scaleVector;
+        Destroy(spawnObj.GetComponent<Collider>());
+        Destroy(spawnObj.GetComponent<Rigidbody>());
+
+        if (obj.gameObject.tag == "Relic")
+            spawnObj.transform.localScale = relicScaleVector;
+        else if (obj.gameObject.tag == "Document")
+            spawnObj.transform.localScale = documentScaleVector;
+
         _examineObj = spawnObj;
 
         //Debug.Log("Object Spawn on Screen");
@@ -126,6 +136,7 @@ public class UIManager : MonoBehaviour
         effectAnim.Play("ExamineDisappearAnim");
 
         examineCanvas.SetActive(false);
+        Destroy(_examineObj);
         _examineObj = null;
     }
 }

@@ -20,6 +20,10 @@ public class GameManagerData : ScriptableObject
     public float depleteStamina;
     public float maxStamina;
 
+    [Space, Header("Pickup Items")]
+    public float relicCount;
+    public float axeCount;
+
     void OnEnable()
     {
         player = PlayerState.Moving;
