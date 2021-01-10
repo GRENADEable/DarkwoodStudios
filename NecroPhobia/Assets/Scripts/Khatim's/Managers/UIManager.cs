@@ -13,7 +13,6 @@ public class UIManager : MonoBehaviour
     public GameObject relicPickupTxt;
 
     [Space, Header("UI References")]
-    public Animator effectAnim;
     public GameObject examineCanvas;
     public Slider staminaSlider;
     public Text relicCountText;
@@ -111,7 +110,6 @@ public class UIManager : MonoBehaviour
     void OnObjPickupEventReceived(GameObject obj)
     {
         gameManagerData.player = GameManagerData.PlayerState.Examine;
-        effectAnim.Play("ExamineAppearAnim");
 
         examineCanvas.SetActive(true);
         relicPickupTxt.SetActive(false);
@@ -137,7 +135,6 @@ public class UIManager : MonoBehaviour
     void ExamineExit()
     {
         gameManagerData.player = GameManagerData.PlayerState.Moving;
-        effectAnim.Play("ExamineDisappearAnim");
 
         examineCanvas.SetActive(false);
         Destroy(_examineObj);
