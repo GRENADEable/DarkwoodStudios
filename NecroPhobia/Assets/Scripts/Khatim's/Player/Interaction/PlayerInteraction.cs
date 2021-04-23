@@ -8,7 +8,7 @@ public class PlayerInteraction : MonoBehaviour
 
     public virtual void StartInteraction()
     {
-        Destroy(interactCol.gameObject);
+        //Destroy(interactCol.gameObject);
         //Debug.Log("Interaction Started");
     }
 

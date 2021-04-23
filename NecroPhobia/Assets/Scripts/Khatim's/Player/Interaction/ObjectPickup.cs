@@ -9,16 +9,28 @@ public class ObjectPickup : PlayerInteraction
     public delegate void SendEvents(GameObject obj);
     public static event SendEvents onObjPickup;
 
+    void OnEnable()
+    {
+        UIManager.onExamineExit += OnExamineExitEventReceived;
+    }
+
+    void OnDisable()
+    {
+        UIManager.onExamineExit -= OnExamineExitEventReceived;
+    }
+
+    void OnDestroy()
+    {
+        UIManager.onExamineExit -= OnExamineExitEventReceived;
+    }
+
     public override void StartInteraction()
     {
         base.StartInteraction();
         pickedObj = interactCol.gameObject;
 
-        if (onObjPickup != null) // Events sent to UI Manager script
-            onObjPickup(pickedObj);
-
-        interactCol = null;
-        pickedObj = null;
+        onObjPickup?.Invoke(pickedObj); // Events sent to UI Manager script
+        Debug.Log("Event Sent");
     }
 
     public override void UpdateInteraction()
@@ -29,5 +41,11 @@ public class ObjectPickup : PlayerInteraction
     public override void EndInteraction()
     {
         base.EndInteraction();
+    }
+
+    void OnExamineExitEventReceived()
+    {
+        interactCol = null;
+        pickedObj = null;
     }
 }

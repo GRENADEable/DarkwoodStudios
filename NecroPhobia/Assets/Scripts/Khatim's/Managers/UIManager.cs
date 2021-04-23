@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    #region Public Variables
     [Space, Header("Data")]
     public GameManagerData gameManagerData;
 
@@ -24,11 +25,20 @@ public class UIManager : MonoBehaviour
     public Transform objectPickedPos;
     public Vector3 relicScaleVector;
     public Vector3 documentScaleVector;
-    private GameObject _examineObj;
-    private Vector2 _lastMousePos;
 
     public delegate void SendEvents();
-    public static event SendEvents onExaminExit;
+    public static event SendEvents onExamineExit;
+    #endregion
+
+    #region Private Variables
+    [Header("Examine Object References")]
+    [SerializeField] private bool isExamine;
+
+    [Header("Object Inspection")]
+    [SerializeField] private GameObject _examineObj;
+    private Vector2 _lastMousePos;
+
+    #endregion
 
     void OnEnable()
     {
@@ -68,7 +78,7 @@ public class UIManager : MonoBehaviour
     {
         if (gameManagerData.player == GameManagerData.PlayerState.Examine)
         {
-            Vector2 currMousePos = (Vector2)Input.mousePosition;
+            Vector2 currMousePos = Input.mousePosition;
             Vector2 mouseDelta = currMousePos - _lastMousePos;
             mouseDelta *= examineSpeed * Time.deltaTime;
 
@@ -77,12 +87,6 @@ public class UIManager : MonoBehaviour
             if (Input.GetMouseButton(0))
                 _examineObj.transform.Rotate(mouseDelta.y * 1, mouseDelta.x * -1f, 0f, Space.World);
 
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                ExamineExit();
-                if (onExaminExit != null)
-                    onExaminExit();
-            }
         }
 
         if (Input.GetButton("Run"))
@@ -107,7 +111,19 @@ public class UIManager : MonoBehaviour
         relicPickupTxt.SetActive(false);
     }
 
-    void OnObjPickupEventReceived(GameObject obj)
+    void OnObjPickupEventReceived(GameObject eventObj)
+    {
+        Debug.Log("Obj Pickup Event Received");
+
+        if (!isExamine)
+            ExamineEnter(eventObj);
+        else
+            EnableExitExamine();
+
+        isExamine = !isExamine;
+    }
+
+    void ExamineEnter(GameObject obj)
     {
         gameManagerData.player = GameManagerData.PlayerState.Examine;
 
@@ -118,23 +134,31 @@ public class UIManager : MonoBehaviour
         Destroy(spawnObj.GetComponent<Collider>());
         Destroy(spawnObj.GetComponent<Rigidbody>());
 
-        if (obj.gameObject.tag == "Relic")
+        if (obj.gameObject.CompareTag("Relic"))
         {
             spawnObj.transform.localScale = relicScaleVector;
             gameManagerData.relicCount++;
             relicCountText.text = "Relic Count: " + gameManagerData.relicCount;
         }
-        else if (obj.gameObject.tag == "Document")
+        else if (obj.gameObject.CompareTag("Document"))
             spawnObj.transform.localScale = documentScaleVector;
 
         _examineObj = spawnObj;
+    }
 
-        //Debug.Log("Object Spawn on Screen");
+    void EnableExitExamine()
+    {
+        if (Input.GetButtonDown("Interact"))
+        {
+            ExamineExit();
+            onExamineExit?.Invoke(); // Event Sent to PlayerControllerV2 and ObjectPickup
+        }
     }
 
     void ExamineExit()
     {
         gameManagerData.player = GameManagerData.PlayerState.Moving;
+        isExamine = false;
 
         examineCanvas.SetActive(false);
         Destroy(_examineObj);

@@ -33,17 +33,17 @@ public class PlayerControllerV2 : MonoBehaviour
 
     void OnEnable()
     {
-        UIManager.onExaminExit += ResetInteraction;
+        UIManager.onExamineExit += ResetInteraction;
     }
 
     void OnDisable()
     {
-        UIManager.onExaminExit -= ResetInteraction;
+        UIManager.onExamineExit -= ResetInteraction;
     }
 
     void OnDestroy()
     {
-        UIManager.onExaminExit -= ResetInteraction;
+        UIManager.onExamineExit -= ResetInteraction;
     }
 
 
@@ -61,14 +61,13 @@ public class PlayerControllerV2 : MonoBehaviour
         else
             _cam.fieldOfView = Mathf.Lerp(_cam.fieldOfView, _currFov, lerpTime);
 
-        if (Input.GetButtonDown("Interact") && _plyInteract != null && gameManagerData.player == GameManagerData.PlayerState.Moving)
+        if (Input.GetButtonDown("Interact") && _plyInteract != null /*&& gameManagerData.player == GameManagerData.PlayerState.Moving*/)
             _plyInteract.StartInteraction();
-        else if (Input.GetButton("Interact") && _plyInteract != null && gameManagerData.player == GameManagerData.PlayerState.Moving)
+        else if (Input.GetButton("Interact") && _plyInteract != null /*&& gameManagerData.player == GameManagerData.PlayerState.Moving*/)
             _plyInteract.UpdateInteraction();
 
-        if (Input.GetButtonUp("Interact") && _plyInteract != null && gameManagerData.player == GameManagerData.PlayerState.Moving)
+        if (Input.GetButtonUp("Interact") && _plyInteract != null /*&& gameManagerData.player == GameManagerData.PlayerState.Moving*/)
             _plyInteract.EndInteraction();
-
 
         if (gameManagerData.currStamina > 0 && Input.GetButton("Run"))
             _currPlayerSpeed = gameManagerData.playerRunSpeed;
@@ -102,8 +101,7 @@ public class PlayerControllerV2 : MonoBehaviour
             if (Input.GetButton("Interact"))
                 _plyInteract.StartInteraction();
 
-            if (onRelicTriggerEnter != null) // Event Sent to UIManager Script
-                onRelicTriggerEnter();
+            onRelicTriggerEnter?.Invoke(); // Event Sent to UIManager Script
             //Debug.Log("Object Reference Added");
         }
     }
@@ -115,8 +113,7 @@ public class PlayerControllerV2 : MonoBehaviour
             if ((other.CompareTag("Relic") || other.CompareTag("Document")) && _plyInteract.interactCol == other)
             {
                 ResetInteraction();
-                if (onRelicTriggerExit != null) // Event Sent to UIManager Script
-                    onRelicTriggerExit();
+                onRelicTriggerExit?.Invoke(); // Event Sent to UIManager Script
                 //Debug.Log("Object Reference Removed");
             }
         }
