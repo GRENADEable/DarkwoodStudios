@@ -15,8 +15,8 @@ public class PlayerControllerV2 : MonoBehaviour
     [Range(0f, 0.1f)] public float lerpTime;
 
     [Space, Header("Player Movement")]
-    public float playerWalkSpeed = 7f;
-    public float playerRunSpeed = 15f;
+    public float playerWalkSpeed = 5f;
+    public float playerRunSpeed = 9f;
     public float gravity = -9.81f;
 
     [Space, Header("Player Stamina")]
@@ -52,12 +52,13 @@ public class PlayerControllerV2 : MonoBehaviour
     [Header("Player Stamina")]
     private bool _canRun;
     private float _currStamina;
+    private bool _staminaCheat;
 
     [Header("Ground Check")]
     private bool _isGrounded;
 
     [Header("Interaction")]
-    private bool _isHatchetCollected;
+    private bool _isAxeCollected;
     private bool _isInteracting;
     private RaycastHit _hit;
     #endregion
@@ -110,6 +111,7 @@ public class PlayerControllerV2 : MonoBehaviour
         _currStamina = maxStamina;
     }
 
+    #region Checks
     void GroundCheck()
     {
         _isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
@@ -128,16 +130,18 @@ public class PlayerControllerV2 : MonoBehaviour
         _isInteracting = Physics.Raycast(ray, out _hit, rayDistance, interactionLayer);
         Debug.DrawRay(ray.origin, ray.direction * rayDistance, _isInteracting ? Color.red : Color.white);
 
-        if (_isInteracting && _isHatchetCollected)
+        if (_isInteracting && _isAxeCollected)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                _isHatchetCollected = false;
+                _isAxeCollected = false;
                 OnTreeChop?.Invoke();
             }
         }
     }
+    #endregion
 
+    #region Movement
     void PlayerMovement()
     {
         _currStamina = Mathf.Clamp(_currStamina, 0, maxStamina);
@@ -153,27 +157,41 @@ public class PlayerControllerV2 : MonoBehaviour
 
     void PlayerRunning()
     {
-        if (_currStamina >= 0 && Input.GetButton("Run") && _moveDirection != Vector3.zero && _canRun)
+        if (!_staminaCheat)
         {
-            _currSpeed = playerRunSpeed;
-            staminaSlider.value -= depleteStamina * Time.deltaTime;
-            _currStamina -= depleteStamina * Time.deltaTime;
-        }
-        else if (!Input.GetButton("Run"))
-        {
-            _currSpeed = playerWalkSpeed;
-            staminaSlider.value += regenStamina * Time.deltaTime;
-            _currStamina += regenStamina * Time.deltaTime;
-        }
+            if (_currStamina >= 0 && Input.GetButton("Run") && _moveDirection != Vector3.zero && _canRun)
+            {
+                _currSpeed = playerRunSpeed;
+                staminaSlider.value -= depleteStamina * Time.deltaTime;
+                _currStamina -= depleteStamina * Time.deltaTime;
+            }
+            else if (!Input.GetButton("Run"))
+            {
+                _currSpeed = playerWalkSpeed;
+                staminaSlider.value += regenStamina * Time.deltaTime;
+                _currStamina += regenStamina * Time.deltaTime;
+            }
 
-        if (_currStamina <= 0)
-        {
-            _canRun = false;
-            _currSpeed = playerWalkSpeed;
+            if (_currStamina <= 0)
+            {
+                _canRun = false;
+                _currSpeed = playerWalkSpeed;
+            }
+            else
+                _canRun = true;
         }
         else
+        {
+            staminaSlider.value = maxStamina;
             _canRun = true;
+
+            if (Input.GetButton("Run"))
+                _currSpeed = playerRunSpeed;
+            else
+                _currSpeed = playerWalkSpeed;
+        }
     }
+    #endregion
 
     void Zoom()
     {
@@ -182,12 +200,30 @@ public class PlayerControllerV2 : MonoBehaviour
         else
             _cam.fieldOfView = Mathf.Lerp(_cam.fieldOfView, _currFov, lerpTime);
     }
+
+    #region Cheats
+    public void OnClick_SuperSpeed()
+    {
+        playerRunSpeed = 50f;
+    }
+
+    public void OnClick_CollectAxe()
+    {
+        _isAxeCollected = true;
+    }
+
+    public void OnClick_UnlimitedStamina()
+    {
+        _staminaCheat = !_staminaCheat;
+    }
+    #endregion
+
     #endregion
 
     #region Events
     void OnHatchetDestroyEventReceived()
     {
-        _isHatchetCollected = true;
+        _isAxeCollected = true;
     }
     #endregion
 }

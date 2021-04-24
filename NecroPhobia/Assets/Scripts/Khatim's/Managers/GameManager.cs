@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public GameManagerData gmData;
 
     [Space, Header("HUD References")]
+    public GameObject cheatPanel;
     public GameObject relicPickupTxt;
     public GameObject hatchetIcon;
     public TextMeshProUGUI relicCountText;
@@ -66,12 +67,16 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         relicCountText.text = $"Relic Count: {_currRelicCount}";
-        DisableCursor();
+        //DisableCursor();
     }
 
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            EnableCursor();
+            cheatPanel.SetActive(true);
+        }
     }
     #endregion
 
@@ -110,6 +115,12 @@ public class GameManager : MonoBehaviour
         gmData.LockCursor(true);
     }
     #endregion
+
+    public void OnClick_CheatClose()
+    {
+        cheatPanel.SetActive(false);
+        DisableCursor();
+    }
 
     #endregion
 

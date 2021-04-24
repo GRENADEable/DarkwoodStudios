@@ -178,8 +178,8 @@ MonoBehaviour:
   gameManagerData: {fileID: 11400000, guid: 8caf691f69eebc04f9b08b5e7a302553, type: 2}
   fovVal: 20
   lerpTime: 0.1
-  playerWalkSpeed: 7
-  playerRunSpeed: 20
+  playerWalkSpeed: 5
+  playerRunSpeed: 12
   gravity: -9.81
   staminaSlider: {fileID: 0}
   regenStamina: 30
@@ -190,6 +190,10 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 256
+  interactionLayer:
+    serializedVersion: 2
+    m_Bits: 32768
+  rayDistance: 3
 --- !u!114 &6010480445902988668
 MonoBehaviour:
   m_ObjectHideFlags: 0
