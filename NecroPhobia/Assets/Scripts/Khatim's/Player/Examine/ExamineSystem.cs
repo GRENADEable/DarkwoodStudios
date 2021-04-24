@@ -23,6 +23,9 @@ public class ExamineSystem : MonoBehaviour
     public LayerMask examineLayer;
     public float rayDistance = 0.7f;
     public float rotationSpeedMouse = 40f;
+
+    public delegate void SendEvents();
+    public static event SendEvents OnRelicDestroy;
     #endregion
 
     #region Private Variables
@@ -40,8 +43,6 @@ public class ExamineSystem : MonoBehaviour
     private Vector3 _intialObjScale;
     private bool _isInteracting;
     private bool _isExamine;
-
-
     #endregion
 
     #region Unity Callbacks
@@ -124,6 +125,14 @@ public class ExamineSystem : MonoBehaviour
 
     void ExamineEnded()
     {
+        if (_tempObjReference.CompareTag("Relic"))
+            DestoryRelic();
+        else
+            PlaceBackObject();
+    }
+
+    void PlaceBackObject()
+    {
         _tempObjReference.layer = LayerMask.NameToLayer("ExamineLayer");
         _tempObjReference.transform.parent = pickPropReturnParentPos;
         _tempObjReference.transform.position = _intialObjPos;
@@ -133,6 +142,16 @@ public class ExamineSystem : MonoBehaviour
 
         _tempObjReference = null;
         _rotateObjTransform = null;
+
+        gmData.currPlayerState = GameManagerData.PlayerState.Moving;
+    }
+
+    void DestoryRelic()
+    {
+        Destroy(_tempObjReference);
+        _tempObjReference = null;
+        _rotateObjTransform = null;
+        OnRelicDestroy?.Invoke();
 
         gmData.currPlayerState = GameManagerData.PlayerState.Moving;
     }
