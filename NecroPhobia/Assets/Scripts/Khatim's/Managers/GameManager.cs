@@ -3,24 +3,26 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     [Space, Header("Data")]
     public GameManagerData gameManagerData;
 
-    [Space, Header("Player")]
-    public GameObject player;
+    [Space, Header("HUD References")]
+    public GameObject relicPickupTxt;
+
+    [Space, Header("UI References")]
+    public TextMeshProUGUI relicCountText;
 
     void Start()
     {
-        //Cursor.visible = false;
-        //Cursor.lockState = CursorLockMode.Locked;
-        gameManagerData.currStamina = gameManagerData.maxStamina;
+
     }
 
     void Update()
     {
-        gameManagerData.currStamina = Mathf.Clamp(gameManagerData.currStamina, 0, gameManagerData.maxStamina);
+
     }
 }

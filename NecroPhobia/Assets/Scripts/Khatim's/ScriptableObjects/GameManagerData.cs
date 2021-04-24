@@ -6,42 +6,54 @@ using UnityEngine;
 public class GameManagerData : ScriptableObject
 {
     [Space, Header("Enums")]
-    public PlayerState player = PlayerState.Moving;
+    public PlayerState currPlayerState = PlayerState.Moving;
     public enum PlayerState { Idle, Moving, Examine, Dead };
 
-    public MenuState menu = MenuState.MainMenu;
+    public MenuState currMenuState = MenuState.MainMenu;
     public enum MenuState { MainMenu, Game, Pause, Death };
-
-    [Space, Header("Player Movement")]
-    public float playerWalkSpeed;
-    public float playerRunSpeed;
-    public float gravity = -9.81f;
-
-    [Space, Header("Player Stamina")]
-    public float currStamina;
-    public float regenStamina;
-    public float depleteStamina;
-    public float maxStamina;
 
     [Space, Header("Pickup Items")]
     public float relicCount;
     public float axeCount;
 
-    public delegate void SendEvents();
-    public static event SendEvents onGameStart;
-
     void OnEnable()
     {
         //menu = MenuState.MainMenu;
-        player = PlayerState.Moving;
+        currPlayerState = PlayerState.Moving;
+    }
+    #region My Functions
+
+    #region Game States
+    public void LockCursor(bool isLocked)
+    {
+        if (isLocked)
+            Cursor.lockState = CursorLockMode.Locked;
+        else
+            Cursor.lockState = CursorLockMode.None;
     }
 
-    public void Start()
+    public void VisibleCursor(bool isVisible)
     {
-        if (onGameStart != null)
-        {
-            onGameStart();
-            Debug.Log("Game Started");
-        }
+        if (isVisible)
+            Cursor.visible = true;
+        else
+            Cursor.visible = false;
     }
+
+    public void TogglePause(bool isPaused)
+    {
+        if (isPaused)
+            Time.timeScale = 0f;
+        else
+            Time.timeScale = 1f;
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+        Debug.Log("Game Exited");
+    }
+    #endregion
+
+    #endregion
 }

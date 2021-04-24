@@ -6,122 +6,137 @@ using UnityEngine.UI;
 
 public class PlayerControllerV2 : MonoBehaviour
 {
+    #region Public Variables
     [Space, Header("Data")]
     public GameManagerData gameManagerData;
-
-    //[Space, Header("Player References")]
-    [SerializeField] private float _currPlayerSpeed;
-    private Vector3 _vel;
-    private CharacterController _charControl;
-    private PlayerInteraction _plyInteract;
 
     [Space, Header("Cam Refernces")]
     public float fovVal;
     [Range(0f, 0.1f)] public float lerpTime;
-    private Camera _cam;
-    private float _currFov;
+
+    [Space, Header("Player Movement")]
+    public float playerWalkSpeed = 7f;
+    public float playerRunSpeed = 15f;
+    public float gravity = -9.81f;
+
+    [Space, Header("Player Stamina")]
+    public Slider staminaSlider;
+    public float regenStamina = 30f;
+    public float depleteStamina = 40f;
+    public float maxStamina = 100f;
 
     [Space, Header("Ground Check")]
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
+    #endregion
+
+    #region Private Variables
+    [Header("Player References")]
+    [SerializeField] private float _currSpeed;
+    private Vector3 _vel;
+    private CharacterController _charControl;
+
+    [Header("Cam Refernces")]
+    private Camera _cam;
+    private float _currFov;
+
+    [Header("Player Stamina")]
+    [SerializeField] private float _currStamina;
+
+    [Header("Ground Check")]
     private bool _isGrounded;
+    #endregion
 
-    public delegate void SendEvents();
-    public static event SendEvents onRelicTriggerEnter;
-    public static event SendEvents onRelicTriggerExit;
+    #region Unity Callbacks
 
+    #region Events
     void OnEnable()
     {
-        UIManager.onExamineExit += ResetInteraction;
+
     }
 
     void OnDisable()
     {
-        UIManager.onExamineExit -= ResetInteraction;
+
     }
 
     void OnDestroy()
     {
-        UIManager.onExamineExit -= ResetInteraction;
+
     }
+    #endregion
 
-
+    #region Intialisation and Loops
     void Start()
     {
         _charControl = GetComponent<CharacterController>();
         _cam = Camera.main;
         _currFov = _cam.fieldOfView;
+        IntializeStamina();
     }
 
     void Update()
     {
-        if (Input.GetMouseButton(1) && gameManagerData.player == GameManagerData.PlayerState.Moving)
-            _cam.fieldOfView = Mathf.Lerp(_cam.fieldOfView, fovVal, lerpTime);
-        else
-            _cam.fieldOfView = Mathf.Lerp(_cam.fieldOfView, _currFov, lerpTime);
+        GroundCheck();
+        PlayerMovement();
+        //Zoom();
+    }
+    #endregion
 
-        if (Input.GetButtonDown("Interact") && _plyInteract != null /*&& gameManagerData.player == GameManagerData.PlayerState.Moving*/)
-            _plyInteract.StartInteraction();
-        else if (Input.GetButton("Interact") && _plyInteract != null /*&& gameManagerData.player == GameManagerData.PlayerState.Moving*/)
-            _plyInteract.UpdateInteraction();
+    #endregion
 
-        if (Input.GetButtonUp("Interact") && _plyInteract != null /*&& gameManagerData.player == GameManagerData.PlayerState.Moving*/)
-            _plyInteract.EndInteraction();
+    #region My Functions
+    void IntializeStamina()
+    {
+        staminaSlider.maxValue = maxStamina;
+        staminaSlider.value = maxStamina;
+        _currStamina = maxStamina;
+    }
 
-        if (gameManagerData.currStamina > 0 && Input.GetButton("Run"))
-            _currPlayerSpeed = gameManagerData.playerRunSpeed;
-        else
-            _currPlayerSpeed = gameManagerData.playerWalkSpeed;
-
+    void GroundCheck()
+    {
         _isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if (_isGrounded & _vel.y < 0)
             _vel.y = -2f;
 
+        _vel.y += gravity * Time.deltaTime;
+        _charControl.Move(_vel * Time.deltaTime);
+    }
+
+    void PlayerMovement()
+    {
+        _currStamina = Mathf.Clamp(_currStamina, 0, maxStamina);
+
         float xMove = Input.GetAxis("Horizontal");
         float zMove = Input.GetAxis("Vertical");
 
+        if (_currStamina > 0 && Input.GetButton("Run"))
+        {
+            _currSpeed = playerRunSpeed;
+            staminaSlider.value -= depleteStamina * Time.deltaTime;
+            _currStamina -= depleteStamina * Time.deltaTime;
+        }
+        else
+        {
+            _currSpeed = playerWalkSpeed;
+            staminaSlider.value += regenStamina * Time.deltaTime;
+            _currStamina += regenStamina * Time.deltaTime;
+        }
+
         Vector3 moveDirection = (transform.right * xMove + transform.forward * zMove).normalized;
 
-        if (gameManagerData.player == GameManagerData.PlayerState.Moving)
-            _charControl.Move(moveDirection * _currPlayerSpeed * Time.deltaTime); // For directional movement
-
-        _vel.y += gameManagerData.gravity * Time.deltaTime;
-        _charControl.Move(_vel * Time.deltaTime); // For gravity
+        if (gameManagerData.currPlayerState == GameManagerData.PlayerState.Moving)
+            _charControl.Move(moveDirection * _currSpeed * Time.deltaTime);
     }
 
-    void OnTriggerEnter(Collider other)
+    void Zoom()
     {
-        if ((other.CompareTag("Relic") || other.CompareTag("Document")) && _plyInteract == null)
-        {
-            _plyInteract = GetComponent<ObjectPickup>();
-            _plyInteract.interactCol = other;
-
-            if (Input.GetButton("Interact"))
-                _plyInteract.StartInteraction();
-
-            onRelicTriggerEnter?.Invoke(); // Event Sent to UIManager Script
-            //Debug.Log("Object Reference Added");
-        }
+        if (Input.GetMouseButton(1) && gameManagerData.currPlayerState == GameManagerData.PlayerState.Moving)
+            _cam.fieldOfView = Mathf.Lerp(_cam.fieldOfView, fovVal, lerpTime);
+        else
+            _cam.fieldOfView = Mathf.Lerp(_cam.fieldOfView, _currFov, lerpTime);
     }
-
-    void OnTriggerExit(Collider other)
-    {
-        if (_plyInteract != null)
-        {
-            if ((other.CompareTag("Relic") || other.CompareTag("Document")) && _plyInteract.interactCol == other)
-            {
-                ResetInteraction();
-                onRelicTriggerExit?.Invoke(); // Event Sent to UIManager Script
-                //Debug.Log("Object Reference Removed");
-            }
-        }
-    }
-
-    void ResetInteraction()
-    {
-        _plyInteract.interactCol = null;
-        _plyInteract = null;
-    }
+    #endregion
 }

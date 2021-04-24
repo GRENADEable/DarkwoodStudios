@@ -25,7 +25,7 @@ public class CameraLookAround : MonoBehaviour
         m_xRotate -= mouseY;
         m_xRotate = Mathf.Clamp(m_xRotate, -90f, 90f);
 
-        if (gameManagerData.player == GameManagerData.PlayerState.Moving)
+        if (gameManagerData.currPlayerState == GameManagerData.PlayerState.Moving)
         {
             transform.localRotation = Quaternion.Euler(m_xRotate, 0f, 0f);
             playerBod.Rotate(Vector3.up * mouseX);
@@ -63,7 +63,7 @@ public class CameraLookAround : MonoBehaviour
         else
             cSharpConversion.y = m_midpoint;
 
-        if (gameManagerData.player == GameManagerData.PlayerState.Moving)
+        if (gameManagerData.currPlayerState == GameManagerData.PlayerState.Moving)
             transform.localPosition = cSharpConversion;
     }
 }

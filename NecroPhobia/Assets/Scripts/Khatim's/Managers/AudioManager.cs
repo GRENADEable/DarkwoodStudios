@@ -42,7 +42,7 @@ public class AudioManager : MonoBehaviour
 
     void MenuState()
     {
-        switch (gameManagerData.menu)
+        switch (gameManagerData.currMenuState)
         {
             case GameManagerData.MenuState.MainMenu:
                 mainMenuOST.Play();
