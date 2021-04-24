@@ -32,7 +32,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4434806442028482}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &20641604748967288
 Camera:
@@ -107,8 +107,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManagerData: {fileID: 11400000, guid: 8caf691f69eebc04f9b08b5e7a302553, type: 2}
   mouseSens: 100
-  playerBod: {fileID: 4434806442028482}
-  m_midpoint: 0.85
+  playerRoot: {fileID: 4434806442028482}
+  _midpoint: 0.85
 --- !u!1 &1131154902115614
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,8 +139,8 @@ Transform:
   m_LocalPosition: {x: 46.149994, y: 2.08, z: 82.04999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4466566539888370}
   - {fileID: 4521841200286346}
+  - {fileID: 4466566539888370}
   - {fileID: 4470449875386250}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -157,7 +157,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 3.5
-  m_Radius: 0.5
+  m_Radius: 0.4
   m_SlopeLimit: 30
   m_StepOffset: 0.6
   m_SkinWidth: 0.08
@@ -275,7 +275,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.75, z: 1}
   m_Children: []
   m_Father: {fileID: 4434806442028482}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &33814462442688782
 MeshFilter:

@@ -4,35 +4,56 @@ using UnityEngine;
 
 public class CameraLookAround : MonoBehaviour
 {
+    #region Public Variables
     [Space, Header("Data")]
     public GameManagerData gameManagerData;
 
     [Space, Header("Mouse Settings")]
     public float mouseSens = 100f;
-    public Transform playerBod;
+    public Transform playerRoot;
+    #endregion
 
-    private float m_xRotate = 0f;
-    private float m_timer = 0.0f;
-    private float m_bobSpeed = 0.2f;
-    private float m_bobamount = 0.1f;
-    [SerializeField] private float m_midpoint = 0.85f;
+    #region Private Variables
+    private float _xRotate = 0f;
+    private float _timer = 0.0f;
+    private float _bobSpeed = 0.2f;
+    private float _bobamount = 0.1f;
+    [SerializeField] private float _midpoint = 0.85f;
+    #endregion
 
+    #region Unity Callbacks
     void Update()
+    {
+        CamLookAround();
+    }
+
+    void FixedUpdate()
+    {
+        HeadBobbing();
+    }
+    #endregion
+
+    #region My Functions
+
+    #region Cam Movement
+    void CamLookAround()
     {
         float mouseX = Input.GetAxis("Mouse X") * mouseSens * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSens * Time.deltaTime;
 
-        m_xRotate -= mouseY;
-        m_xRotate = Mathf.Clamp(m_xRotate, -90f, 90f);
+        _xRotate -= mouseY;
+        _xRotate = Mathf.Clamp(_xRotate, -90f, 90f);
 
         if (gameManagerData.currPlayerState == GameManagerData.PlayerState.Moving)
         {
-            transform.localRotation = Quaternion.Euler(m_xRotate, 0f, 0f);
-            playerBod.Rotate(Vector3.up * mouseX);
+            transform.localRotation = Quaternion.Euler(_xRotate, 0f, 0f);
+            playerRoot.Rotate(Vector3.up * mouseX);
         }
     }
+    #endregion
 
-    void FixedUpdate()
+    #region HeadBob
+    void HeadBobbing()
     {
         float waveslice = 0.0f;
         float horizontal = Input.GetAxis("Horizontal");
@@ -41,29 +62,32 @@ public class CameraLookAround : MonoBehaviour
         Vector3 cSharpConversion = transform.localPosition;
 
         if (Mathf.Abs(horizontal) == 0 && Mathf.Abs(vertical) == 0)
-            m_timer = 0.0f;
+            _timer = 0.0f;
         else
         {
             //Using a sine wave to determine where the head should be in its bounce
-            waveslice = Mathf.Sin(m_timer);
-            m_timer = m_timer + m_bobSpeed;
-            if (m_timer > Mathf.PI * 2)
-                m_timer = m_timer - (Mathf.PI * 2);
+            waveslice = Mathf.Sin(_timer);
+            _timer = _timer + _bobSpeed;
+            if (_timer > Mathf.PI * 2)
+                _timer = _timer - (Mathf.PI * 2);
         }
         //If the point on the sine wave is not at zero
         if (waveslice != 0)
         {
             // If waveslice is -1, reached the lowest point on the sine wave and should  footstep.
-            float translateChange = waveslice * m_bobamount;
+            float translateChange = waveslice * _bobamount;
             float totalAxes = Mathf.Abs(horizontal) + Mathf.Abs(vertical);
             totalAxes = Mathf.Clamp(totalAxes, 0.0f, 1.0f);
             translateChange = totalAxes * translateChange;
-            cSharpConversion.y = m_midpoint + translateChange;
+            cSharpConversion.y = _midpoint + translateChange;
         }
         else
-            cSharpConversion.y = m_midpoint;
+            cSharpConversion.y = _midpoint;
 
         if (gameManagerData.currPlayerState == GameManagerData.PlayerState.Moving)
             transform.localPosition = cSharpConversion;
     }
+    #endregion
+
+    #endregion
 }
