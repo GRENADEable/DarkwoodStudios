@@ -190,8 +190,6 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 256
-  _currSpeed: 0
-  _currStamina: 0
 --- !u!114 &6010480445902988668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,6 +208,7 @@ MonoBehaviour:
   dropKey: 324
   examinePointPos: {fileID: 0}
   pickPropReturnParentPos: {fileID: 0}
+  scaleDown: {x: 0.4, y: 0.4, z: 0.4}
   examineLayer:
     serializedVersion: 2
     m_Bits: 16384

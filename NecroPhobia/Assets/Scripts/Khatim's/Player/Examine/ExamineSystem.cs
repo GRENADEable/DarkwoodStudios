@@ -18,6 +18,7 @@ public class ExamineSystem : MonoBehaviour
     [Space, Header("Transform References")]
     public Transform examinePointPos;
     public Transform pickPropReturnParentPos;
+    public Vector3 scaleDown;
 
     [Space, Header("Examine Object References")]
     public LayerMask examineLayer;
@@ -114,6 +115,9 @@ public class ExamineSystem : MonoBehaviour
         _intialObjRot = _tempObjReference.transform.rotation;
         _intialObjScale = _tempObjReference.transform.localScale;
 
+        if (_tempObjReference.CompareTag("Hatchet"))
+            _tempObjReference.transform.localScale = scaleDown;
+
         _tempObjReference.layer = LayerMask.NameToLayer("InspectionCamLayer");
 
         _tempObjReference.transform.parent = examinePointPos;
@@ -125,8 +129,8 @@ public class ExamineSystem : MonoBehaviour
 
     void ExamineEnded()
     {
-        if (_tempObjReference.CompareTag("Relic"))
-            DestoryRelic();
+        if (_tempObjReference.CompareTag("Relic") || _tempObjReference.CompareTag("Hatchet"))
+            DestoryItem();
         else
             PlaceBackObject();
     }
@@ -146,7 +150,7 @@ public class ExamineSystem : MonoBehaviour
         gmData.currPlayerState = GameManagerData.PlayerState.Moving;
     }
 
-    void DestoryRelic()
+    void DestoryItem()
     {
         Destroy(_tempObjReference);
         _tempObjReference = null;

@@ -32,9 +32,10 @@ public class PlayerControllerV2 : MonoBehaviour
     #endregion
 
     #region Private Variables
-    [Header("Player References")]
-    [SerializeField] private float _currSpeed;
+    [Header("Player Movement")]
+    private float _currSpeed;
     private Vector3 _vel;
+    private Vector3 _moveDirection;
     private CharacterController _charControl;
 
     [Header("Cam Refernces")]
@@ -42,7 +43,8 @@ public class PlayerControllerV2 : MonoBehaviour
     private float _currFov;
 
     [Header("Player Stamina")]
-    [SerializeField] private float _currStamina;
+    private bool _canRun;
+    private float _currStamina;
 
     [Header("Ground Check")]
     private bool _isGrounded;
@@ -80,6 +82,7 @@ public class PlayerControllerV2 : MonoBehaviour
     {
         GroundCheck();
         PlayerMovement();
+        PlayerRunning();
         //Zoom();
     }
     #endregion
@@ -112,23 +115,34 @@ public class PlayerControllerV2 : MonoBehaviour
         float xMove = Input.GetAxis("Horizontal");
         float zMove = Input.GetAxis("Vertical");
 
-        if (_currStamina > 0 && Input.GetButton("Run"))
+        _moveDirection = (transform.right * xMove + transform.forward * zMove).normalized;
+
+        if (gameManagerData.currPlayerState == GameManagerData.PlayerState.Moving)
+            _charControl.Move(_moveDirection * _currSpeed * Time.deltaTime);
+    }
+
+    void PlayerRunning()
+    {
+        if (_currStamina >= 0 && Input.GetButton("Run") && _moveDirection != Vector3.zero && _canRun)
         {
             _currSpeed = playerRunSpeed;
             staminaSlider.value -= depleteStamina * Time.deltaTime;
             _currStamina -= depleteStamina * Time.deltaTime;
         }
-        else
+        else if (!Input.GetButton("Run"))
         {
             _currSpeed = playerWalkSpeed;
             staminaSlider.value += regenStamina * Time.deltaTime;
             _currStamina += regenStamina * Time.deltaTime;
         }
 
-        Vector3 moveDirection = (transform.right * xMove + transform.forward * zMove).normalized;
-
-        if (gameManagerData.currPlayerState == GameManagerData.PlayerState.Moving)
-            _charControl.Move(moveDirection * _currSpeed * Time.deltaTime);
+        if (_currStamina <= 0)
+        {
+            _canRun = false;
+            _currSpeed = playerWalkSpeed;
+        }
+        else
+            _canRun = true;
     }
 
     void Zoom()
