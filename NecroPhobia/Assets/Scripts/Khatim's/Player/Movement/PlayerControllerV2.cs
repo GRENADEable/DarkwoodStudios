@@ -29,6 +29,13 @@ public class PlayerControllerV2 : MonoBehaviour
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
+
+    [Space, Header("Interaction")]
+    public LayerMask interactionLayer;
+    public float rayDistance = 3f;
+
+    public delegate void SendEvents();
+    public static event SendEvents OnTreeChop;
     #endregion
 
     #region Private Variables
@@ -48,6 +55,11 @@ public class PlayerControllerV2 : MonoBehaviour
 
     [Header("Ground Check")]
     private bool _isGrounded;
+
+    [Header("Interaction")]
+    private bool _isHatchetCollected;
+    private bool _isInteracting;
+    private RaycastHit _hit;
     #endregion
 
     #region Unity Callbacks
@@ -55,17 +67,17 @@ public class PlayerControllerV2 : MonoBehaviour
     #region Events
     void OnEnable()
     {
-
+        ExamineSystem.OnHatchetDestroy += OnHatchetDestroyEventReceived;
     }
 
     void OnDisable()
     {
-
+        ExamineSystem.OnHatchetDestroy += OnHatchetDestroyEventReceived;
     }
 
     void OnDestroy()
     {
-
+        ExamineSystem.OnHatchetDestroy += OnHatchetDestroyEventReceived;
     }
     #endregion
 
@@ -83,6 +95,7 @@ public class PlayerControllerV2 : MonoBehaviour
         GroundCheck();
         PlayerMovement();
         PlayerRunning();
+        RaycastInteractCheck();
         //Zoom();
     }
     #endregion
@@ -106,6 +119,23 @@ public class PlayerControllerV2 : MonoBehaviour
 
         _vel.y += gravity * Time.deltaTime;
         _charControl.Move(_vel * Time.deltaTime);
+    }
+
+    void RaycastInteractCheck()
+    {
+        Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
+
+        _isInteracting = Physics.Raycast(ray, out _hit, rayDistance, interactionLayer);
+        Debug.DrawRay(ray.origin, ray.direction * rayDistance, _isInteracting ? Color.red : Color.white);
+
+        if (_isInteracting && _isHatchetCollected)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                _isHatchetCollected = false;
+                OnTreeChop?.Invoke();
+            }
+        }
     }
 
     void PlayerMovement()
@@ -151,6 +181,13 @@ public class PlayerControllerV2 : MonoBehaviour
             _cam.fieldOfView = Mathf.Lerp(_cam.fieldOfView, fovVal, lerpTime);
         else
             _cam.fieldOfView = Mathf.Lerp(_cam.fieldOfView, _currFov, lerpTime);
+    }
+    #endregion
+
+    #region Events
+    void OnHatchetDestroyEventReceived()
+    {
+        _isHatchetCollected = true;
     }
     #endregion
 }

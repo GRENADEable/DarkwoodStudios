@@ -1,37 +1,103 @@
 fileFormatVersion: 2
 guid: f3acf4c79defef54dbe97c2fcc53ee78
-timeCreated: 1511598886
-licenseType: Free
 ModelImporter:
-  serializedVersion: 21
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: Plane001
-    100004: Plane002
-    100006: Plane003
-    100008: Plane004
-    400000: //RootNode
-    400002: Plane001
-    400004: Plane002
-    400006: Plane003
-    400008: Plane004
-    2300000: Plane001
-    2300002: Plane002
-    2300004: Plane003
-    2300006: Plane004
-    3300000: Plane001
-    3300002: Plane002
-    3300004: Plane003
-    3300006: Plane004
-    4300000: Plane001
-    4300002: Plane002
-    4300004: Plane003
-    4300006: Plane004
-    9500000: //RootNode
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: Plane001
+  - first:
+      1: 100004
+    second: Plane002
+  - first:
+      1: 100006
+    second: Plane003
+  - first:
+      1: 100008
+    second: Plane004
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: Plane001
+  - first:
+      4: 400004
+    second: Plane002
+  - first:
+      4: 400006
+    second: Plane003
+  - first:
+      4: 400008
+    second: Plane004
+  - first:
+      23: 2300000
+    second: Plane001
+  - first:
+      23: 2300002
+    second: Plane002
+  - first:
+      23: 2300004
+    second: Plane003
+  - first:
+      23: 2300006
+    second: Plane004
+  - first:
+      33: 3300000
+    second: Plane001
+  - first:
+      33: 3300002
+    second: Plane002
+  - first:
+      33: 3300004
+    second: Plane003
+  - first:
+      33: 3300006
+    second: Plane004
+  - first:
+      43: 4300000
+    second: Plane001
+  - first:
+      43: 4300002
+    second: Plane002
+  - first:
+      43: 4300004
+    second: Plane003
+  - first:
+      43: 4300006
+    second: Plane004
+  - first:
+      95: 9500000
+    second: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 01 - Default
+    second: {fileID: 2100000, guid: 773540ed64c69a742bd5786ed0c4958e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 02 - Default
+    second: {fileID: 2100000, guid: 440f36bb39b30c146bf42278e5cfc1dd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 03 - Default
+    second: {fileID: 2100000, guid: 1280a3a4b94c0534b9730552f384abab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 07 - Default
+    second: {fileID: 2100000, guid: ab9b21d5635e32b40b4f117310b402fb, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -44,6 +110,8 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -58,16 +126,24 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
@@ -78,10 +154,13 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 1
-  copyAvatar: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -91,14 +170,16 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

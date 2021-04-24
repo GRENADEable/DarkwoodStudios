@@ -26,13 +26,12 @@ public class ExamineSystem : MonoBehaviour
     public float rotationSpeedMouse = 40f;
 
     public delegate void SendEvents();
+    public static event SendEvents OnPaperPicked;
     public static event SendEvents OnRelicDestroy;
+    public static event SendEvents OnHatchetDestroy;
     #endregion
 
     #region Private Variables
-    [Header("Camera")]
-    private Camera _cam;
-
     [Header("UI References")]
     private Transform _rotateObjTransform;
 
@@ -47,10 +46,6 @@ public class ExamineSystem : MonoBehaviour
     #endregion
 
     #region Unity Callbacks
-    void Start()
-    {
-        _cam = Camera.main;
-    }
 
     void Update()
     {
@@ -118,6 +113,9 @@ public class ExamineSystem : MonoBehaviour
         if (_tempObjReference.CompareTag("Hatchet"))
             _tempObjReference.transform.localScale = scaleDown;
 
+        if (_tempObjReference.CompareTag("Document"))
+            OnPaperPicked?.Invoke();
+
         _tempObjReference.layer = LayerMask.NameToLayer("InspectionCamLayer");
 
         _tempObjReference.transform.parent = examinePointPos;
@@ -152,10 +150,15 @@ public class ExamineSystem : MonoBehaviour
 
     void DestoryItem()
     {
+        if (_tempObjReference.CompareTag("Hatchet"))
+            OnHatchetDestroy?.Invoke();
+
+        if (_tempObjReference.CompareTag("Relic"))
+            OnRelicDestroy?.Invoke();
+
         Destroy(_tempObjReference);
         _tempObjReference = null;
         _rotateObjTransform = null;
-        OnRelicDestroy?.Invoke();
 
         gmData.currPlayerState = GameManagerData.PlayerState.Moving;
     }

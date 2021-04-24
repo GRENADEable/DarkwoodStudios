@@ -1,108 +1,301 @@
 fileFormatVersion: 2
 guid: 0c8e07381c1d30d44adc78b520bee2f3
-timeCreated: 1508835479
-licenseType: Free
 ModelImporter:
-  serializedVersion: 21
-  fileIDToRecycleName:
-    100000: alter display
-    100002: cloth
-    100004: 'cloth '
-    100006: cloth 1
-    100008: cloth 2
-    100010: colomb
-    100012: colomb001
-    100014: grass
-    100016: Line001
-    100018: Line002
-    100020: //RootNode
-    100022: shrine
-    100024: talisman
-    100026: talisman display
-    100028: talisman001
-    100030: talisman002
-    100032: talisman003
-    100034: talisman004
-    100036: tatami mat
-    100038: windows
-    100040: windows001
-    400000: alter display
-    400002: cloth
-    400004: 'cloth '
-    400006: cloth 1
-    400008: cloth 2
-    400010: colomb
-    400012: colomb001
-    400014: grass
-    400016: Line001
-    400018: Line002
-    400020: //RootNode
-    400022: shrine
-    400024: talisman
-    400026: talisman display
-    400028: talisman001
-    400030: talisman002
-    400032: talisman003
-    400034: talisman004
-    400036: tatami mat
-    400038: windows
-    400040: windows001
-    2300000: alter display
-    2300002: cloth
-    2300004: 'cloth '
-    2300006: cloth 1
-    2300008: cloth 2
-    2300010: colomb
-    2300012: colomb001
-    2300014: grass
-    2300016: shrine
-    2300018: talisman
-    2300020: talisman001
-    2300022: talisman002
-    2300024: talisman003
-    2300026: talisman004
-    2300028: tatami mat
-    2300030: windows
-    2300032: windows001
-    3300000: alter display
-    3300002: cloth
-    3300004: 'cloth '
-    3300006: cloth 1
-    3300008: cloth 2
-    3300010: colomb
-    3300012: colomb001
-    3300014: grass
-    3300016: shrine
-    3300018: talisman
-    3300020: talisman001
-    3300022: talisman002
-    3300024: talisman003
-    3300026: talisman004
-    3300028: tatami mat
-    3300030: windows
-    3300032: windows001
-    4300000: grass
-    4300002: alter display
-    4300004: tatami mat
-    4300006: talisman
-    4300008: talisman001
-    4300010: talisman002
-    4300012: talisman004
-    4300014: talisman003
-    4300016: shrine
-    4300018: colomb001
-    4300020: colomb
-    4300022: windows
-    4300024: windows001
-    4300026: cloth
-    4300028: cloth
-    4300030: 'cloth '
-    4300032: cloth
-    9500000: //RootNode
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: alter display
+  - first:
+      1: 100002
+    second: cloth
+  - first:
+      1: 100004
+    second: 'cloth '
+  - first:
+      1: 100006
+    second: cloth 1
+  - first:
+      1: 100008
+    second: cloth 2
+  - first:
+      1: 100010
+    second: colomb
+  - first:
+      1: 100012
+    second: colomb001
+  - first:
+      1: 100014
+    second: grass
+  - first:
+      1: 100016
+    second: Line001
+  - first:
+      1: 100018
+    second: Line002
+  - first:
+      1: 100020
+    second: //RootNode
+  - first:
+      1: 100022
+    second: shrine
+  - first:
+      1: 100024
+    second: talisman
+  - first:
+      1: 100026
+    second: talisman display
+  - first:
+      1: 100028
+    second: talisman001
+  - first:
+      1: 100030
+    second: talisman002
+  - first:
+      1: 100032
+    second: talisman003
+  - first:
+      1: 100034
+    second: talisman004
+  - first:
+      1: 100036
+    second: tatami mat
+  - first:
+      1: 100038
+    second: windows
+  - first:
+      1: 100040
+    second: windows001
+  - first:
+      4: 400000
+    second: alter display
+  - first:
+      4: 400002
+    second: cloth
+  - first:
+      4: 400004
+    second: 'cloth '
+  - first:
+      4: 400006
+    second: cloth 1
+  - first:
+      4: 400008
+    second: cloth 2
+  - first:
+      4: 400010
+    second: colomb
+  - first:
+      4: 400012
+    second: colomb001
+  - first:
+      4: 400014
+    second: grass
+  - first:
+      4: 400016
+    second: Line001
+  - first:
+      4: 400018
+    second: Line002
+  - first:
+      4: 400020
+    second: //RootNode
+  - first:
+      4: 400022
+    second: shrine
+  - first:
+      4: 400024
+    second: talisman
+  - first:
+      4: 400026
+    second: talisman display
+  - first:
+      4: 400028
+    second: talisman001
+  - first:
+      4: 400030
+    second: talisman002
+  - first:
+      4: 400032
+    second: talisman003
+  - first:
+      4: 400034
+    second: talisman004
+  - first:
+      4: 400036
+    second: tatami mat
+  - first:
+      4: 400038
+    second: windows
+  - first:
+      4: 400040
+    second: windows001
+  - first:
+      23: 2300000
+    second: alter display
+  - first:
+      23: 2300002
+    second: cloth
+  - first:
+      23: 2300004
+    second: 'cloth '
+  - first:
+      23: 2300006
+    second: cloth 1
+  - first:
+      23: 2300008
+    second: cloth 2
+  - first:
+      23: 2300010
+    second: colomb
+  - first:
+      23: 2300012
+    second: colomb001
+  - first:
+      23: 2300014
+    second: grass
+  - first:
+      23: 2300016
+    second: shrine
+  - first:
+      23: 2300018
+    second: talisman
+  - first:
+      23: 2300020
+    second: talisman001
+  - first:
+      23: 2300022
+    second: talisman002
+  - first:
+      23: 2300024
+    second: talisman003
+  - first:
+      23: 2300026
+    second: talisman004
+  - first:
+      23: 2300028
+    second: tatami mat
+  - first:
+      23: 2300030
+    second: windows
+  - first:
+      23: 2300032
+    second: windows001
+  - first:
+      33: 3300000
+    second: alter display
+  - first:
+      33: 3300002
+    second: cloth
+  - first:
+      33: 3300004
+    second: 'cloth '
+  - first:
+      33: 3300006
+    second: cloth 1
+  - first:
+      33: 3300008
+    second: cloth 2
+  - first:
+      33: 3300010
+    second: colomb
+  - first:
+      33: 3300012
+    second: colomb001
+  - first:
+      33: 3300014
+    second: grass
+  - first:
+      33: 3300016
+    second: shrine
+  - first:
+      33: 3300018
+    second: talisman
+  - first:
+      33: 3300020
+    second: talisman001
+  - first:
+      33: 3300022
+    second: talisman002
+  - first:
+      33: 3300024
+    second: talisman003
+  - first:
+      33: 3300026
+    second: talisman004
+  - first:
+      33: 3300028
+    second: tatami mat
+  - first:
+      33: 3300030
+    second: windows
+  - first:
+      33: 3300032
+    second: windows001
+  - first:
+      43: 4300000
+    second: grass
+  - first:
+      43: 4300002
+    second: alter display
+  - first:
+      43: 4300004
+    second: tatami mat
+  - first:
+      43: 4300006
+    second: talisman
+  - first:
+      43: 4300008
+    second: talisman001
+  - first:
+      43: 4300010
+    second: talisman002
+  - first:
+      43: 4300012
+    second: talisman004
+  - first:
+      43: 4300014
+    second: talisman003
+  - first:
+      43: 4300016
+    second: shrine
+  - first:
+      43: 4300018
+    second: colomb001
+  - first:
+      43: 4300020
+    second: colomb
+  - first:
+      43: 4300022
+    second: windows
+  - first:
+      43: 4300024
+    second: windows001
+  - first:
+      43: 4300026
+    second: cloth
+  - first:
+      43: 4300028
+    second: cloth
+  - first:
+      43: 4300030
+    second: 'cloth '
+  - first:
+      43: 4300032
+    second: cloth
+  - first:
+      95: 9500000
+    second: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 43343e79f2b99ab49801e07ea95faf41, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -115,6 +308,8 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -129,16 +324,24 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
@@ -149,10 +352,13 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 1
-  copyAvatar: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -162,14 +368,16 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

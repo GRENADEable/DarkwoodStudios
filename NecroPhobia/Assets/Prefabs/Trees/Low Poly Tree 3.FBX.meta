@@ -1,126 +1,360 @@
 fileFormatVersion: 2
 guid: abfe713bf26c4c4429ff8ee4662b347d
-timeCreated: 1511779200
-licenseType: Free
 ModelImporter:
-  serializedVersion: 21
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: Plane052
-    100004: Plane053
-    100006: Plane054
-    100008: Plane055
-    100010: Plane056
-    100012: Plane057
-    100014: Plane058
-    100016: Plane059
-    100018: Plane060
-    100020: Plane061
-    100022: Plane062
-    100024: Plane063
-    100026: Plane064
-    100028: Plane065
-    100030: Plane066
-    100032: Plane067
-    100034: Plane068
-    100036: Plane069
-    100038: Plane070
-    100040: Plane073
-    100042: Plane074
-    100044: Tree 3
-    400000: //RootNode
-    400002: Plane052
-    400004: Plane053
-    400006: Plane054
-    400008: Plane055
-    400010: Plane056
-    400012: Plane057
-    400014: Plane058
-    400016: Plane059
-    400018: Plane060
-    400020: Plane061
-    400022: Plane062
-    400024: Plane063
-    400026: Plane064
-    400028: Plane065
-    400030: Plane066
-    400032: Plane067
-    400034: Plane068
-    400036: Plane069
-    400038: Plane070
-    400040: Plane073
-    400042: Plane074
-    400044: Tree 3
-    2300000: Plane052
-    2300002: Plane053
-    2300004: Plane054
-    2300006: Plane055
-    2300008: Plane056
-    2300010: Plane057
-    2300012: Plane058
-    2300014: Plane059
-    2300016: Plane060
-    2300018: Plane061
-    2300020: Plane062
-    2300022: Plane063
-    2300024: Plane064
-    2300026: Plane065
-    2300028: Plane066
-    2300030: Plane067
-    2300032: Plane068
-    2300034: Plane069
-    2300036: Plane070
-    2300038: Plane073
-    2300040: Plane074
-    2300042: Tree 3
-    3300000: Plane052
-    3300002: Plane053
-    3300004: Plane054
-    3300006: Plane055
-    3300008: Plane056
-    3300010: Plane057
-    3300012: Plane058
-    3300014: Plane059
-    3300016: Plane060
-    3300018: Plane061
-    3300020: Plane062
-    3300022: Plane063
-    3300024: Plane064
-    3300026: Plane065
-    3300028: Plane066
-    3300030: Plane067
-    3300032: Plane068
-    3300034: Plane069
-    3300036: Plane070
-    3300038: Plane073
-    3300040: Plane074
-    3300042: Tree 3
-    4300000: Tree 3
-    4300002: Plane074
-    4300004: Plane073
-    4300006: Plane056
-    4300008: Plane057
-    4300010: Plane058
-    4300012: Plane059
-    4300014: Plane062
-    4300016: Plane070
-    4300018: Plane064
-    4300020: Plane063
-    4300022: Plane054
-    4300024: Plane061
-    4300026: Plane060
-    4300028: Plane067
-    4300030: Plane068
-    4300032: Plane052
-    4300034: Plane055
-    4300036: Plane066
-    4300038: Plane053
-    4300040: Plane065
-    4300042: Plane069
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: Plane052
+  - first:
+      1: 100004
+    second: Plane053
+  - first:
+      1: 100006
+    second: Plane054
+  - first:
+      1: 100008
+    second: Plane055
+  - first:
+      1: 100010
+    second: Plane056
+  - first:
+      1: 100012
+    second: Plane057
+  - first:
+      1: 100014
+    second: Plane058
+  - first:
+      1: 100016
+    second: Plane059
+  - first:
+      1: 100018
+    second: Plane060
+  - first:
+      1: 100020
+    second: Plane061
+  - first:
+      1: 100022
+    second: Plane062
+  - first:
+      1: 100024
+    second: Plane063
+  - first:
+      1: 100026
+    second: Plane064
+  - first:
+      1: 100028
+    second: Plane065
+  - first:
+      1: 100030
+    second: Plane066
+  - first:
+      1: 100032
+    second: Plane067
+  - first:
+      1: 100034
+    second: Plane068
+  - first:
+      1: 100036
+    second: Plane069
+  - first:
+      1: 100038
+    second: Plane070
+  - first:
+      1: 100040
+    second: Plane073
+  - first:
+      1: 100042
+    second: Plane074
+  - first:
+      1: 100044
+    second: Tree 3
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: Plane052
+  - first:
+      4: 400004
+    second: Plane053
+  - first:
+      4: 400006
+    second: Plane054
+  - first:
+      4: 400008
+    second: Plane055
+  - first:
+      4: 400010
+    second: Plane056
+  - first:
+      4: 400012
+    second: Plane057
+  - first:
+      4: 400014
+    second: Plane058
+  - first:
+      4: 400016
+    second: Plane059
+  - first:
+      4: 400018
+    second: Plane060
+  - first:
+      4: 400020
+    second: Plane061
+  - first:
+      4: 400022
+    second: Plane062
+  - first:
+      4: 400024
+    second: Plane063
+  - first:
+      4: 400026
+    second: Plane064
+  - first:
+      4: 400028
+    second: Plane065
+  - first:
+      4: 400030
+    second: Plane066
+  - first:
+      4: 400032
+    second: Plane067
+  - first:
+      4: 400034
+    second: Plane068
+  - first:
+      4: 400036
+    second: Plane069
+  - first:
+      4: 400038
+    second: Plane070
+  - first:
+      4: 400040
+    second: Plane073
+  - first:
+      4: 400042
+    second: Plane074
+  - first:
+      4: 400044
+    second: Tree 3
+  - first:
+      23: 2300000
+    second: Plane052
+  - first:
+      23: 2300002
+    second: Plane053
+  - first:
+      23: 2300004
+    second: Plane054
+  - first:
+      23: 2300006
+    second: Plane055
+  - first:
+      23: 2300008
+    second: Plane056
+  - first:
+      23: 2300010
+    second: Plane057
+  - first:
+      23: 2300012
+    second: Plane058
+  - first:
+      23: 2300014
+    second: Plane059
+  - first:
+      23: 2300016
+    second: Plane060
+  - first:
+      23: 2300018
+    second: Plane061
+  - first:
+      23: 2300020
+    second: Plane062
+  - first:
+      23: 2300022
+    second: Plane063
+  - first:
+      23: 2300024
+    second: Plane064
+  - first:
+      23: 2300026
+    second: Plane065
+  - first:
+      23: 2300028
+    second: Plane066
+  - first:
+      23: 2300030
+    second: Plane067
+  - first:
+      23: 2300032
+    second: Plane068
+  - first:
+      23: 2300034
+    second: Plane069
+  - first:
+      23: 2300036
+    second: Plane070
+  - first:
+      23: 2300038
+    second: Plane073
+  - first:
+      23: 2300040
+    second: Plane074
+  - first:
+      23: 2300042
+    second: Tree 3
+  - first:
+      33: 3300000
+    second: Plane052
+  - first:
+      33: 3300002
+    second: Plane053
+  - first:
+      33: 3300004
+    second: Plane054
+  - first:
+      33: 3300006
+    second: Plane055
+  - first:
+      33: 3300008
+    second: Plane056
+  - first:
+      33: 3300010
+    second: Plane057
+  - first:
+      33: 3300012
+    second: Plane058
+  - first:
+      33: 3300014
+    second: Plane059
+  - first:
+      33: 3300016
+    second: Plane060
+  - first:
+      33: 3300018
+    second: Plane061
+  - first:
+      33: 3300020
+    second: Plane062
+  - first:
+      33: 3300022
+    second: Plane063
+  - first:
+      33: 3300024
+    second: Plane064
+  - first:
+      33: 3300026
+    second: Plane065
+  - first:
+      33: 3300028
+    second: Plane066
+  - first:
+      33: 3300030
+    second: Plane067
+  - first:
+      33: 3300032
+    second: Plane068
+  - first:
+      33: 3300034
+    second: Plane069
+  - first:
+      33: 3300036
+    second: Plane070
+  - first:
+      33: 3300038
+    second: Plane073
+  - first:
+      33: 3300040
+    second: Plane074
+  - first:
+      33: 3300042
+    second: Tree 3
+  - first:
+      43: 4300000
+    second: Tree 3
+  - first:
+      43: 4300002
+    second: Plane074
+  - first:
+      43: 4300004
+    second: Plane073
+  - first:
+      43: 4300006
+    second: Plane056
+  - first:
+      43: 4300008
+    second: Plane057
+  - first:
+      43: 4300010
+    second: Plane058
+  - first:
+      43: 4300012
+    second: Plane059
+  - first:
+      43: 4300014
+    second: Plane062
+  - first:
+      43: 4300016
+    second: Plane070
+  - first:
+      43: 4300018
+    second: Plane064
+  - first:
+      43: 4300020
+    second: Plane063
+  - first:
+      43: 4300022
+    second: Plane054
+  - first:
+      43: 4300024
+    second: Plane061
+  - first:
+      43: 4300026
+    second: Plane060
+  - first:
+      43: 4300028
+    second: Plane067
+  - first:
+      43: 4300030
+    second: Plane068
+  - first:
+      43: 4300032
+    second: Plane052
+  - first:
+      43: 4300034
+    second: Plane055
+  - first:
+      43: 4300036
+    second: Plane066
+  - first:
+      43: 4300038
+    second: Plane053
+  - first:
+      43: 4300040
+    second: Plane065
+  - first:
+      43: 4300042
+    second: Plane069
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 09 - Default
+    second: {fileID: 2100000, guid: e5a807e01f2c50041b76dc91d3717800, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tree 3
+    second: {fileID: 2100000, guid: 411e08c340ff2ba4cb116dcd0d473c4c, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -133,6 +367,8 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -147,16 +383,24 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
@@ -167,10 +411,13 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 1
-  copyAvatar: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -180,14 +427,16 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
