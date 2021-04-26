@@ -17,7 +17,7 @@ public class ChaseAudioWendigo : MonoBehaviour
 
     void OnTriggerEnter(Collider play)
     {
-        if (play.tag == "Player" && ply.GetComponent<PlayerController>().invisTimer <= 0)
+        if (play.tag == "Player")
         {
             aud.PlayOneShot(growlClip, 1f);
             aud.PlayOneShot(chaseClip, 0.75f);
